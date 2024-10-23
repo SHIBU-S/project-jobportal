@@ -1,5 +1,12 @@
+.jobportallogo{
+    width: 12%;
+}
 .navlist{
     text-decoration: none;
+    color: black;
+}
+.navlist:hover{
+    color: blue;
 }
 .navli {
     position: relative; 

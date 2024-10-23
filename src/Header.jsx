@@ -4,14 +4,14 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
-import {jobportal_logo} from 'jobportal_logo';
+import jobportal_logo from './jobportal_logo.svg';
 
 function Header() {
   return (
     <Navbar expand="lg">
       <Container className="bg-body-tertiary d-flex align-items-center">
         {/* <Navbar.Brand href="#">Navbar Scroll</Navbar.Brand> */}
-        <img src={jobportal_logo} alt="Job Portal Logo" className="me-3" />
+        <img src={jobportal_logo} alt="Job Portal Logo" className="me-3 jobportallogo" />
         <Navbar.Toggle aria-controls="navbarScroll" className="ms-auto" />
 
         <Navbar.Collapse id="navbarScroll" className='border d-flex justify-content-center'>
