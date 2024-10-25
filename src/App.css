@@ -26,6 +26,7 @@
 
 .sub-menus {
     position: absolute;
+    top: 55px;
     width: 250px;
     display: none; 
     background-color: #fff; 
@@ -37,6 +38,7 @@
 .navline:hover .sub-menus {
     display: block; 
 }
+
 @media (max-width: 992px) {
     .sub-menus {
       display: block; 
@@ -84,7 +86,6 @@
 }
 .createfreeacc{
     text-decoration: none;
-    color: #2042e3;
 }
 
 .button{
@@ -100,9 +101,25 @@
 .login:hover{color: black;}
 
 
+.lineremoval{
+    border-width: 0;
+}
+.closebutton{background-color: rgb(218, 215, 215);}
+.closebutton:hover{background-color: black; color: white;}
 
 
-
-
-
+.logintitle::after {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 13%; 
+    background-color: #2042e3;
+    bottom: 0; 
+    left: 10px;
+}
+    @media (min-width : 768px) {
+        .logintitle::after{
+            left: 25px;
+        }
+    }
 
