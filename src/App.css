@@ -45,28 +45,26 @@
       position: static; 
     }
     .jobportallogo{
-        width:26%;
+        width:24%;
     }
 }
-
 .sub-menus li {
     padding: 8px 16px; 
 }  
-
 .sub-menus li a {
     color: black; 
     text-decoration: none; 
 } 
-
 .sub-menus li:hover {
     background-color: blue; 
 }
-
 .sub-menus li:hover a {
     color: white; 
 } 
 
-
+/* .login-signup{
+    display: inherit !important;
+} */
 
 
 
@@ -98,14 +96,26 @@
 .login{
     color: blue;
 }
-.login:hover{color: black;}
+.login-signup:hover .loginlogo{fill: black;}
+.login-signup:hover  .login{color: black;}
 
 
 .lineremoval{
     border-width: 0;
 }
-.closebutton{background-color: rgb(218, 215, 215);}
-.closebutton:hover{background-color: black; color: white;}
+.closebutton:hover{background-image: url(./Closebutton.png); background-size: cover; background-position: center; }
+.line-container {
+    display: flex;
+    align-items: center;
+}
+.line-container::before,
+.line-container::after {
+    content: '';
+    flex: 1; 
+    border-bottom: 1px solid #eee;
+    margin: 0 23px; 
+}
+  
 
 
 .logintitle::after {
@@ -122,4 +132,5 @@
             left: 25px;
         }
     }
+
 

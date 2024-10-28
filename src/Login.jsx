@@ -19,7 +19,7 @@ function Login() {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Body>
-          <Container className=' position-relative pt-2 pb-2'>
+          <Container className='position-relative pt-2 pb-2'>
             <Button variant="close" onClick={handleClose} className='position-absolute top-0 end-0 m-2 border p-2 closebutton' />
 
             <Modal.Title><h3 className='px-2 px-md-4 fw-bold pb-3 mt-3 logintitle position-relative'>Login From Here</h3></Modal.Title>
@@ -65,7 +65,12 @@ function Login() {
               </Col>
             </Row>
 
-            <div className='text-center mt-3'><span className='lightcolorline'>Or</span></div>
+            <div className='text-center mt-3'>
+              <div className='line-container'>
+                <span className='lightcolorline'>Or</span>
+              </div>
+            </div>
+
 
             <Form className='px-2 px-md-4'>
               <div className="mb-3">
@@ -92,7 +97,6 @@ function Login() {
 
               <p className='text-center mt-3'>
                 Don’t have an account? 
-                {/* <br className="d-block d-sm-none" />  */}
                 <a href="#" className='createfreeacc'>Create a free account</a>
               </p>
             </Form>
