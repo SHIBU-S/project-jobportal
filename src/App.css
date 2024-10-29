@@ -1,3 +1,6 @@
+.templatebg,.body{
+    background-color: #f6f9fc;
+}
 .jobportallogo{
     width: 12%;
 }
@@ -23,7 +26,6 @@
     color: blue;
 }
 
-
 .sub-menus {
     position: absolute;
     top: 55px;
@@ -38,14 +40,17 @@
 .navline:hover .sub-menus {
     display: block; 
 }
-
 @media (max-width: 992px) {
     .sub-menus {
       display: block; 
       position: static; 
     }
     .jobportallogo{
-        width:24%;
+        width:26%;
+    }
+    .navcollapse{
+        background-color: white;
+        box-shadow: 0 0 6px rgb(215, 213, 213);
     }
 }
 .sub-menus li {
@@ -62,16 +67,9 @@
     color: white; 
 } 
 
-/* .login-signup{
-    display: inherit !important;
-} */
-
-
-
 .lightcolorline{
     color: #7E8890;
 }
-
 .google{
     background-color: #dd4b39;
 }
@@ -84,7 +82,10 @@
 }
 .createfreeacc{
     text-decoration: none;
+    color: #2042e3;
 }
+.createfreeacc:hover{text-decoration: underline;}
+.terms_cond{text-decoration: none;}
 
 .button{
     background-color: blue;
@@ -92,6 +93,7 @@
 }
 .button:hover{
     background-color: black;
+    box-shadow: 0 0 10px black;
 }
 .login{
     color: blue;
@@ -99,10 +101,10 @@
 .login-signup:hover .loginlogo{fill: black;}
 .login-signup:hover  .login{color: black;}
 
-
 .lineremoval{
     border-width: 0;
 }
+.closebutton{background-color: rgb(221, 218, 218);}
 .closebutton:hover{background-image: url(./Closebutton.png); background-size: cover; background-position: center; }
 .line-container {
     display: flex;
@@ -116,8 +118,6 @@
     margin: 0 23px; 
 }
   
-
-
 .logintitle::after {
     position: absolute;
     content: "";
@@ -132,5 +132,3 @@
             left: 25px;
         }
     }
-
-
