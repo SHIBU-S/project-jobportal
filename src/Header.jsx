@@ -1,94 +1,3 @@
-// import Container from 'react-bootstrap/Container';
-// import Nav from 'react-bootstrap/Nav';
-// import Navbar from 'react-bootstrap/Navbar';
-// import { Link } from 'react-router-dom';
-// import jobportal_logo from './jobportal_logo.svg';
-// import Login from './Login';
-// import SignUp from './SignUp';
-
-// function Header() {
-//   return (
-//     <Navbar expand="lg"className='templatebg border pb-lg-3' >
-//       <Container className=" pt-2 pb-2 pb-lg-0 navbar-container">
-
-//         <img src={jobportal_logo} alt="Job Portal Logo" className="me-4 jobportallogo" />  
-
-//         <Navbar.Toggle aria-controls="navbarScroll" className="bg-primary ms-4 px-2" />
-
-//          <div className='login-signup d-flex align-items-center order-lg-2 order-md-0 ms-4 ms-lg-0'>
-//           <div className='me-0 me-lg-3'>
-//             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" className="bi bi-lock loginlogo" viewBox="0 0 16 16">
-//               <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2M5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1"/>
-//             </svg>
-//             <Login />
-//           </div>
-//           <button type="button" className="button rounded-1 ">
-//             <SignUp />
-//           </button>
-//         </div> 
-
-
-//         <Navbar.Collapse id="navbarScroll" className=' pe-md-0 pe-lg-3 pe-xxl-0 navcollapse mt-3 mt-lg-0'>
-//           <Nav className="ms-auto mt-3 mt-lg-0 ">
-//             <li className='p-3 p-lg-0'><Link to="/Home" className='navlist p-3 navli pb-lg-4 '>Home</Link></li>
-
-//              <li className=' p-3 p-lg-0 navline'>
-//               <Link to="/Pages" className='navlist p-3 navli pb-lg-4'>Pages</Link>
-//               <ul className='sub-menus pt-3 pe-4 mt-3'>
-//                 <li className=' rounded-1'> <Link to="/About">About</Link>                    </li>
-//                 <li className='mt-2 me-2 rounded-1'> <Link to="/JobList">Job List</Link>               </li>
-//                 <li className='mt-2 me-2 rounded-1'> <Link to="/JobDetails">Job Details</Link>         </li>
-//                 <li className='mt-2 me-2 rounded-1'> <Link to="/ResumePage">Resume Page</Link>         </li>
-//                 <li className='mt-2 me-2 rounded-1'> <Link to="/PrivacyPolicy">Privacy Policy</Link>   </li>
-//                 <li className='mt-2 me-2 rounded-1'> <Link to="/Faq">Faq</Link>                        </li>
-//                 <li className='mt-2 me-2 rounded-1'> <Link to="/OurPricing">Our Pricing</Link>         </li>
-//                 <li className='mt-2 me-2 rounded-1'> <Link to="/404Error">404 Error</Link>             </li>
-//                 <li className='mt-2 me-2 rounded-1 mb-4'> <Link to="/MailSuccess">Mail Success</Link>  </li>
-//               </ul>
-//             </li>
-
-//             <li className=' p-3 p-lg-0 navline'>
-//               <Link to="/Candidates" className='navlist p-3 navli pb-lg-4'>Candidates</Link>
-//               <ul className='sub-menus  pt-3 pe-4 mt-3'>
-//                 <li className='mt-2 me-2 rounded-1'> <Link to="/BrowseJobs">Browse Jobs</Link>             </li>
-//                 <li className='mt-2 me-2 rounded-1'> <Link to="/BrowseCategories">Browse Categories</Link> </li>
-//                 <li className='mt-2 me-2 rounded-1'> <Link to="/AddResume">Add Resume</Link>               </li>
-//                 <li className='mt-2 me-2 rounded-1 mb-4'> <Link to="/JobAlerts">Job Alerts</Link>          </li>
-//               </ul>
-//             </li>
-
-//             <li className=' p-3 p-lg-0 navline'>
-//               <Link to="/Employers" className='navlist p-3 navli pb-lg-4'>Employers</Link>
-//               <ul className='sub-menus  pt-3 pe-4 mt-3'>
-//                 <li className='mt-2 me-2 rounded-1'> <Link to="/AddJob">Add Job</Link>                         </li>
-//                 <li className='mt-2 me-2 rounded-1'> <Link to="/ManageJobs">Manage Jobs</Link>                 </li>
-//                 <li className='mt-2 me-2 rounded-1'> <Link to="/ManageApplication">Manage Applications</Link>  </li>
-//                 <li className='mt-2 me-2 rounded-1'> <Link to="/ManageResume">Manage Resume</Link>             </li>
-//                 <li className='mt-2 me-2 rounded-1 mb-4'> <Link to="/BrowseResumes">Browse Resumes</Link>      </li>
-//               </ul>
-//             </li>
-
-//             <li className=' p-3 p-lg-0 navline'>
-//               <Link to="/Blog" className='navlist p-3 navli pb-lg-4'>Blog</Link>
-//               <ul className='sub-menus  pt-3 pe-4 mt-3'>
-//                 <li className='mt-2 me-2 rounded-1'> <Link to="/BlogGridSidebar">Blog Grid Sidebar</Link>             </li>
-//                 <li className='mt-2 me-2 rounded-1'> <Link to="/BlogSingle">Blog Single</Link>                        </li>
-//                 <li className='mt-2 me-2 rounded-1 mb-4'> <Link to="/BlogSingleSidebar">Blog Single Sidebar</Link>    </li>
-//               </ul>
-//             </li>
-
-//             <li className=' p-3 p-lg-0 me-4 '><Link to="/Contact" className='navlist p-3 navli pb-lg-4'>Contact</Link></li>
-//           </Nav>
-//         </Navbar.Collapse>
-
-
-//       </Container>
-//     </Navbar>
-//   );
-// }
-
-// export default Header;
-
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -100,18 +9,15 @@ import SignUp from './SignUp';
 
 function Header() {
   return (
-    <Navbar expand="lg"className='templatebg border pb-lg-3' >
+    <Navbar expand="lg"className=' border pb-lg-3 sticky-top ' style={{ backgroundColor: "#f6f9fc"}}>
       <Container className=" pt-2 pb-2 pb-lg-0 navbar-container">
 
-        <img src={jobportal_logo} alt="Job Portal Logo" className="me-4 jobportallogo" />  
+        <img src={jobportal_logo} alt="Job Portal Logo" className="jobportallogo" />  
 
-        <Navbar.Toggle aria-controls="navbarScroll" className="bg-primary ms-4 px-2" />
+        <Navbar.Toggle aria-controls="navbarScroll" className="bg-primary ms-5 px-1 py-0 px-md-2 py-md-1" />
 
          <div className='login-signup d-flex align-items-center order-lg-2 order-md-0 ms-4 ms-lg-0'>
           <div className='me-0 me-lg-3'>
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" className="loginlogo" fill='blue' width="16" height="16" viewBox="0 0 50 50">
-            <path d="M 25 3 C 18.363281 3 13 8.363281 13 15 L 13 20 L 9 20 C 7.355469 20 6 21.355469 6 23 L 6 47 C 6 48.644531 7.355469 50 9 50 L 41 50 C 42.644531 50 44 48.644531 44 47 L 44 23 C 44 21.355469 42.644531 20 41 20 L 37 20 L 37 15 C 37 8.363281 31.636719 3 25 3 Z M 25 5 C 30.566406 5 35 9.433594 35 15 L 35 20 L 15 20 L 15 15 C 15 9.433594 19.433594 5 25 5 Z M 9 22 L 41 22 C 41.554688 22 42 22.445313 42 23 L 42 47 C 42 47.554688 41.554688 48 41 48 L 9 48 C 8.445313 48 8 47.554688 8 47 L 8 23 C 8 22.445313 8.445313 22 9 22 Z M 25 30 C 23.300781 30 22 31.300781 22 33 C 22 33.898438 22.398438 34.6875 23 35.1875 L 23 38 C 23 39.101563 23.898438 40 25 40 C 26.101563 40 27 39.101563 27 38 L 27 35.1875 C 27.601563 34.6875 28 33.898438 28 33 C 28 31.300781 26.699219 30 25 30 Z"></path>
-            </svg>
             <Login />
           </div>
           <button type="button" className="button rounded-1 ">
@@ -126,50 +32,50 @@ function Header() {
 
              <li className=' p-3 p-lg-0 navline'>
               <Link to="/Pages" className='navlist p-3 navli pb-lg-4'>Pages</Link>
-              <ul className='ps-3 pe-2 sub-menus pt-2 pb-1 mt-3 border border-dark'>
-                <li className='mt-2 me-2 rounded-1'> <Link to="/About">About</Link>                    </li>
-                <li className='mt-2 me-2 rounded-1'> <Link to="/JobList">Job List</Link>               </li>
-                <li className='mt-2 me-2 rounded-1'> <Link to="/JobDetails">Job Details</Link>         </li>
-                <li className='mt-2 me-2 rounded-1'> <Link to="/ResumePage">Resume Page</Link>         </li>
-                <li className='mt-2 me-2 rounded-1'> <Link to="/PrivacyPolicy">Privacy Policy</Link>   </li>
-                <li className='mt-2 me-2 rounded-1'> <Link to="/Faq">Faq</Link>                        </li>
-                <li className='mt-2 me-2 rounded-1'> <Link to="/OurPricing">Our Pricing</Link>         </li>
-                <li className='mt-2 me-2 rounded-1'> <Link to="/404Error">404 Error</Link>             </li>
-                <li className='mt-2 me-2 rounded-1 mb-3'> <Link to="/MailSuccess">Mail Success</Link>  </li>
+              <ul className='ps-3 pe-2 sub-menus pt-2 pb-1 mt-3 border'>
+                <li className='mt-2 me-2 rounded-1'> <Link to="/About" className='d-block'>About</Link>                    </li>
+                <li className='mt-2 me-2 rounded-1'> <Link to="/JobList" className='d-block'>Job List</Link>               </li>
+                <li className='mt-2 me-2 rounded-1'> <Link to="/JobDetails" className='d-block'>Job Details</Link>         </li>
+                <li className='mt-2 me-2 rounded-1'> <Link to="/ResumePage" className='d-block'>Resume Page</Link>         </li>
+                <li className='mt-2 me-2 rounded-1'> <Link to="/PrivacyPolicy" className='d-block'>Privacy Policy</Link>   </li>
+                <li className='mt-2 me-2 rounded-1'> <Link to="/Faq" className='d-block'>Faq</Link>                        </li>
+                <li className='mt-2 me-2 rounded-1'> <Link to="/OurPricing" className='d-block'>Our Pricing</Link>         </li>
+                <li className='mt-2 me-2 rounded-1'> <Link to="/404Error" className='d-block'>404 Error</Link>             </li>
+                <li className='mt-2 me-2 rounded-1 mb-3'> <Link to="/MailSuccess" className='d-block'>Mail Success</Link>  </li>
               </ul>
             </li>
 
             <li className=' p-3 p-lg-0 navline'>
               <Link to="/Candidates" className='navlist p-3 navli pb-lg-4'>Candidates</Link>
-              <ul className='ps-3 pe-2 sub-menus pt-2 mt-3 border border-dark'>
-                <li className='mt-2 me-2 rounded-1'> <Link to="/BrowseJobs">Browse Jobs</Link>             </li>
-                <li className='mt-2 me-2 rounded-1'> <Link to="/BrowseCategories">Browse Categories</Link> </li>
-                <li className='mt-2 me-2 rounded-1'> <Link to="/AddResume">Add Resume</Link>               </li>
-                <li className='mt-2 me-2 rounded-1 mb-3'> <Link to="/JobAlerts">Job Alerts</Link>          </li>
+              <ul className='ps-3 pe-2 sub-menus pt-2 mt-3 border'>
+                <li className='mt-2 me-2 rounded-1'> <Link to="/BrowseJobs" className='d-block'>Browse Jobs</Link>             </li>
+                <li className='mt-2 me-2 rounded-1'> <Link to="/BrowseCategories" className='d-block'>Browse Categories</Link> </li>
+                <li className='mt-2 me-2 rounded-1'> <Link to="/AddResume" className='d-block'>Add Resume</Link>               </li>
+                <li className='mt-2 me-2 rounded-1 mb-3'> <Link to="/JobAlerts" className='d-block'>Job Alerts</Link>          </li>
               </ul>
             </li>
 
             <li className=' p-3 p-lg-0 navline'>
               <Link to="/Employers" className='navlist p-3 navli pb-lg-4'>Employers</Link>
-              <ul className='ps-3 pe-2 sub-menus pt-2 mt-3 border border-dark'>
-                <li className='mt-2 me-2 rounded-1'> <Link to="/AddJob">Add Job</Link>                         </li>
-                <li className='mt-2 me-2 rounded-1'> <Link to="/ManageJobs">Manage Jobs</Link>                 </li>
-                <li className='mt-2 me-2 rounded-1'> <Link to="/ManageApplication">Manage Applications</Link>  </li>
-                <li className='mt-2 me-2 rounded-1'> <Link to="/ManageResume">Manage Resume</Link>             </li>
-                <li className='mt-2 me-2 rounded-1 mb-3'> <Link to="/BrowseResumes">Browse Resumes</Link>      </li>
+              <ul className='ps-3 pe-2 sub-menus pt-2 mt-3 border '>
+                <li className='mt-2 me-2 rounded-1'> <Link to="/AddJob" className='d-block'>Add Job</Link>                         </li>
+                <li className='mt-2 me-2 rounded-1'> <Link to="/ManageJobs" className='d-block'>Manage Jobs</Link>                 </li>
+                <li className='mt-2 me-2 rounded-1'> <Link to="/ManageApplication" className='d-block'>Manage Applications</Link>  </li>
+                <li className='mt-2 me-2 rounded-1'> <Link to="/ManageResume" className='d-block'>Manage Resume</Link>             </li>
+                <li className='mt-2 me-2 rounded-1 mb-3'> <Link to="/BrowseResumes" className='d-block'>Browse Resumes</Link>      </li>
               </ul>
             </li>
 
             <li className=' p-3 p-lg-0 navline'>
               <Link to="/Blog" className='navlist p-3 navli pb-lg-4'>Blog</Link>
-              <ul className='ps-3 pe-2 sub-menus pt-2 mt-3 border border-dark '>
-                <li className='mt-2 me-2 rounded-1'> <Link to="/BlogGridSidebar">Blog Grid Sidebar</Link>             </li>
-                <li className='mt-2 me-2 rounded-1'> <Link to="/BlogSingle">Blog Single</Link>                        </li>
-                <li className='mt-2 me-2 rounded-1 mb-3'> <Link to="/BlogSingleSidebar">Blog Single Sidebar</Link>    </li>
+              <ul className='ps-3 pe-2 sub-menus pt-2 mt-3 border '>
+                <li className='mt-2 me-2 rounded-1'> <Link to="/BlogGridSidebar" className='d-block'>Blog Grid Sidebar</Link>             </li>
+                <li className='mt-2 me-2 rounded-1'> <Link to="/BlogSingle" className='d-block'>Blog Single</Link>                        </li>
+                <li className='mt-2 me-2 rounded-1 mb-3'> <Link to="/BlogSingleSidebar" className='d-block'>Blog Single Sidebar</Link>    </li>
               </ul>
             </li>
 
-            <li className=' p-3 p-lg-0 me-4 '><Link to="/Contact" className='navlist p-3 navli pb-lg-4'>Contact</Link></li>
+            <li className=' p-3 p-lg-0 me-3 '><Link to="/Contact" className='navlist p-3 navli pb-lg-4'>Contact</Link></li>
 
           </Nav>
         </Navbar.Collapse>
