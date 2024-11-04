@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Header';
 import Body from './Body';
 import ApplyProcess from './ApplyProcess';
+import JobCategory from './JobCategory';
 
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
     <div className="App">
       <Header/>
       <Body/>
-      {/* <ApplyProcess/> */}
+      <ApplyProcess/>
+      {/* <JobCategory/> */}
               <Routes>
                   {/* <Route path='/Home' element={<Header/>}></Route> */}
               </Routes>

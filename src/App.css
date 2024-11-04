@@ -184,6 +184,9 @@
     @media screen and (max-width:767px) {
         .bodypage-title{font-size: 23px;}
     }
+
+
+     
 .video {
     position: absolute;
     top: 50%;
@@ -192,11 +195,80 @@
     background-color: #2042e3;
 }
 .video:hover{background-color: white;}
-.video:hover svg{fill: #2042e3;}
+.video:hover svg{fill: #2042e3;} 
+
+.videobox{align-items: center; height: 700px;}
+.videopage{background-color: black;}
+
+.video::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.3); 
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: wave 2s infinite;
+    z-index: -1; 
+}
+
+@keyframes wave {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+}   
+
+
+
 
 .body-img {
     position: relative;
     overflow: hidden; 
   }
-  
-  
+.applyprocesstitle{position: relative; font-size: 18px;}
+.applyprocesstitle::after{
+    content: "";
+    position: absolute;
+    width: 20%;
+    height: 1px;
+    background-color: white;
+    left: 0;
+    bottom: 0;
+}
+.applyprocesslogo{
+    border: 1px dashed #fff;}
+.applyprocess-logodiv:hover .applyprocesslogo{
+    background-color: white;
+    fill: blue;
+    transform: rotate(360deg); 
+    transition: transform 0.5s;
+}
+
+
+    /* JobCategory */
+.jobcategory-title{
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+.jobcategory-titlename::after{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 1px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: blue;
+}
+.jobcategory-lists:hover{
+    box-shadow : 2px 2px 20px gray;
+}
