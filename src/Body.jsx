@@ -79,8 +79,8 @@ function Body() {
         <>
             <Container fluid className="border" style={{ height: "auto", backgroundColor: "#f6f9fc" }}>
                 <Container className="mt-0 mt-lg-4">
-                    <Row className="pt-0 pt-lg-5">
-                        <Col sm={12} lg={6} className="mt-0 mt-lg-5 pt-4 pt-md-5 p-0 p-md-3">
+                    <Row className="pt-0 pt-lg-5 pb-lg-5 pb-xxl-0  mb-5 mb-xxl-0">
+                        <Col sm={12} lg={6} className="mt-0 mt-lg-4 pt-4 pt-md-5 p-0 p-md-3">
                             <h1 className="bodypage-title">Find Your Career <br /> to Make a Better Life</h1>
                             <p className="mt-4 lightcolorline">
                                 Creating a beautiful job website is not easy <br />
@@ -106,8 +106,8 @@ function Body() {
 
                             <div className="mt-4">
                                 <div className="d-block d-md-flex keywords">
-                                    <span style={{ color: "#2042e3" }}>Popular Keywords:</span>
-                                    <ul className="d-flex p-0 ms-0 ms-md-3">
+                                    <span style={{ color: "#2042e3" }}>Popular Keywords: </span>
+                                    <ul className="d-flex p-0 ms-0 ms-md-3 ms-lg-2 ms-xxl-3">
                                         <li><a href="#">Administrative</a></li>
                                         <li><a href="#">Android</a></li>
                                         <li><a href="#">app</a></li>

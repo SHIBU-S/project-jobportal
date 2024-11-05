@@ -1,8 +1,10 @@
 .body{
     background-color: #f6f9fc;
 }
-.jobportallogo{
-    width: 13%;
+@media only screen and (min-width: 425px) and (max-width: 2560px){
+    .jobportallogo{
+        width: 130px;
+    }
 }
 .navli {
     position: relative; 
@@ -12,7 +14,7 @@
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 0; 
+    bottom: -3px; 
     height: 2px;
 }
 .navli:hover::after {
@@ -27,7 +29,7 @@
 }
 .sub-menus {
     position: absolute;
-    top: 57px;
+    top: 62px;
     width: 250px;
     display: none; 
     background-color: #fff; 
@@ -43,9 +45,6 @@
     .sub-menus {
       display: block; 
       position: static; 
-    }
-    .jobportallogo{
-        width:30%;
     }
     .navcollapse{
         background-color: white;
@@ -143,8 +142,9 @@
 
     /* Body Page */
 .bodypage-title{
-    font-weight: 700;  font-size: 40px; line-height: 55px;
+    font-weight: 700;  font-size: 40px; ;
 }
+@media only screen and (min-width: 767px){.bodypage-title{line-height: 55px;}}
 .job-search{
     background-color: #fff;
     border: 1px solid #e2e4ea;

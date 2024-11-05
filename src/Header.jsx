@@ -111,7 +111,7 @@ function Header() {
 
         <Navbar.Toggle aria-controls="navbarScroll" className="bg-primary ms-5 px-1 py-0 px-md-2 py-md-1" />
 
-         <div className='login-signup d-flex align-items-center order-lg-2 order-md-0 ms-4 ms-lg-0'>
+        <div className=' login-signup d-flex align-items-center order-lg-2 order-md-0 ms-4 ms-lg-0'>
           <div className='me-0 me-lg-3'>
             <Login />
           </div>
@@ -122,7 +122,7 @@ function Header() {
 
 
         <Navbar.Collapse id="navbarScroll" className=' pe-md-0 pe-lg-0 pe-xxl-0 navcollapse mt-3 mt-lg-0'>
-          <Nav className=" pb-1 ms-auto mt-0 mt-lg-2 ps-3">
+          <Nav className=" pb-1 ms-auto mt-0 mt-lg-1 ps-3">
             <li className=' p-1 p-lg-0'><Link to="/Home" className=' navlist p-3 navli pb-lg-4 '>Home</Link></li>
 
              <li className='mt-3 mt-lg-0 p-1 p-lg-0 navline'>
