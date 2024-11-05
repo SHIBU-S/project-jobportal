@@ -12,7 +12,7 @@ function App() {
       <Header/>
       <Body/>
       <ApplyProcess/>
-      {/* <JobCategory/> */}
+      <JobCategory/>
               <Routes>
                   {/* <Route path='/Home' element={<Header/>}></Route> */}
               </Routes>

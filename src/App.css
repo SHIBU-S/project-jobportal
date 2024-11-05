@@ -2,7 +2,7 @@
     background-color: #f6f9fc;
 }
 .jobportallogo{
-    width: 12%;
+    width: 13%;
 }
 .navli {
     position: relative; 
@@ -27,7 +27,7 @@
 }
 .sub-menus {
     position: absolute;
-    top: 55px;
+    top: 57px;
     width: 250px;
     display: none; 
     background-color: #fff; 
@@ -45,13 +45,16 @@
       position: static; 
     }
     .jobportallogo{
-        width:20%;
+        width:30%;
     }
     .navcollapse{
         background-color: white;
         box-shadow: 0 0 6px rgb(215, 213, 213);
     }
 }
+   
+
+
 .sub-menus li {
     padding: 8px 16px; 
 }  
@@ -140,7 +143,7 @@
 
     /* Body Page */
 .bodypage-title{
-    font-weight: 700;  font-size: 40px;
+    font-weight: 700;  font-size: 40px; line-height: 55px;
 }
 .job-search{
     background-color: #fff;
@@ -154,7 +157,7 @@
 .jobsearch-button:hover{background-color: black;}
 .jobsearch-button:hover button{color: white;}
 .jobsearch-button button{color: white;}
-.form-label{ margin-bottom: 0;}
+.form-label{ margin-bottom: 0; font-size: 15px; color: #000;}
 .form-control{padding: 0; border: 0;}
 .whatjobs-div::after{
     position: absolute;
@@ -213,7 +216,7 @@
     animation: wave 2s infinite;
     z-index: -1; 
 }
-
+/* 
 @keyframes wave {
     0% {
         transform: translate(-50%, -50%) scale(0);
@@ -224,9 +227,7 @@
     100% {
         transform: translate(-50%, -50%) scale(0);
     }
-}   
-
-
+}    */
 
 
 .body-img {
@@ -253,6 +254,27 @@
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /* JobCategory */
 .jobcategory-title{
     border-radius: 4px;
@@ -272,3 +294,4 @@
 .jobcategory-lists:hover{
     box-shadow : 2px 2px 20px gray;
 }
+.jobcategory-name:hover{color: blue;}
