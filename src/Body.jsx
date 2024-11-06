@@ -92,15 +92,16 @@ function Body() {
                                 <form action="" className="d-flex position-relative" style={{ padding: "10px 10px 10px 0" }}>
                                     <div style={{ padding: "0 30px" }} className="whatjobs-div position-relative">
                                         <label htmlFor="whatjobs" className="form-label"> What</label>
-                                        <input type="text" className="form-control" id="whatjobs" placeholder="What jobs you want?" />
+                                        <input type="text" id="whatjobs" placeholder="What jobs you want?" style={{padding:"0",border:"0",outline:"0",width:"100%"}} />
                                     </div>
                                     <div style={{ padding: "0 30px" }}>
                                         <label htmlFor="locationname" className="form-label"> Where</label>
-                                        <input type="text" className="form-control" id="locationname" placeholder="Location" />
+                                        <input type="text" id="locationname" placeholder="Location" style={{padding:"0",border:"0",outline:"0",width:"100%"}}  />
                                     </div>
                                     <div className="jobsearch-button d-flex align-items-center justify-content-center px-5" style={{ width: "28%" }}>
                                         <button type="submit" className="btn">Search</button>
                                     </div>
+
                                 </form>
                             </div>
 
@@ -108,7 +109,7 @@ function Body() {
                                 <div className="d-block d-md-flex keywords">
                                     <span style={{ color: "#2042e3" }}>Popular Keywords: </span>
                                     <ul className="d-flex p-0 ms-0 ms-md-3 ms-lg-2 ms-xxl-3">
-                                        <li><a href="#">Administrative</a></li>
+                                        <li className=" px-1"><a href="#">Administrative</a></li>
                                         <li><a href="#">Android</a></li>
                                         <li><a href="#">app</a></li>
                                         <li><a href="#">ASP.NET</a></li>

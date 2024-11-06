@@ -4,6 +4,7 @@ import Header from './Header';
 import Body from './Body';
 import ApplyProcess from './ApplyProcess';
 import JobCategory from './JobCategory';
+import AboutUsSection from './AboutUsSection';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Body/>
       <ApplyProcess/>
       <JobCategory/>
+      <AboutUsSection/>
               <Routes>
                   {/* <Route path='/Home' element={<Header/>}></Route> */}
               </Routes>

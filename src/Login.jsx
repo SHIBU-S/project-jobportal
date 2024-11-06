@@ -76,13 +76,13 @@ function Login() {
 
             <Form className='px-2 px-md-4'>
               <div className="mb-3">
-                <label htmlFor="exampleFormControlInput1" className="form-label">E-mail</label>
-                <input type="email" className="form-control px-4 py-2" id="exampleFormControlInput1" placeholder="example@gmail.com" />
+                <label htmlFor="exampleFormControlInput1" className="form-label mb-2">E-mail</label>
+                <input type="email" className="border form-control px-4 py-2" id="exampleFormControlInput1" placeholder="example@gmail.com" />
               </div>
 
               <div className="mb-3">
-                <label htmlFor="exampleFormControlPassword1" className="form-label">Password</label>
-                <input type="password" className="form-control  px-4 py-2" id="exampleFormControlPassword1" placeholder="Enter password" />
+                <label htmlFor="exampleFormControlPassword1" className="form-label mb-2">Password</label>
+                <input type="password" className="border form-control  px-4 py-2" id="exampleFormControlPassword1" placeholder="Enter password" />
               </div>
 
               <Row className="align-items-center">
@@ -93,7 +93,7 @@ function Login() {
               </Row>
 
 
-              <Button type="submit" className="loginbutton p-2 w-100 mt-3">
+              <Button type="submit" className="loginbutton p-2 w-100 mt-4">
                 Log In
               </Button>
 
