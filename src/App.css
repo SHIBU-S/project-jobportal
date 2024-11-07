@@ -29,7 +29,7 @@
 }
 .sub-menus {
     position: absolute;
-    top: 62px;
+    top: 57px;
     width: 250px;
     display: none; 
     background-color: #fff; 
@@ -281,3 +281,31 @@
     box-shadow : 0 1rem 3rem rgba(35, 38, 45, 0.15);
 }
 .jobcategory-name:hover{color: blue;}
+
+
+
+/* AboutUsPage */
+.AboutUsPic3{
+    position: relative;
+    top: -20px;
+}
+.aboutus-box{
+    position: relative;
+}
+.aboutus-box::after{
+    content: "";
+    position: absolute;
+    right: -65px;
+    bottom: -36px;
+    height: 200px;
+    width: 200px;
+    background-image: url(./PatternImg.png);
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+@media (max-width: 576px) {
+    .aboutus-box::after {
+        right: 0;
+        background-image: none;
+    }
+}
