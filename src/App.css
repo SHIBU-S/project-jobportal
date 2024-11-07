@@ -309,3 +309,45 @@
         background-image: none;
     }
 }
+
+
+/* UploadResume */
+.uploadresume{
+    background-image: url(./UploadResumeImg.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 2;
+}
+.uploadresume::before{
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2042e3;
+    opacity: 0.8;
+    z-index: -1;
+}
+.uploadresumepage-title{position: relative;}
+.uploadresumepage-title::after{
+    position: absolute;
+    content: "";
+    width: 60px;
+    height: 2px;
+    background-color: white;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.uploadresume-button a{
+    background-color: #fff;
+}
+.uploadresume-button:hover a{
+    background-color: black;
+    color: #fff;
+} 
+.uploadresume-button:hover a svg{
+    fill: white;
+}

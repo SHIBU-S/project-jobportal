@@ -5,6 +5,7 @@ import Body from './Body';
 import ApplyProcess from './ApplyProcess';
 import JobCategory from './JobCategory';
 import AboutUsSection from './AboutUsSection';
+import UploadResume from './UploadResume';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <ApplyProcess/>
       <JobCategory/>
       <AboutUsSection/>
+      <UploadResume/>
               <Routes>
                   {/* <Route path='/Home' element={<Header/>}></Route> */}
               </Routes>
