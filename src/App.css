@@ -449,7 +449,9 @@
 
 .jobbox{
     background-color: #fff;
-    border: 1px solid #eee;
+    /* border: 1px solid #eee; */
+    border-style: solid;
+    border-radius: 5px;
 }
 .jobbox:hover{
     box-shadow : 0 1rem 3rem rgba(35, 38, 45, 0.15);
