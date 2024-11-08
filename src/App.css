@@ -343,6 +343,7 @@
 }
 .uploadresume-button a{
     background-color: #fff;
+    color: #2042e3;
 }
 .uploadresume-button:hover a{
     background-color: black;
@@ -350,4 +351,106 @@
 } 
 .uploadresume-button:hover a svg{
     fill: white;
+}
+.uploadresume-button .upload-link {
+    padding: 15px 30px;
+    border: none;
+    color: #2042e3;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+
+/* BrowseRecentJobs */
+.BrowseRecentJobs-title{ position: relative; }  
+.BrowseRecentJobs-title::after{
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 50px;
+    left: 50%;
+    bottom: 0;
+    background-color: blue;
+    transform: translate(-50%);
+}
+
+
+.RecentJobs-listbox{
+    position: relative;
+}
+.jobimage{
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    margin-top: -25px;
+    line-height: 50px;
+}
+.BrowseRecentJobname{ padding-bottom: 20px; position: relative;}
+.BrowseRecentJobname::after{
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: #eae7e7;
+    bottom: 0;
+    left: 0;
+}
+.BrowseRecentJobname a{
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: #081828;
+}
+
+.jobcontent-lists{
+    list-style-type: none;
+    text-decoration: none;
+}
+.jobcontent-lists a{
+    text-decoration: none;
+    color: #777;
+}
+.jobcontent-lists li{
+    background-color: #2042e314;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #2042e3;
+}
+
+.Job-Button{
+    position: absolute;
+    right: 10px;
+    top: 3px; 
+}
+    @media (max-width:750px) {
+        .Job-Button{left: -20px; top: 230px;}
+    }
+.Job-Button ul li{
+    list-style-type: none;
+}
+.apply,.full-Parttime{
+    padding: 5px 20px;
+    text-decoration: none;
+    font-size: 13px;
+    border-radius: 4px;
+}
+.apply{
+    color: black;
+    border: 1px solid #eee;
+}
+.full-Parttime{
+    color: white;
+    background-color: blue;
+}
+    .apply:hover{background-color: blue; color: white;}
+
+.jobbox{
+    background-color: #fff;
+    border: 1px solid #eee;
+}
+.jobbox:hover{
+    box-shadow : 0 1rem 3rem rgba(35, 38, 45, 0.15);
 }
