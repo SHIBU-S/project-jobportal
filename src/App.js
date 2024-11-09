@@ -7,6 +7,8 @@ import JobCategory from './JobCategory';
 import AboutUsSection from './AboutUsSection';
 import UploadResume from './UploadResume';
 import BrowseRecentJobs from './BrowseRecentJobs';
+import BrowseFeaturedJobs from './BrowseFeaturedJobs';
+import Testimonials from './Testimonials';
 
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
       <AboutUsSection/>
       <UploadResume/>
       <BrowseRecentJobs/>
+      <BrowseFeaturedJobs/>
+      <Testimonials/>
 
               <Routes>
                   {/* <Route path='/Home' element={<Header/>}></Route> */}
