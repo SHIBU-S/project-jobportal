@@ -535,4 +535,34 @@
 /* Testimonial */
 .Testimonial{
     background-color: #081828;
+    position: relative;
 }
+.Testimonial-title{position: relative;}
+.Testimonial-title::before{
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 50px;
+    background-color: #2042e3;  bottom: 0;
+}
+.Testimonial-PatternImg1{
+    position: absolute;
+    top: -49px;
+    left: -75px;
+    width: 174px;
+    height: 174px;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+}
+.Testimonial-PatternImg2{
+    position: absolute;
+    top: 140px;
+    width: 174px;
+    height: 174px;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+} 
+
+.carousel-indicators [data-bs-target]{display: none;}
+.carousel-control-next, .carousel-control-prev{position: relative; display: inline;}
+.carousel-caption{position: static;}
