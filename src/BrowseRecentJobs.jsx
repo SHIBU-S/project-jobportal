@@ -14,7 +14,7 @@ import AndroidDeveloperImg from './AndroidDeveloper-Img.png';
 function BrowseRecentJobs(){
     return(
         <>
-            <Container fluid  style={{backgroundColor:"#f6f9fc"}} className="pb-5 ">
+            <Container fluid style={{backgroundColor:"#f6f9fc"}} className="pb-5 border">
                 <Container className="mt-5 pt-5" style={{height:"auto"}}>
                     <Row className="text-center">
                         <Col>

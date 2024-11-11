@@ -362,8 +362,9 @@
 
 
 /* BrowseRecentJobs */
-.BrowseRecentJobs-title{ position: relative; }  
-.BrowseRecentJobs-title::after{
+.BrowseRecentJobs-title,.BrowseFeaturedJobs-title,.PricingTable-title,.Latestnews-title{ position: relative; }  
+.BrowseRecentJobs-title::after,.BrowseFeaturedJobs-title::after,
+.PricingTable-title::after,.Latestnews-title::after{
     position: absolute;
     content: "";
     height: 2px;
@@ -373,7 +374,6 @@
     background-color: blue;
     transform: translate(-50%);
 }
-
 
 .RecentJobs-listbox{
     position: relative;
@@ -403,23 +403,6 @@
     font-weight: 500;
     color: #081828;
 }
-
-
-/* .jobcontent-lists{
-    list-style-type: none;
-    text-decoration: none;
-}
-.jobcontent-lists a{
-    text-decoration: none;
-    color: #777;
-}
-.jobcontent-lists li{
-    background-color: #2042e314;
-    padding: 5px 10px;
-    border-radius: 3px;
-    font-size: 12px;
-    color: #2042e3;
-}  */
 .jobcontent-lists{
     list-style-type: none; margin: 0; padding: 0;
 }
@@ -434,11 +417,6 @@
     border-radius: 3px;
 }
 .jobcontent-lists li a{color: #777;}
-
-
-
-
-
 
 .Job-Button{
     position: absolute;
@@ -564,5 +542,36 @@
 } 
 
 .carousel-indicators [data-bs-target]{display: none;}
-.carousel-control-next, .carousel-control-prev{position: relative; display: inline;}
+/* .carousel-control-next, .carousel-control-prev{display: inline;} */
 .carousel-caption{position: static;}
+.carousel-control-prev-icon{position:absolute; left: 500px; top: 170px;}
+.carousel-control-next-icon{position:absolute; top: 170px;}
+
+
+/* Pricing-Table */
+.amount{position: relative;}
+.amount::before{
+    position: absolute;
+    content: "";
+    height: 1px; width: 100%;
+    background-color: #edeff2;
+    bottom: 0;
+}
+.amount::after{
+    position: absolute;
+    content: '';
+    background: #e4e8ed;
+    width: 15px;
+    height: 15px;
+    right: 0px;
+    bottom: -7px;
+    border-radius: 5px;
+}
+.PricingTable-lists li{list-style-type: none;}
+.PricingTable-RegisterButton a{
+    padding: 15px 30px;
+    background-color: #2042e3;
+    text-decoration: none;
+    color: #fff; border-radius: 4px;
+}
+.PricingTable-RegisterButton a:hover{background-color: black;}

@@ -9,6 +9,8 @@ import UploadResume from './UploadResume';
 import BrowseRecentJobs from './BrowseRecentJobs';
 import BrowseFeaturedJobs from './BrowseFeaturedJobs';
 import Testimonials from './Testimonials';
+import PricingTable from './PricingTable';
+import LatestNews from './LatestNews';
 
 
 function App() {
@@ -22,7 +24,9 @@ function App() {
       <UploadResume/>
       <BrowseRecentJobs/>
       <BrowseFeaturedJobs/>
-      <Testimonials/>
+      {/* <Testimonials/> */}
+      <PricingTable/>
+      <LatestNews/>
 
               <Routes>
                   {/* <Route path='/Home' element={<Header/>}></Route> */}
