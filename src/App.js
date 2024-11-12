@@ -24,7 +24,7 @@ function App() {
       <UploadResume/>
       <BrowseRecentJobs/>
       <BrowseFeaturedJobs/>
-      {/* <Testimonials/> */}
+      <Testimonials/>
       <PricingTable/>
       <LatestNews/>
 
