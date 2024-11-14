@@ -13,7 +13,7 @@ function Testimonials(){
     return(
         <>
             <Container fluid className="Testimonial border border-dark pb-5 pb-md-0">
-                <Container style={{height:"530px"}}>
+                <Container style={{height:"auto"}}>
                     <Row>
                         <Col sm={12} md={12} lg={6}>
                             <div className="mt-5 pt-5">
@@ -99,7 +99,7 @@ function Testimonials(){
                         </Col>
 
                         <Col sm={12} lg={6} className="d-none d-lg-flex justify-content-end">
-                            <div className="Testimonial-Img">
+                            <div className="Testimonial-Img mt-5 pt-3">
                                 <img src={TestimonialImg} class="img-fluid" alt="..." />
                             </div>
                             <div className="Testimonial-PatternImg2">
