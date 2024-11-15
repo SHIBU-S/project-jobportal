@@ -28,7 +28,7 @@ function LatestNews(){
                     <Row>
                         <Col sm={12} md={6} lg={4}>
                             <div style={{boxShadow:"0 1rem 3rem rgba(35, 38, 45, 0.15)"}}>
-                                <div><img src={NewsBlogImg1} class="img-fluid" alt="..." style={{width:"100%"}}/></div>
+                                <div className="LatestNews"><img src={NewsBlogImg1} class="img-fluid" alt="..." style={{width:"100%"}}/></div>
                                 <div className="p-4">
                                     <h4 className="BrowseFeaturedJobname mt-4 mt-md-0"><Link to="">The Internet Is A Job Seeker Most Crucial Success</Link></h4>
                                     <ul className="ps-0 mt-3 jobcontent-lists">
@@ -56,7 +56,7 @@ function LatestNews(){
 
                         <Col sm={12} md={6} lg={4} className="mt-4 mt-md-0">
                             <div style={{boxShadow:"0 1rem 3rem rgba(35, 38, 45, 0.15)"}}>
-                                <div><img src={NewsBlogImg2} class="img-fluid" alt="..." style={{width:"100%"}}/></div>
+                                <div className="LatestNews"><img src={NewsBlogImg2} class="img-fluid" alt="..." style={{width:"100%"}}/></div>
                                 <div className="p-4">
                                     <h4 className="BrowseFeaturedJobname mt-4 mt-md-0"><Link to="">Today From Connecting With Potential Employers</Link></h4>
                                     <ul className="ps-0 mt-3 jobcontent-lists">
@@ -84,7 +84,7 @@ function LatestNews(){
 
                         <Col sm={12} md={6} lg={4} className="mt-4 mt-lg-0">
                             <div style={{boxShadow:"0 1rem 3rem rgba(35, 38, 45, 0.15)"}}>
-                                <div><img src={NewsBlogImg3} class="img-fluid" alt="..." style={{width:"100%"}}/></div>
+                                <div className="LatestNews"><img src={NewsBlogImg3} class="img-fluid" alt="..." style={{width:"100%"}}/></div>
                                 <div className="p-4">
                                     <h4 className="BrowseFeaturedJobname mt-4 mt-md-0"><Link to="">We’ve Weeded Through Hundreds Of Job Hunting</Link></h4>
                                     <ul className="ps-0 mt-3 jobcontent-lists">

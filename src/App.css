@@ -194,7 +194,8 @@
 .body-img {
     position: relative;
     overflow: hidden; 
-  }
+} 
+
 
     /* Apply-Process */
 .applyprocesstitle{position: relative; font-size: 18px;}
@@ -397,7 +398,14 @@
 }
 .jobbox:hover{box-shadow : 0 1rem 3rem rgba(35, 38, 45, 0.15);}
 
-/* BrowseFeaturedJobs */
+/* BrowseFeaturedJobs */ 
+.BrowseFeaturedJob{overflow: hidden;}
+.BrowseFeaturedJob img {
+    transition: transform 0.5s ease;}
+.BrowseFeaturedJob img:hover {
+    transform: scale(1.1);
+}
+  
 .BrowseFeaturedJob-box1 {position: relative;}
 .BrowseFeaturedJobname a{font-size: 19px; font-weight: 500; text-decoration: none; color: #081828;}
 .BrowseFeaturedJobname a:hover{color: #2042e3;}
@@ -482,8 +490,8 @@
 .carousel-indicators [data-bs-target]{display: none;}
 .carousel-caption{position: static;}
 .carousel-control-prev-icon {position: absolute; left: 500px; top: 200px; border-style: solid; border-radius: 50%; padding: 20px;
-background-image: url(./LeftArrow-ImgWhite.png);}
-.carousel-control-next-icon {position: absolute; top: 200px;  border-style: solid; border-radius: 50%; padding: 20px; background-image: url(./RightArrow-ImgWhite.png);  }
+background-image: url(./LeftArrow-ImgWhite.png); background-size: 60%;}
+.carousel-control-next-icon {position: absolute; top: 200px;  border-style: solid; border-radius: 50%; padding: 20px;background-size: 60%; background-image: url(./RightArrow-ImgWhite.png);  }
 .carousel-control-prev-icon:hover{background-color: white;background-image: url(./LeftArrow-ImgBlue.png);}
 .carousel-control-next-icon:hover{background-color: white;background-image: url(./RightArrow-ImgBlue.png);}
 @media (max-width: 678px ) {
@@ -524,6 +532,11 @@ background-image: url(./LeftArrow-ImgWhite.png);}
     color: #fff; border-radius: 4px;
 }
 .PricingTable-RegisterButton a:hover{background-color: black;}
+
+/* LatestNews */
+.LatestNews{overflow: hidden;}
+.LatestNews img{transition: transform 0.5s ease;}
+.LatestNews img:hover{transform: rotate(1deg) scale(1.1);}
 
 
 /* Footer */
@@ -574,3 +587,20 @@ background-image: url(./LeftArrow-ImgWhite.png);}
 .breadcrumb-nav li{list-style-type: none; }
 .breadcrumb-nav li a{text-decoration-line: none;}
 .breadcrumb-nav li a:hover{text-decoration-line: underline;}
+
+
+/* Contact */
+.form-group input{
+    height: 55px; line-height: 55px;
+    width: 100%;  border: 1px solid #e6e2f5;
+    padding: 0px 20px;
+    color: #333; border-radius: 0px;
+    font-weight: 400;
+    border-radius: 5px;
+}
+.form-group-message textarea{height: 180px;    width: 100%;
+    border: 1px solid #e6e2f5;
+    padding: 15px 20px;  color: #333;
+    font-weight: 400;
+    border-radius: 5px;}
+.contact-info li{list-style-type: none;}

@@ -31,7 +31,7 @@ function Header() {
             <li className=' p-1 p-lg-0'><Link to="/Home" className=' navlist p-3 navli pb-lg-4 '>Home</Link></li>
 
              <li className='mt-3 mt-lg-0 p-1 p-lg-0 navline'>
-              <Link to="/Pages" className='navlist p-3 navli pb-lg-4'>Pages</Link>
+              <Link to="#" className='navlist p-3 navli pb-lg-4'>Pages</Link>
               <ul className='ms-4 ms-lg-0 ps-2 ps-lg-3 pe-lg-2 sub-menus pt-1 pt-lg-2 pb-0 pb-lg-1 mt-3 '>
                 <li className='mt-2 me-2 rounded-1'> <Link to="/AboutUs" className='d-block'>About Us</Link>                    </li>
                 <li className='mt-2 me-2 rounded-1'> <Link to="/JobList" className='d-block'>Job List</Link>               </li>
@@ -46,7 +46,7 @@ function Header() {
             </li>
 
             <li className=' p-1 p-lg-0 navline'>
-              <Link to="/Candidates" className='navlist p-3 navli pb-lg-4'>Candidates</Link>
+              <Link to="#" className='navlist p-3 navli pb-lg-4'>Candidates</Link>
               <ul className='ms-4 ms-lg-0 ps-2 ps-lg-3 pe-lg-2 sub-menus pt-1 pt-lg-2 pb-0 pb-lg-1 mt-3'>
                 <li className='mt-2 me-2 rounded-1'> <Link to="/BrowseJobs" className='d-block'>Browse Jobs</Link>             </li>
                 <li className='mt-2 me-2 rounded-1'> <Link to="/BrowseCategories" className='d-block'>Browse Categories</Link> </li>
@@ -56,7 +56,7 @@ function Header() {
             </li>
 
             <li className=' p-1 p-lg-0 navline'>
-              <Link to="/Employers" className='navlist p-3 navli pb-lg-4'>Employers</Link>
+              <Link to="#" className='navlist p-3 navli pb-lg-4'>Employers</Link>
               <ul className='ms-4 ms-lg-0 ps-2 ps-lg-3 pe-lg-2 sub-menus pt-1 pt-lg-2 pb-0 pb-lg-1 mt-3 '>
                 <li className='mt-2 me-2 rounded-1'> <Link to="/AddJob" className='d-block'>Add Job</Link>                         </li>
                 <li className='mt-2 me-2 rounded-1'> <Link to="/ManageJobs" className='d-block'>Manage Jobs</Link>                 </li>
@@ -67,7 +67,7 @@ function Header() {
             </li>
 
             <li className=' p-1 p-lg-0 navline'>
-              <Link to="/Blog" className='navlist p-3 navli pb-lg-4'>Blog</Link>
+              <Link to="#" className='navlist p-3 navli pb-lg-4'>Blog</Link>
               <ul className='ms-4 ms-lg-0 ps-3 pe-2 sub-menus pt-2 mt-3  '>
                 <li className='mt-2 me-2 rounded-1'> <Link to="/BlogGridSidebar" className='d-block'>Blog Grid Sidebar</Link>             </li>
                 <li className='mt-2 me-2 rounded-1'> <Link to="/BlogSingle" className='d-block'>Blog Single</Link>                        </li>

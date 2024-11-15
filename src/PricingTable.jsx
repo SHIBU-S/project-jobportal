@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function PricingTable(){
     return(
         <>
-            <Container fluid className=" pb-5" style={{backgroundColor:"#f6f9fc"}}>
+            <Container fluid className="border pb-5" style={{backgroundColor:"#f6f9fc"}}>
                 <Container className="mt-5 pt-5" style={{height:"auto"}}>
                     <Row className="text-center">
                         <Col>

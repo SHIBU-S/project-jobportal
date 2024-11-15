@@ -152,7 +152,7 @@ function BrowseRecentJobs(){
                                 </Col>
                                 <Col md={10} className="position-relative">
                                     <div className="jobcontent">
-                                        <h4 className="BrowseRecentJobname mt-4 mt-md-0"><Link to="">Sales <br className="d-none d-lg-block d-xxl-none" /> Manger</Link></h4>
+                                        <h4 className="BrowseRecentJobname mt-4 mt-md-0"><Link to="">Sales <br className="d-none d-lg-block d-xxl-none" /> Manager</Link></h4>
                                         <p className="lightcolorline">We are looking for Enrollment Advisors who are looking to take 30-35 appointments per week. All leads are pre-scheduled. </p>
                                         <ul className="ps-0 jobcontent-lists">
                                             <li className="me-2 ">

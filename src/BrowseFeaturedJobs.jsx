@@ -31,7 +31,7 @@ function BrowseFeaturedJobs(){
                     <Row className="pt-5 pb-5">
                         <Col sm={12} md={6} lg={4}>
                             <div className="BrowseFeaturedJob-box1 " style={{height:"auto",boxShadow:"0 1rem 3rem rgba(35, 38, 45, 0.15)"}}>
-                                <div className="BrowseFeaturedJob"><img src={GraphicsDesign} class="img-fluid" alt="..." style={{width:"100%"}}/></div>
+                                <div className="BrowseFeaturedJob "><img src={GraphicsDesign} class="img-fluid" alt="..." style={{width:"100%",borderTopLeftRadius:"10px",borderTopRightRadius:"10px"}}/></div>
                                 <div className="p-4">
                                     <h4 className="BrowseFeaturedJobname mt-4 mt-md-0"><Link to="">Graphics Design</Link></h4>
                                     <ul className="ps-0 mt-3 jobcontent-lists">
@@ -62,7 +62,7 @@ function BrowseFeaturedJobs(){
 
                         <Col sm={12} md={6} lg={4}>
                         <div className="BrowseFeaturedJob-box1 mt-4 mt-md-0" style={{height:"auto",boxShadow:"0 1rem 3rem rgba(35, 38, 45, 0.15)"}}>
-                                <div><img src={RestaurantServices} class="img-fluid" alt="..." style={{width:"100%"}}/></div>
+                                <div className="BrowseFeaturedJob "><img src={RestaurantServices} class="img-fluid" alt="..." style={{width:"100%"}}/></div>
                                 <div className="p-4">
                                     <h4 className="BrowseFeaturedJobname mt-4 mt-md-0"><Link to="">Restaurant Services</Link></h4>
                                     <ul className="ps-0 mt-3 jobcontent-lists">
@@ -93,7 +93,7 @@ function BrowseFeaturedJobs(){
 
                         <Col sm={12} md={6} lg={4}>
                         <div className="BrowseFeaturedJob-box1 mt-4 mt-lg-0" style={{height:"auto",boxShadow:"0 1rem 3rem rgba(35, 38, 45, 0.15)"}}>
-                                <div><img src={ShareMarketAnalysis} class="img-fluid" alt="..." style={{width:"100%"}}/></div>
+                                <div className="BrowseFeaturedJob "><img src={ShareMarketAnalysis} class="img-fluid" alt="..." style={{width:"100%"}}/></div>
                                 <div className="p-4">
                                     <h4 className="BrowseFeaturedJobname mt-4 mt-md-0"><Link to="">Share Market Analysis</Link></h4>
                                     <ul className="ps-0 mt-3 jobcontent-lists">
@@ -126,7 +126,7 @@ function BrowseFeaturedJobs(){
 
                         <Col sm={12} md={6} lg={4} className="mt-4">
                             <div className="BrowseFeaturedJob-box1 " style={{height:"auto",boxShadow:"0 1rem 3rem rgba(35, 38, 45, 0.15)"}}>
-                                <div><img src={MedicalServices} class="img-fluid" alt="..." style={{width:"100%"}}/></div>
+                                <div className="BrowseFeaturedJob "><img src={MedicalServices} class="img-fluid" alt="..." style={{width:"100%"}}/></div>
                                 <div className="p-4">
                                     <h4 className="BrowseFeaturedJobname mt-4 mt-md-0"><Link to="">Medical Services</Link></h4>
                                     <ul className="ps-0 mt-3 jobcontent-lists">
@@ -157,7 +157,7 @@ function BrowseFeaturedJobs(){
 
                         <Col sm={12} md={6} lg={4} className="mt-4">
                         <div className="BrowseFeaturedJob-box1 " style={{height:"auto",boxShadow:"0 1rem 3rem rgba(35, 38, 45, 0.15)"}}>
-                                <div><img src={AutoMobileServices} class="img-fluid" alt="..." style={{width:"100%"}}/></div>
+                                <div className="BrowseFeaturedJob "><img src={AutoMobileServices} class="img-fluid" alt="..." style={{width:"100%"}}/></div>
                                 <div className="p-4">
                                     <h4 className="BrowseFeaturedJobname mt-4 mt-md-0"><Link to="">Auto Mobile Services</Link></h4>
                                     <ul className="ps-0 mt-3 jobcontent-lists">
@@ -188,7 +188,7 @@ function BrowseFeaturedJobs(){
 
                         <Col sm={12} md={6} lg={4} className="mt-4">
                         <div className="BrowseFeaturedJob-box1 " style={{height:"auto",boxShadow:"0 1rem 3rem rgba(35, 38, 45, 0.15)"}}>
-                                <div><img src={ITNetworkingServices} class="img-fluid" alt="..." style={{width:"100%"}}/></div>
+                                <div className="BrowseFeaturedJob "><img src={ITNetworkingServices} class="img-fluid" alt="..." style={{width:"100%"}}/></div>
                                 <div className="p-4">
                                     <h4 className="BrowseFeaturedJobname mt-4 mt-md-0"><Link to="">IT & Networking Services</Link></h4>
                                     <ul className="ps-0 mt-3 jobcontent-lists">
