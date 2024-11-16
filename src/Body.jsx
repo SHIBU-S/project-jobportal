@@ -16,14 +16,14 @@ function Body() {
                 <Container className="mt-0 mt-lg-4">
                     <Row className="pt-0 pt-lg-5 pb-lg-5 pb-xxl-0  mb-5 mb-xxl-0">
                         <Col sm={12} lg={6} className="mt-0 mt-lg-4 pt-4 pt-md-5 p-0 p-md-3">
-                            <h1 className="bodypage-title">Find Your Career <br /> to Make a Better Life</h1>
-                            <p className="mt-4 lightcolorline">
+                            <h1 className="bodypage-title" style={{animationDuration:"0.3s"}}>Find Your Career <br /> to Make a Better Life</h1>
+                            <p className="body-animation mt-4 lightcolorline" style={{animationDuration:"0.5s"}}>
                                 Creating a beautiful job website is not easy <br />
                                 always. To make your life easier, we are <br />
                                 introducing Jobcamp template.
                             </p>
 
-                            <div className="job-search position-relative mt-5">
+                            <div className="job-search body-animation position-relative mt-5" style={{animationDuration:"0.7s"}}>
                                 <form action="" className="d-flex position-relative" style={{ padding: "10px 10px 10px 0" }}>
                                     <div style={{ padding: "0 30px" }} className="whatjobs-div position-relative">
                                         <label htmlFor="whatjobs" className="form-label"> What</label>
@@ -40,7 +40,7 @@ function Body() {
                                 </form>
                             </div>
 
-                            <div className="mt-4">
+                            <div className="mt-4 body-animation" style={{animationDuration:"0.7s"}}>
                                 <div className="d-block d-md-flex keywords">
                                     <span style={{ color: "#2042e3" }}>Popular Keywords: </span>
                                     <ul className="d-flex p-0 ms-0 ms-md-3 ms-lg-2 ms-xxl-3">

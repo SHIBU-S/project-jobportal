@@ -1,14 +1,10 @@
-.body{
-    background-color: #f6f9fc;
-}
+.body{ background-color: #f6f9fc;}
 @media only screen and (min-width: 425px) and (max-width: 2560px){
     .jobportallogo{
         width: 130px;
     }
 }
-.navli {
-    position: relative; 
-}
+.navli {  position: relative; }
 .navli::after {
     content: ''; 
     position: absolute;
@@ -17,16 +13,9 @@
     bottom: -3px; 
     height: 2px;
 }
-.navli:hover::after {
-    background-color: blue; 
-}
-.navlist{
-    text-decoration: none;
-    color: black;
-}
-.navlist:hover{
-    color: blue;
-}
+.navli:hover::after { background-color: blue; }
+.navlist{ text-decoration: none;  color: black;}
+.navlist:hover{ color: blue;}
 .sub-menus {
     position: absolute;
     top: 57px;
@@ -38,9 +27,7 @@
     list-style-type: none;
     text-align: left;
 }
-.navline:hover .sub-menus {
-    display: block; 
-}
+.navline:hover .sub-menus { display: block; }
 @media (max-width: 992px) {
     .sub-menus {
       display: block; 
@@ -51,13 +38,9 @@
         box-shadow: 0 0 6px rgb(215, 213, 213);
     }
 }
-   
-
-
 .sub-menus li {padding: 8px 16px; }  
 .sub-menus li a {
-    color: black; 
-    text-decoration: none; 
+    color: black;  text-decoration: none; 
 } 
 .sub-menus li:hover {background-color: blue; }
 .sub-menus li:hover a {color: white; } 
@@ -73,11 +56,7 @@
 }
 .createfreeacc:hover{text-decoration: underline;}
 .terms_cond{text-decoration: none;}
-
-.button{
-    background-color: blue;
-    border: 1px blue;
-}
+.button{ background-color: blue;  border: 1px blue;}
 .button:hover{
     background-color: black;
     box-shadow: 0 0 10px black;
@@ -94,8 +73,7 @@
 .closebutton{background-color: rgb(221, 218, 218);}
 .closebutton:hover{background-image: url(./Closebutton.png); background-size: cover; background-position: center; }
 .line-container {
-    display: flex;
-    align-items: center;
+    display: flex;  align-items: center;
 }
 .line-container::before,
 .line-container::after {
@@ -121,16 +99,16 @@
 
     /* Body Page */
 .bodypage-title{
-    font-weight: 700;  font-size: 40px; ;}
-@media only screen and (min-width: 767px){.bodypage-title{line-height: 55px;}}
+    font-weight: 700;  font-size: 40px;}
+
+    @media only screen and (min-width: 767px){.bodypage-title{line-height: 55px;}}
 .job-search{
     background-color: #fff;
     border: 1px solid #e2e4ea;
     border-radius: 4px;
 }
 .jobsearch-button{
-    background-color: blue;
-    border-radius: 4px;
+    background-color: blue; border-radius: 4px;
 }
 .jobsearch-button:hover{background-color: black;}
 .jobsearch-button:hover button{color: white;}
@@ -225,9 +203,9 @@
 .jobcategory-title{
     border-radius: 4px;
     text-transform: uppercase;
-    font-size: 15px;
+    font-size: 15px; 
 }
-.jobcategory-titlename::after{
+        .jobcategory-titlename::after{
     content: "";
     position: absolute;
     width: 50px;
@@ -555,14 +533,11 @@ background-image: url(./LeftArrow-ImgWhite.png); background-size: 60%;}
 .footer-social ul li{display: inline-block;}
 .footer-social ul li a{
     font-size: 14px;
-    color: #081828;
-    height: 40px;
-    width: 40px;
-    text-align: center;
+    color: #081828; height: 40px;
+    width: 40px; text-align: center;
     display: block;
     line-height: 40px;
-    background-color: #E8ECF1;
-    border: none;
+    background-color: #E8ECF1; border: none;
     border-radius: 4px;
 }
 .footer-social ul li a:hover{background-color: blue;}
@@ -604,3 +579,24 @@ background-image: url(./LeftArrow-ImgWhite.png); background-size: 60%;}
     font-weight: 400;
     border-radius: 5px;}
 .contact-info li{list-style-type: none;}
+
+
+/* ---- Animation --- */
+.body-img,.aboutUs2-animation,.Testimonial-Rightside
+            {visibility: visible; animation-name: fadeInRight; animation-duration: 0.5s; animation-delay: 0.3s; }
+.bodypage-title,.body-animation
+            {visibility: visible; animation-name: fadeInUp; animation-delay: 0.3s}
+.aboutUs-animation,.Testimonial-leftside
+            {visibility: visible; animation-name: fadeInLeft; animation-duration: 0.5s;}
+.jobcategory-title
+            {visibility: visible; animation-name: jobcat-fadeInDown; animation-duration: 0.5s;}
+.jobcategory-titlename,.jobcategory-paraname,.jobcategory-lists,.uploadresumepage-title,.uploadresumepage-para,.uploadresume-button,.BrowseRecentJobs-title,.BrowseRecentJobs-para,.jobbox,.BrowseFeaturedJobs-title,.BrowseFeaturedJobs-para,
+.BrowseFeaturedJob-box1,.PricingTable-title,.PricingTable-para,.PricingTable-head,.Latestnews-title,.Latestnews-para,.LatestNews-Box
+            {visibility: visible;animation-name: jobcat-fadeInUp; animation-duration: 0.5s;}
+
+@keyframes fadeInUp { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); }}
+
+@keyframes fadeInRight { 0% { opacity: 0; transform: translateX(20px); } 100% { opacity: 1; transform: translateX(0); }}
+@keyframes fadeInLeft { 0% { opacity: 0; transform: translateX(-20px); }  100% { opacity: 1; transform: translateX(0); }}
+@keyframes jobcat-fadeInDown { 0% { opacity: 0; transform: translateY(-40px); }  100% { opacity: 1; transform: translateY(0); }}
+@keyframes jobcat-fadeInUp { 0% { opacity: 0; transform: translateY(20px); }  100% { opacity: 1; transform: translateY(0);}}

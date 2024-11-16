@@ -21,10 +21,10 @@ function BrowseRecentJobs(){
                             <span style={{backgroundColor:"#2042e3",fontSize:"12px",padding:"5px 18px",borderRadius:"4px",lineHeight:"22px",color:"#fff",textTransform:"uppercase"}}>
                                 Hot Jobs
                             </span>
-                            <h2 className="BrowseRecentJobs-title mt-2" style={{fontSize:"35px",fontWeight:"700",paddingBottom:"14px",lineHeight:"45px"}}>
+                            <h2 className="BrowseRecentJobs-title mt-2" style={{fontSize:"35px",fontWeight:"700",paddingBottom:"14px",lineHeight:"45px",animationDelay:"0.4s"}}>
                                 Browse Recent Jobs
                             </h2>
-                            <p className="lightcolorline">There are many variations of passages of Lorem Ipsum available, but the majority have suffered <br className="d-lg-block"/> alteration in some form.</p>
+                            <p className="lightcolorline BrowseRecentJobs-para" style={{animationDelay:"0.6s"}}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered <br className="d-lg-block"/> alteration in some form.</p>
                         </Col>
                     </Row>
                 </Container>
@@ -35,7 +35,7 @@ function BrowseRecentJobs(){
                     <Row>
                     {/* Software Engineer */}
                         <Col sm={12} lg={6} className="ps-3 pe-3 ps-md-4 pe-md-4">
-                            <Row className="jobbox" style={{padding:"30px"}}>
+                            <Row className="jobbox" style={{padding:"30px",animationDelay:"0.3s"}}>
                                 <Col md={2} className="d-flex align-items-center  ">
                                     <img src={SoftwareEngineerImg} class="img-fluid" alt="..." />
                                 </Col>
@@ -71,7 +71,7 @@ function BrowseRecentJobs(){
 
                         {/* Digital Marketer */}
                         <Col sm={12} lg={6} className="mt-4 mt-lg-0 ps-3 pe-3 ps-md-4 pe-md-4">
-                            <Row className="jobbox" style={{padding:"30px"}}>
+                            <Row className="jobbox" style={{padding:"30px",animationDelay:"0.5s"}}>
                                 <Col md={2} className="d-flex align-items-center  ">
                                     <img src={DigitalMarketerImg} class="img-fluid" alt="..." />
                                 </Col>
@@ -110,7 +110,7 @@ function BrowseRecentJobs(){
                     <Row className="mt-4">
                     {/* Graphics Design */}
                         <Col sm={12} lg={6} className="ps-3 pe-3 ps-md-4 pe-md-4">
-                            <Row className="jobbox" style={{padding:"30px"}}>
+                            <Row className="jobbox" style={{padding:"30px",animationDelay:"0.3s"}}>
                                 <Col md={2} className="d-flex align-items-center  ">
                                     <img src={GraphicsDesignImg} class="img-fluid" alt="..." />
                                 </Col>
@@ -146,7 +146,7 @@ function BrowseRecentJobs(){
 
                         {/* Sales Manager */}
                         <Col sm={12} lg={6} className="mt-4 mt-lg-0 ps-3 pe-3 ps-md-4 pe-md-4">
-                            <Row className="jobbox" style={{padding:"30px"}}>
+                            <Row className="jobbox" style={{padding:"30px",animationDelay:"0.5s"}}>
                                 <Col md={2} className="d-flex align-items-center  ">
                                     <img src={SalesManagerImg} class="img-fluid" alt="..." />
                                 </Col>
@@ -185,7 +185,7 @@ function BrowseRecentJobs(){
                     <Row className="mt-4">
                     {/* Ui/Ux Designer */}
                         <Col sm={12} lg={6} className="ps-3 pe-3 ps-md-4 pe-md-4">
-                            <Row className="jobbox" style={{padding:"30px"}}>
+                            <Row className="jobbox" style={{padding:"30px",animationDelay:"0.3s"}}>
                                 <Col md={2} className="d-flex align-items-center  ">
                                     <img src={UiUxDesignImg} class="img-fluid" alt="..." />
                                 </Col>
@@ -221,7 +221,7 @@ function BrowseRecentJobs(){
 
                         {/* Product Designer */}
                         <Col sm={12} lg={6} className="mt-4 mt-lg-0 ps-3 pe-3 ps-md-4 pe-md-4">
-                            <Row className="jobbox" style={{padding:"30px"}}>
+                            <Row className="jobbox" style={{padding:"30px",animationDelay:"0.5s"}}>
                                 <Col md={2} className="d-flex align-items-center  ">
                                     <img src={ProductDesignerImg} class="img-fluid" alt="..." />
                                 </Col>
@@ -260,7 +260,7 @@ function BrowseRecentJobs(){
                     <Row className="mt-4">
                     {/* Web Developer */}
                         <Col sm={12} lg={6} className="ps-3 pe-3 ps-md-4 pe-md-4">
-                            <Row className="jobbox" style={{padding:"30px"}}>
+                            <Row className="jobbox" style={{padding:"30px",animationDelay:"0.3s"}}>
                                 <Col md={2} className="d-flex align-items-center  ">
                                     <img src={WebDeveloperImg} class="img-fluid" alt="..." />
                                 </Col>
@@ -296,7 +296,7 @@ function BrowseRecentJobs(){
 
                         {/* Android Developer */}
                         <Col sm={12} lg={6} className="mt-4 mt-lg-0 ps-3 pe-3 ps-md-4 pe-md-4">
-                            <Row className="jobbox" style={{padding:"30px"}}>
+                            <Row className="jobbox" style={{padding:"30px",animationDelay:"0.5s"}}>
                                 <Col md={2} className="d-flex align-items-center  ">
                                     <img src={AndroidDeveloperImg} class="img-fluid" alt="..." />
                                 </Col>

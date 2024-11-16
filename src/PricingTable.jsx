@@ -12,10 +12,10 @@ function PricingTable(){
                             <span style={{backgroundColor:"#2042e3",fontSize:"12px",padding:"5px 18px",borderRadius:"4px",lineHeight:"22px",color:"#fff",textTransform:"uppercase"}}>
                                 Pricing Table
                             </span>
-                            <h2 className="PricingTable-title mt-2" style={{fontSize:"35px",fontWeight:"700",paddingBottom:"14px",lineHeight:"45px"}}>
+                            <h2 className="PricingTable-title mt-2" style={{animationDelay:"0.4s",fontSize:"35px",fontWeight:"700",paddingBottom:"14px",lineHeight:"45px"}}>
                                 Our Pricing Plan
                             </h2>
-                            <p className="lightcolorline">There are many variations of passages of Lorem Ipsum available, but the majority have suffered <br className="d-lg-block"/> alteration in some form.</p>
+                            <p className="PricingTable-para lightcolorline" style={{animationDelay:"0.6s"}}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered <br className="d-lg-block"/> alteration in some form.</p>
                         </Col>
                     </Row>
                 </Container>
@@ -23,7 +23,7 @@ function PricingTable(){
                 <Container className="mt-5 pt-2 pb-5" style={{height:"auto"}}>
                     <Row>
                         <Col sm={12} md={6} lg={4}>
-                            <div className="PricingTable-head" style={{padding:"55px 50px",backgroundColor:"#fff",boxShadow:"0 1rem 3rem rgba(35, 38, 45, 0.15)"}}>
+                            <div className="PricingTable-head" style={{animationDelay:"0.2s",padding:"55px 50px",backgroundColor:"#fff",boxShadow:"0 1rem 3rem rgba(35, 38, 45, 0.15)"}}>
                                     <h4 style={{fontSize:"18px",fontWeight:"500"}}>BASIC PACK</h4>
                                     <p className="amount pb-4" style={{fontSize:"40px",fontWeight:"700"}} >$30  <span className="lightcolorline" style={{fontSize:"14px",fontWeight:"400"}}>per month</span></p>
                                     <ul className="PricingTable-lists ps-0 pt-3">
@@ -45,7 +45,7 @@ function PricingTable(){
                         </Col>
 
                         <Col sm={12} md={6} lg={4}>
-                            <div className="PricingTable-head mt-4 mt-md-0" style={{padding:"55px 50px",backgroundColor:"#fff",boxShadow:"0 1rem 3rem rgba(35, 38, 45, 0.15)"}}>
+                            <div className="PricingTable-head mt-4 mt-md-0" style={{animationDelay:"0.4s",padding:"55px 50px",backgroundColor:"#fff",boxShadow:"0 1rem 3rem rgba(35, 38, 45, 0.15)"}}>
                                     <h4 style={{fontSize:"18px",fontWeight:"500"}}>STANDARD PACK</h4>
                                     <p className="amount pb-4" style={{fontSize:"40px",fontWeight:"700"}} >$40  <span className="lightcolorline" style={{fontSize:"14px",fontWeight:"400"}}>per month</span></p>
                                     <ul className="PricingTable-lists ps-0 pt-3">
@@ -67,7 +67,7 @@ function PricingTable(){
                         </Col>
 
                         <Col sm={12} md={6} lg={4}>
-                            <div className="PricingTable-head mt-4 mt-lg-0" style={{padding:"55px 50px",backgroundColor:"#fff",boxShadow:"0 1rem 3rem rgba(35, 38, 45, 0.15)"}}>
+                            <div className="PricingTable-head mt-4 mt-lg-0" style={{animationDelay:"0.6s",padding:"55px 50px",backgroundColor:"#fff",boxShadow:"0 1rem 3rem rgba(35, 38, 45, 0.15)"}}>
                                     <h4 style={{fontSize:"18px",fontWeight:"500"}}>PREMIUM PACK</h4>
                                     <p className="amount pb-4" style={{fontSize:"40px",fontWeight:"700"}} >$60  <span className="lightcolorline" style={{fontSize:"14px",fontWeight:"400"}}>per month</span></p>
                                     <ul className="PricingTable-lists ps-0 pt-3">

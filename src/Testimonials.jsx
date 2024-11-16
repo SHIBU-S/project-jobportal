@@ -15,7 +15,7 @@ function Testimonials(){
             <Container fluid className="Testimonial border border-dark pb-5 pb-md-0">
                 <Container style={{height:"auto"}}>
                     <Row>
-                        <Col sm={12} md={12} lg={6}>
+                        <Col sm={12} md={12} lg={6} className="Testimonial-leftside" style={{animationDelay:"0.3s"}}>
                             <div className="mt-5 pt-5">
                                 <span style={{textTransform:"uppercase",color:"#fff",backgroundColor:"#2042e3",fontSize:"12px",padding:"5px 18px",borderRadius:"4px"}}>
                                     What saye's Our Clients
@@ -98,7 +98,7 @@ function Testimonials(){
                             </div>
                         </Col>
 
-                        <Col sm={12} lg={6} className="d-none d-lg-flex justify-content-end">
+                        <Col sm={12} lg={6} className="Testimonial-Rightside d-none d-lg-flex justify-content-end">
                             <div className="Testimonial-Img mt-5 pt-3">
                                 <img src={TestimonialImg} class="img-fluid" alt="..." />
                             </div>

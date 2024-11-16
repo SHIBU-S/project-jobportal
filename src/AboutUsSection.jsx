@@ -11,7 +11,7 @@ function AboutUsSection(){
              <Container fluid  className="pb-5">
                 <Container className="pt-2 pt-lg-5 pb-2 pb-lg-5 mt-5" style={{height:"auto"}}>
                     <Row className="d-flex justify-content-center">
-                        <Col sm={12} md={10} lg={5}>
+                        <Col sm={12} md={10} lg={5} className="aboutUs-animation" style={{animationDelay:"0.3s"}}>
                             <div className="aboutus-box">
                             <Row>
                                 <Col xs={6} sm={6} lg={6} className=" ps-0"><img src={AboutUsPic1} class="img-fluid" alt="..." style={{width:"100%",borderRadius:"5px"}}/></Col>
@@ -28,7 +28,7 @@ function AboutUsSection(){
                             </div>
                         </Col>
 
-                        <Col sm={12} md={10} lg={7} className="pt-5 pt-lg-0 pt-xxl-5 ps-0 ps-lg-5">
+                        <Col sm={12} md={10} lg={7} className="aboutUs2-animation pt-5 pt-lg-0 pt-xxl-5 ps-0 ps-lg-5">
                             <h2 className="mb-5 pt-lg-0 pt-xxl-5 ms-lg-5" style={{fontWeight:"700"}}>Help You To Get The  <br /> Best Job That Fits You</h2>
                             <Row className="ps-lg-5">
                                 <Col xs={1} sm={1} className="d-flex justify-content-start ">
