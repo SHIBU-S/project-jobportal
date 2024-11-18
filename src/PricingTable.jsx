@@ -6,7 +6,7 @@ function PricingTable(){
     return(
         <>
             <Container fluid className="border pb-5" style={{backgroundColor:"#f6f9fc"}}>
-                <Container className="mt-5 pt-5" style={{height:"auto"}}>
+                <Container className="mt-3 mt-lg-5 pt-5" style={{height:"auto"}}>
                     <Row className="text-center">
                         <Col>
                             <span style={{backgroundColor:"#2042e3",fontSize:"12px",padding:"5px 18px",borderRadius:"4px",lineHeight:"22px",color:"#fff",textTransform:"uppercase"}}>
@@ -20,7 +20,7 @@ function PricingTable(){
                     </Row>
                 </Container>
 
-                <Container className="mt-5 pt-2 pb-5" style={{height:"auto"}}>
+                <Container className="mt-3 mt-lg-5 pt-2 pb-5" style={{height:"auto"}}>
                     <Row>
                         <Col sm={12} md={6} lg={4}>
                             <div className="PricingTable-head" style={{animationDelay:"0.2s",padding:"55px 50px",backgroundColor:"#fff",boxShadow:"0 1rem 3rem rgba(35, 38, 45, 0.15)"}}>

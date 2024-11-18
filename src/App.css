@@ -380,8 +380,9 @@
 .BrowseFeaturedJob{overflow: hidden;}
 .BrowseFeaturedJob img {
     transition: transform 0.5s ease;}
+.BrowseFeaturedJob{border-top-left-radius: 10px; border-top-right-radius: 10px;}
 .BrowseFeaturedJob img:hover {
-    transform: scale(1.1);
+    transform: scale(1.1);  
 }
   
 .BrowseFeaturedJob-box1 {position: relative;}
@@ -579,6 +580,12 @@ background-image: url(./LeftArrow-ImgWhite.png); background-size: 60%;}
     font-weight: 400;
     border-radius: 5px;}
 .contact-info li{list-style-type: none;}
+
+
+.page-item:first-child .page-link{border-top-left-radius: 0; border-bottom-left-radius: 0;}
+.page-item:last-child .page-link{ border-top-right-radius: 0; border-bottom-right-radius: 0;}
+.page-link{color: black;border-radius: 4px;}  .page-link:hover{background-color: var(--bs-pagination-active-bg); color: white;}
+.page-item{margin-right: 13px;border:none;}
 
 
 /* ---- Animation --- */

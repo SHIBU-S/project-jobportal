@@ -10,12 +10,23 @@ import ProductDesignerImg from './ProductDesigner-Img.png';
 import WebDeveloperImg from './WebDeveloper-Img.png';
 import AndroidDeveloperImg from './AndroidDeveloper-Img.png';
 
+import Pagination from 'react-bootstrap/Pagination';
+
 
 function BrowseRecentJobs(){
+    let active = 1;
+let items = [];
+for (let number = 1; number <= 4; number++) {
+  items.push(
+    <Pagination.Item key={number} active={number === active}>
+      {number}
+    </Pagination.Item>,
+  );
+}
     return(
         <>
-            <Container fluid style={{backgroundColor:"#f6f9fc"}} className="pb-5 border">
-                <Container className="mt-5 pt-5" style={{height:"auto"}}>
+            <Container fluid style={{backgroundColor:"#f6f9fc"}} className="pb-lg-5 border">
+                <Container className="mt-2 mt-lg-5 pt-5" style={{height:"auto"}}>
                     <Row className="text-center">
                         <Col>
                             <span style={{backgroundColor:"#2042e3",fontSize:"12px",padding:"5px 18px",borderRadius:"4px",lineHeight:"22px",color:"#fff",textTransform:"uppercase"}}>
@@ -329,6 +340,19 @@ function BrowseRecentJobs(){
                             </Row>
                         </Col>
                     </Row>
+
+                    
+                    <Row >
+                        <Col className="d-flex justify-content-center mt-5">
+                            <Pagination><li className="px-2 d-flex align-items-center" style={{listStyleType:"none",backgroundColor:"white",borderRadius:"4px",border:"1px solid #eee",marginRight:"13px"}}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+                                        </svg></li>
+                                {items}
+                                        <li className="px-2 d-flex align-items-center" style={{listStyleType:"none",backgroundColor:"white",borderRadius:"4px",border:"1px solid #eee"}}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                                        </svg></li></Pagination>
+                            
+                        </Col>
+                    </Row>
+
 
                 
                 </Container>

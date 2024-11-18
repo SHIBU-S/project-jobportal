@@ -7,7 +7,7 @@ function JobCategory(){
     return(
         <>
             <Container fluid className="border pb-5" style={{backgroundColor: "#f6f9fc" }}>
-                <Container className="mt-5">
+                <Container className="mt-3 mt-lg-5">
                     <Row className="pt-5">
                         <Col className="text-center">
                             <span className="jobcategory-title" style={{backgroundColor:"#2042e3",padding:"5px 18px",color:"#fff",animationDelay:"0.4s"}}>Job Category</span>
@@ -17,7 +17,7 @@ function JobCategory(){
                     </Row>
                 </Container>
 
-                <Container className="mt-5 p-5 mb-3" style={{height:"auto",backgroundColor:"white",boxShadow:"0 1rem 3rem rgba(35, 38, 45, 0.15)",borderRadius:"5px"}}>
+                <Container className="mt-3 mt-lg-5 p-5 mb-3" style={{height:"auto",backgroundColor:"white",boxShadow:"0 1rem 3rem rgba(35, 38, 45, 0.15)",borderRadius:"5px"}}>
                     <Row className="text-center">
                         <Col sm={12} md={6} lg={3} className=" p-2">
                             <Link to="/" style={{textDecoration:"none",color:"#081828"}}>
