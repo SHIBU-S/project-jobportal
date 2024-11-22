@@ -8,7 +8,7 @@ function UploadResume(){
             <Container fluid className=" uploadresume">
                 <Container className=" pt-5 pb-5 text-center" style={{height:"auto"}}>
                     <Row>
-                        <Col className="mt-5 pt-2 pb-4">
+                        <Col className="mt-lg-5 pt-2 pb-lg-4">
                             <span style={{backgroundColor:"#fff",color:"#2042e3",padding:"5px 18px",fontSize:"12px",borderRadius:"4px"}}>
                                 GETTING STARTED TO WORK
                             </span>
