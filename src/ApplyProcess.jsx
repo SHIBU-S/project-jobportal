@@ -6,7 +6,7 @@ function ApplyProcess(){
         <>
             <Container fluid className="border mt-1" style={{height:"auto",backgroundColor:"#2042e3"}}>
                 <Container>
-                    <Row className="my-5 text-white text-sm-start text-md-center text-lg-start">
+                    <Row className="my-3 my-md-5 pb-md-3 text-white text-sm-start text-md-center text-lg-start">
                         <Col sm={12} md={4} className="pt-2 d-flex d-md-block d-lg-flex applyprocess-logodiv">
                             <div className="pt-4 "> 
                                 <svg className=" p-2 applyprocesslogo  rounded-circle" fill="white" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60" height="60" viewBox="0 0 32 32">
@@ -14,7 +14,7 @@ function ApplyProcess(){
                                 </svg>
                             </div>
                             <div className="mt-2 ms-4 ms-md-0 ms-lg-4">
-                                <h4 className="applyprocesstitle d-flex py-3 mb-3">Register Your Account</h4>
+                                <h4 className="applyprocesstitle py-3 mb-3 text-start text-md-center text-lg-start">Register Your <br className="d-none d-lg-block d-xxl-none"/> Account</h4>
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                             </div>
                         </Col>
@@ -29,7 +29,7 @@ function ApplyProcess(){
                                 </svg>                  
                             </div>
                             <div className="mt-2 ms-4 ms-md-0 ms-lg-4">
-                                <h4 className="applyprocesstitle d-flex py-3 mb-3">Upload Your Resume</h4>
+                                <h4 className="applyprocesstitle text-start text-md-center text-lg-start py-3 mb-3">Upload Your <br className="d-none d-lg-block d-xxl-none"/> Resume</h4>
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                             </div>
                         </Col>
@@ -42,7 +42,7 @@ function ApplyProcess(){
                                 </svg>
                             </div>
                             <div className="mt-2 ms-4 ms-md-0 ms-lg-4">
-                                <h4 className=" applyprocesstitle py-3 mb-3">Apply for Dream Job</h4>
+                                <h4 className=" applyprocesstitle text-start text-md-center text-lg-start py-3 mb-3">Apply for <br className="d-none d-lg-block d-xxl-none"/> Dream Job</h4>
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                             </div>
                         </Col>

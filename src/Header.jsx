@@ -1,4 +1,3 @@
-
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -14,9 +13,9 @@ function Header() {
 
         <img src={jobportal_logo} alt="Job Portal Logo" className="jobportallogo" />  
 
-        <Navbar.Toggle aria-controls="navbarScroll" className="bg-primary ms-5 px-1 py-0 px-md-2 py-md-1" />
+        <Navbar.Toggle aria-controls="navbarScroll" className="bg-primary ms-3 ms-md-5 px-1 py-0 px-md-2 py-md-1" />
 
-        <div className=' login-signup d-flex align-items-center order-lg-2 order-md-0 ms-4 ms-lg-0'>
+        <div className=' login-signup d-flex align-items-center order-lg-2 order-md-0 ms-lg-0'>
           <div className='me-0 me-lg-3'>
             <Login />
           </div>
@@ -33,7 +32,7 @@ function Header() {
              <li className='mt-3 mt-lg-0 p-1 p-lg-0 navline'>
               <Link to="#" className='navlist p-3 navli pb-lg-4'>Pages</Link>
               <ul className='ms-4 ms-lg-0 ps-2 ps-lg-3 pe-lg-2 sub-menus pt-1 pt-lg-2 pb-0 pb-lg-1 mt-3 '>
-                <li className='mt-2 me-2 rounded-1'> <Link to="/AboutUs" className='d-block'>About Us</Link>                    </li>
+                <li className='mt-2 me-2 rounded-1'> <Link to="/AboutUs" className='d-block'>About Us</Link>               </li>
                 <li className='mt-2 me-2 rounded-1'> <Link to="/JobList" className='d-block'>Job List</Link>               </li>
                 <li className='mt-2 me-2 rounded-1'> <Link to="/JobDetails" className='d-block'>Job Details</Link>         </li>
                 <li className='mt-2 me-2 rounded-1'> <Link to="/ResumePage" className='d-block'>Resume Page</Link>         </li>

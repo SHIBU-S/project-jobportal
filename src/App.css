@@ -1,5 +1,5 @@
 .body{ background-color: #f6f9fc;}
-@media only screen and (min-width: 425px) and (max-width: 2560px){
+@media only screen and (min-width: 300px) and (max-width: 2560px){
     .jobportallogo{
         width: 130px;
     }
@@ -39,9 +39,7 @@
     }
 }
 .sub-menus li {padding: 8px 16px; }  
-.sub-menus li a {
-    color: black;  text-decoration: none; 
-} 
+.sub-menus li a { color: black;  text-decoration: none; } 
 .sub-menus li:hover {background-color: blue; }
 .sub-menus li:hover a {color: white; } 
 .form-label{color: #081828; font-weight: 500;}
@@ -185,6 +183,8 @@
     background-color: white;
     left: 0;
     bottom: 0;
+}   @media (min-width:765px) and (max-width:979px) {
+    .applyprocesstitle::after{left: 50%; transform: translateX(-50%);}
 }
 .applyprocesslogo{
     border: 1px dashed #fff;}

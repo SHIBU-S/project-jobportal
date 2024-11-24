@@ -1,4 +1,3 @@
-import { Routes,Route } from 'react-router-dom';
 import './App.css';
 import Header from './Header';
 import Body from './Body';
@@ -36,9 +35,3 @@ function HomePage() {
 
 
 export default HomePage;
-
-
-
-// .body-img{visibility: visible; animation-name: fadeInRight; animation-duration: 0.5s; animation-delay: 0.3s; }
-//         @keyframes fadeInRight { 0% { opacity: 0; transform: translateX(20px); } 
-//                                 100% { opacity: 1; transform: translateX(0); }}
