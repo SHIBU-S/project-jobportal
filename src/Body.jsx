@@ -12,7 +12,7 @@ function Body() {
 
     return (
         <>
-            <Container fluid className="border" style={{ height: "auto", backgroundColor: "#f6f9fc" }}>
+            <Container fluid className="border border-light" style={{ height: "auto", backgroundColor: "#f6f9fc" }}>
                 <Container className="mt-0 mt-lg-4">
                     <Row className="pt-0 pt-lg-5 pb-lg-5 pb-xxl-0  mb-5 mb-xxl-0">
                         <Col sm={12} lg={6} className="mt-0 mt-lg-4 pt-4 pt-md-5 p-0 p-md-3">

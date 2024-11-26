@@ -9,7 +9,7 @@ function LatestNews(){
     return(
         <>
             <Container fluid className="">
-                <Container className="mt-5 pt-5" style={{height:"auto"}}>
+                <Container className="mt-0 mt-md-3 mt-lg-5 pt-5" style={{height:"auto"}}>
                     <Row className="text-center">
                         <Col>
                             <span style={{backgroundColor:"#2042e3",fontSize:"12px",padding:"5px 18px",borderRadius:"4px",lineHeight:"22px",color:"#fff",textTransform:"uppercase"}}>

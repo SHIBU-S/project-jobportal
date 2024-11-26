@@ -9,10 +9,10 @@ function UploadResume(){
                 <Container className=" pt-5 pb-5 text-center" style={{height:"auto"}}>
                     <Row>
                         <Col className="mt-lg-5 pt-2 pb-lg-4">
-                            <span style={{backgroundColor:"#fff",color:"#2042e3",padding:"5px 18px",fontSize:"12px",borderRadius:"4px"}}>
+                            <span className="py-2" style={{backgroundColor:"#fff",color:"#2042e3",padding:"5px 18px",fontSize:"12px",borderRadius:"4px"}}>
                                 GETTING STARTED TO WORK
                             </span>
-                            <h2 className="mt-3 pb-4 uploadresumepage-title" style={{color:"#fff",fontWeight:"700",animationDelay:"0.4s"}}>
+                            <h2 className=" mt-3 pb-4 uploadresumepage-title" style={{color:"#fff",fontWeight:"700",animationDelay:"0.4s"}}>
                                 Don’t just find. Be found. Put your CV in <br className="d-none d-lg-block"/> front of great employers
                             </h2>
                             <p className="mt-3 uploadresumepage-para" style={{color:"#fff",animationDelay:"0.6s"}}>It helps you to increase your chances of finding a suitable job and let recruiters contact you about jobs that are <br className="d-none d-lg-block" /> not needed to pay for advertising.</p>
