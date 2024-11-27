@@ -6,6 +6,9 @@ import AboutUsPage from './AboutUs-Page';
 import HomePage from './HomePage';
 import JobListPage from './JobList-Page';
 import ContactUsPage from './ContactUs-Page';
+import AdminPage from './Admin-Page';
+import BrowseJobsPage from './BrowseJobs-Page';
+import BrowseCategoryPage from './BrowseCategory-Page';
 
 
 function App() {
@@ -17,8 +20,11 @@ function App() {
                   <Route path="/Home" element={<HomePage/>} />
                   <Route path="/AboutUs" element={<AboutUsPage/>} />
                   <Route path='/JobList' element={<JobListPage/>}/>
-
+                  <Route path='/BrowseJobs' element={<BrowseJobsPage/>}/>
+                  <Route path='BrowseCategories' element={<BrowseCategoryPage/>}/>
                   <Route path='/Contact' element={<ContactUsPage/>}/>
+
+                  <Route path='/Admin' element={<AdminPage/>}/>
               </Routes>
     </div>
   );
@@ -26,3 +32,4 @@ function App() {
 
 
 export default App;
+
