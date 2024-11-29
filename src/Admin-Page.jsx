@@ -26,7 +26,7 @@ function AdminPage(){
                                                                                 </svg> Please enter your login details.</h1>
                                 </div>
 
-                                <div className="p-3" style={{backgroundColor:"white"}}>
+                                <div className="pt-3 px-3" style={{backgroundColor:"white"}}>
                                     <Form.Group as={Col} md="4" className="w-100" controlId="validationFormikUsername2">
                                         <Form.Label style={{color:"#545454"}}>Username</Form.Label>
                                             <InputGroup hasValidation>
@@ -44,7 +44,7 @@ function AdminPage(){
                                     </Form.Group>
                                 </div>
 
-                                <div className="forgotpassword ps-3" style={{backgroundColor:"white"}}>
+                                <div className="forgotpassword ps-3" style={{backgroundColor:"white",fontSize:"14px"}}>
                                     <Link to="" className="text-decoration-none">Forgotten Password</Link>
                                 </div>
 

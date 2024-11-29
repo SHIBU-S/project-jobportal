@@ -586,6 +586,9 @@ background-image: url(./LeftArrow-ImgWhite.png); background-size: 60%;}
 .page-item:last-child .page-link{ border-top-right-radius: 0; border-bottom-right-radius: 0;}
 .page-link{color: black;border-radius: 4px;}  .page-link:hover{background-color: var(--bs-pagination-active-bg); color: white;}
 .page-item{margin-right: 13px;border:none;}
+.leftright-arrow{background-color: white;}
+.leftright-arrow:hover{background-color: var(--bs-pagination-active-bg); }
+.leftright-arrow:hover svg{fill: white;}
 
 
 /* ---- Animation --- */
