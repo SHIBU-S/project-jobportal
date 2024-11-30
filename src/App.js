@@ -9,6 +9,7 @@ import ContactUsPage from './ContactUs-Page';
 import AdminPage from './Admin-Page';
 import BrowseJobsPage from './BrowseJobs-Page';
 import BrowseCategoryPage from './BrowseCategory-Page';
+import SideNavigation from './SideNavigation';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
                   <Route path='/Contact' element={<ContactUsPage/>}/>
 
                   <Route path='/Admin' element={<AdminPage/>}/>
+                  <Route path='/Admin/Sidenavigation' element={<SideNavigation/>}/>
               </Routes>
     </div>
   );

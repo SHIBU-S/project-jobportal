@@ -590,6 +590,8 @@ background-image: url(./LeftArrow-ImgWhite.png); background-size: 60%;}
 .leftright-arrow:hover{background-color: var(--bs-pagination-active-bg); }
 .leftright-arrow:hover svg{fill: white;}
 
+.alert-dismissible .btn-close{padding: 0; top: 17px; right: 8px; width: 3%; height: 10px;}
+
 
 /* ---- Animation --- */
 .body-img,.aboutUs2-animation,.Testimonial-Rightside
