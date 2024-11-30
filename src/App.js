@@ -10,6 +10,8 @@ import AdminPage from './Admin-Page';
 import BrowseJobsPage from './BrowseJobs-Page';
 import BrowseCategoryPage from './BrowseCategory-Page';
 import SideNavigation from './SideNavigation';
+import Dashboard from './Dashboard';
+import BlogGridSidebarPage from './BlogGridSidebar-Page';
 
 
 function App() {
@@ -23,10 +25,13 @@ function App() {
                   <Route path='/JobList' element={<JobListPage/>}/>
                   <Route path='/BrowseJobs' element={<BrowseJobsPage/>}/>
                   <Route path='BrowseCategories' element={<BrowseCategoryPage/>}/>
+                  <Route path='/BlogGridSidebar' element={<BlogGridSidebarPage/>}/>
                   <Route path='/Contact' element={<ContactUsPage/>}/>
 
                   <Route path='/Admin' element={<AdminPage/>}/>
                   <Route path='/Admin/Sidenavigation' element={<SideNavigation/>}/>
+
+                  {/* <Route path='/Dashboard' element={<Dashboard/>}/> */}
               </Routes>
     </div>
   );

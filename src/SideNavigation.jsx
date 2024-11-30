@@ -1,7 +1,9 @@
+
 import { Container, Row, Col } from "react-bootstrap";
 import AdminPageImg from './AdminPage-Img.png';
-import { Link} from "react-router-dom";
-
+import { Link, Outlet, Route, Routes } from "react-router-dom";
+import Dashboard from "./Dashboard";
+import Categories from "./Categories";
 
 function SideNavigation(){
     return(
@@ -13,10 +15,36 @@ function SideNavigation(){
                     </div>
                 </Row>
             </Container>
+
+            <Container fluid className="border border-dark">
+                <Row style={{height:"500px"}}>
+                    <Col sm={2} className="border border-dark px-0" >
+                        <div className="p-2" style={{backgroundColor:"#19222E"}}>
+                            <span className="text-white p-2"> NAVIGATION</span>
+                        </div>
+
+                        <ul className="sidenav_lists" style={{paddingLeft:"0"}}>
+                            <li className="p-2"><Link to="/Dashboard">Dashboard</Link></li>
+                            <li className="p-2"><Link to="/Categories">Categories</Link></li>
+                            <li className="p-2"><Link to=""></Link> Service</li>
+                            <li className="p-2"><Link to=""></Link> Bannar</li>
+                            <li className="p-2"><Link to=""></Link> Blog</li>
+                            <li className="p-2"><Link to=""></Link> Users</li>
+                            <li className="p-2"><Link to=""></Link> Orders</li>
+                        </ul>
+                    </Col>
+
+                    <Col className="border border-dark" >
+                        <Routes>
+                            <Route path='/Dashboard' element={<Dashboard/>}/>
+                            <Route path='/Categories' element={<Categories/>}/>
+                        </Routes>
+                    </Col> 
+                </Row>
+            </Container>
         </>
     )
 }
 
 export default SideNavigation;
-
 

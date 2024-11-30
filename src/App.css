@@ -591,6 +591,7 @@ background-image: url(./LeftArrow-ImgWhite.png); background-size: 60%;}
 .leftright-arrow:hover svg{fill: white;}
 
 .alert-dismissible .btn-close{padding: 0; top: 17px; right: 8px; width: 3%; height: 10px;}
+.sidenav_lists li{list-style-type: none;background-color: #283443; color: #b3cbdd;}
 
 
 /* ---- Animation --- */
