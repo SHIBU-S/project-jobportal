@@ -31,10 +31,10 @@ function BlogGridSidebarPage(){
                 </Container>
             </Container>
 
-            <Container fluid>
+            <Container fluid className="border pb-5" style={{backgroundColor:"#f6f9fc"}}>
                 <Container className="mt-5 pt-5">
                     <Row>
-                        <Col sm={8}>
+                        <Col sm={12} md={6} lg={8}>
                             <Row>
                                 <Col lg={6}>
                                 <div className="LatestNews-Box" style={{boxShadow:"0 1rem 3rem rgba(35, 38, 45, 0.15)",animationDelay:"0.3s"}}>
@@ -92,7 +92,7 @@ function BlogGridSidebarPage(){
                                 </div>
                                 </Col>
 
-                                <Col lg={6}>
+                                <Col lg={6} className="mt-5">
                                 <div className="LatestNews-Box" style={{boxShadow:"0 1rem 3rem rgba(35, 38, 45, 0.15)",animationDelay:"0.7s"}}>
                                 <div className="LatestNews"><img src={NewsBlogImg3} class="img-fluid" alt="..." style={{width:"100%"}}/></div>
                                 <div className="p-4">
@@ -120,7 +120,7 @@ function BlogGridSidebarPage(){
                                 </div>
                                 </Col>
 
-                                <Col lg={6}>
+                                <Col lg={6} className="mt-5">
                                 <div className="LatestNews-Box" style={{boxShadow:"0 1rem 3rem rgba(35, 38, 45, 0.15)",animationDelay:"0.3s"}}>
                                 <div className="LatestNews"><img src={NewsBlogImg1} class="img-fluid" alt="..." style={{width:"100%"}}/></div>
                                 <div className="p-4">
@@ -148,7 +148,7 @@ function BlogGridSidebarPage(){
                                 </div>
                                 </Col>
 
-                                <Col lg={6}>
+                                <Col lg={6} className="mt-5">
                                 <div className="LatestNews-Box" style={{boxShadow:"0 1rem 3rem rgba(35, 38, 45, 0.15)",animationDelay:"0.5s"}}>
                                 <div className="LatestNews"><img src={NewsBlogImg2} class="img-fluid" alt="..." style={{width:"100%"}}/></div>
                                 <div className="p-4">
@@ -176,7 +176,7 @@ function BlogGridSidebarPage(){
                                 </div>
                                 </Col>
 
-                                <Col lg={6}>
+                                <Col lg={6} className="mt-5">
                                 <div className="LatestNews-Box" style={{boxShadow:"0 1rem 3rem rgba(35, 38, 45, 0.15)",animationDelay:"0.7s"}}>
                                 <div className="LatestNews"><img src={NewsBlogImg3} class="img-fluid" alt="..." style={{width:"100%"}}/></div>
                                 <div className="p-4">
@@ -206,8 +206,8 @@ function BlogGridSidebarPage(){
                             </Row>
                         </Col>
 
-                        <Col>
-                            <div className="border p-5">
+                        <Col sm={12} md={6} lg={4}>
+                            <div className=" p-5 bg-white">
                                 <h5>Search This Site</h5>
                                 <form action="" className="position-relative">
                                     <input type="text" placeholder="Search Here..." className="p-3" style={{width:"100%"}}/>
@@ -215,6 +215,63 @@ function BlogGridSidebarPage(){
                                         
                                     </button>
                                 </form>
+                            </div>
+
+                            <div className="bg-white p-4 mt-4">
+                                <h5 className="p-4">Popular Feeds</h5>
+
+                                <div className="p-4">   
+                                    <h6><Link to="" className="text-decoration-none text-dark">Tips to write an impressive resume online for beginner</Link></h6>
+                                    <span> 5th Nov 2023</span>
+                                </div>
+
+                                <div className="p-4">
+                                    <h6><Link to="" className="text-decoration-none text-dark">10 most important SEO focus areas for colleges and universities</Link></h6>
+                                    <span>24th March 2023</span>
+                                </div>
+
+                                <div className="p-4">
+                                    <h6><Link to="" className="text-decoration-none text-dark">7 things you should never say to your boss in your joblife</Link></h6>
+                                    <span>30th Jan 2023</span>
+                                </div>
+                            </div>
+
+                            <div className="p-4 bg-white mt-4">
+                                <h5 className="p-4">Categories</h5>
+                                <ul className="BlogGridCategorieslists" style={{listStyleType:"none"}}>
+                                    <li className="mt-3"><Link className=" d-block text-decoration-none text-dark" to="">Announcement <span className="d-flex align-items-center justify-content-center">26</span></Link></li>
+                                    <li className="mt-3"><Link className=" d-block text-decoration-none text-dark" to="">Indeed Events <span className="d-flex align-items-center justify-content-center">26</span></Link></li>
+                                    <li className="mt-3"><Link className=" d-block text-decoration-none text-dark" to="">Tips & Tricks<span className="d-flex align-items-center justify-content-center">26</span></Link></li>
+                                    <li className="mt-3"><Link className=" d-block text-decoration-none text-dark" to="">Experiences <span className="d-flex align-items-center justify-content-center">26</span></Link></li>
+                                    <li className="mt-3"><Link className=" d-block text-decoration-none text-dark" to="">Case Studies <span className="d-flex align-items-center justify-content-center">26</span></Link></li>
+                                    <li className="mt-3"><Link className=" d-block text-decoration-none text-dark" to="">Labor Market News <span className="d-flex align-items-center justify-content-center">26</span></Link></li>
+                                    <li className="mt-3"><Link className=" d-block text-decoration-none text-dark" to="">HR Best Practices <span className="d-flex align-items-center justify-content-center">26</span></Link></li>
+                                </ul>
+                            </div>
+
+                            <div className="p-4 bg-white mt-4">
+                                <h5 className="p-4">Popular Tags</h5>
+                                <div className="populartags">
+                                    <Row>
+                                        <Col sm={4}><div className="ms-1"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
+                                        <Col sm={4}><div><Link to="" className="p-1 text-center">Design</Link></div></Col>
+                                        <Col sm={4}><div className="me-5"><Link to="" className="p-1 text-center">HR</Link></div></Col>
+
+                                        <Col sm={4}><div className="mt-2 ms-3"><Link to="" className="p-1 text-center">Recruiter</Link></div></Col>
+                                        <Col sm={4}><div className="mt-2"><Link to="" className="p-1 text-center">Interview</Link></div></Col>
+                                        <Col sm={4}><div className="mt-2 me-2"><Link to="" className="p-1 text-center">Employee</Link></div></Col>
+                                    </Row>
+
+                                    <Row>
+                                        <Col sm={4}><div className="mt-2 ms-3"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
+                                        <Col sm={4}><div className="mt-2"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
+                                        <Col sm={4}><div className="mt-2 me-4"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
+
+                                        <Col sm={4}><div className="mt-2 ms-3"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
+                                        <Col sm={4}><div className="mt-2"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
+                                        <Col sm={4}><div className="mt-2 me-5"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
+                                    </Row>
+                                </div>
                             </div>
                         </Col>
                     </Row>

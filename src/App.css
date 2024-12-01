@@ -592,6 +592,11 @@ background-image: url(./LeftArrow-ImgWhite.png); background-size: 60%;}
 
 .alert-dismissible .btn-close{padding: 0; top: 17px; right: 8px; width: 3%; height: 10px;}
 .sidenav_lists li{list-style-type: none;background-color: #283443; color: #b3cbdd;}
+.BlogGridCategorieslists li{position: relative;}
+.BlogGridCategorieslists li a span{position: absolute; right: 0; top: 0; border: 1px solid #eee; border-radius: 4px; height: 35px; width: 35px;}
+.BlogGridCategorieslists li a:hover span{background-color: blue; color: white;}
+.populartags a{text-decoration: none; border: 1px solid #eee; display: block; color: black; border-radius: 4px;}
+.populartags a:hover{background-color: blue; color: white;}
 
 
 /* ---- Animation --- */
