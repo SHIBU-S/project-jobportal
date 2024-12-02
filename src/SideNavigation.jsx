@@ -4,8 +4,12 @@ import AdminPageImg from './AdminPage-Img.png';
 import { Link, Outlet, Route, Routes } from "react-router-dom";
 import Dashboard from "./Dashboard";
 import Categories from "./Categories";
+import { useState } from "react";
 
 function SideNavigation(){
+
+    const [display,setdisplay] = useState("");
+
     return(
         <>
             <Container fluid style={{ boxShadow: "0px 0px 3px #ccc" }}>
@@ -24,7 +28,7 @@ function SideNavigation(){
                         </div>
 
                         <ul className="sidenav_lists" style={{paddingLeft:"0"}}>
-                            <li className="p-2"><Link to="/Dashboard">Dashboard</Link></li>
+                            <li className="p-2" onClick={Dashboard}><Link to="/Dashboard">Dashboard</Link></li>
                             <li className="p-2"><Link to="/Categories">Categories</Link></li>
                             <li className="p-2"><Link to=""></Link> Service</li>
                             <li className="p-2"><Link to=""></Link> Bannar</li>
@@ -35,10 +39,7 @@ function SideNavigation(){
                     </Col>
 
                     <Col className="border border-dark" >
-                        <Routes>
-                            <Route path='/Dashboard' element={<Dashboard/>}/>
-                            <Route path='/Categories' element={<Categories/>}/>
-                        </Routes>
+                        <Dashboard/>
                     </Col> 
                 </Row>
             </Container>
@@ -47,4 +48,5 @@ function SideNavigation(){
 }
 
 export default SideNavigation;
+
 
