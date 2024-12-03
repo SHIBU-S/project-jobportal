@@ -1,4 +1,5 @@
 
+
 import { Container, Row, Col } from "react-bootstrap";
 import AdminPageImg from './AdminPage-Img.png';
 import { Link, Outlet, Route, Routes } from "react-router-dom";
@@ -6,9 +7,24 @@ import Dashboard from "./Dashboard";
 import Categories from "./Categories";
 import { useState } from "react";
 
+import { AiFillDashboard } from "react-icons/ai";
+
+
 function SideNavigation(){
 
-    const [display,setdisplay] = useState("");
+    const [activePage, setActivePage] = useState(1); 
+
+    const pageNames = ["Dashboard","Categories","Service","Bannar","Blog","Users","Orders"];
+    const pagelogos = [<AiFillDashboard />]
+
+    const items = [];
+    for (let number = 1; number <= 7; number++) {
+      items.push(
+        <li key={number} active={number === activePage} onClick={() => setActivePage(number)} className="text-white p-2 d-flex align-items-center">
+           {pagelogos[number-1]}  {pageNames[number - 1]}
+        </li>
+      );
+    }
 
     return(
         <>
@@ -20,26 +36,21 @@ function SideNavigation(){
                 </Row>
             </Container>
 
-            <Container fluid className="border border-dark">
-                <Row style={{height:"500px"}}>
+            <Container fluid className="border  ">
+                <Row style={{height:"700px"}}>
                     <Col sm={2} className="border border-dark px-0" >
                         <div className="p-2" style={{backgroundColor:"#19222E"}}>
                             <span className="text-white p-2"> NAVIGATION</span>
                         </div>
 
-                        <ul className="sidenav_lists" style={{paddingLeft:"0"}}>
-                            <li className="p-2" onClick={Dashboard}><Link to="/Dashboard">Dashboard</Link></li>
-                            <li className="p-2"><Link to="/Categories">Categories</Link></li>
-                            <li className="p-2"><Link to=""></Link> Service</li>
-                            <li className="p-2"><Link to=""></Link> Bannar</li>
-                            <li className="p-2"><Link to=""></Link> Blog</li>
-                            <li className="p-2"><Link to=""></Link> Users</li>
-                            <li className="p-2"><Link to=""></Link> Orders</li>
+                        <ul className="sidenav_lists" style={{paddingLeft:"0",height:"700px"}}>
+                            {items}
                         </ul>
                     </Col>
 
                     <Col className="border border-dark" >
-                        <Dashboard/>
+                        {activePage === 1 && (<Dashboard/>)}
+                        {activePage === 2 && (<Categories/>)}
                     </Col> 
                 </Row>
             </Container>
@@ -48,5 +59,9 @@ function SideNavigation(){
 }
 
 export default SideNavigation;
+
+
+
+
 
 
