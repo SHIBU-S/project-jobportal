@@ -10,7 +10,6 @@ import AdminPage from './Admin-Page';
 import BrowseJobsPage from './BrowseJobs-Page';
 import BrowseCategoryPage from './BrowseCategory-Page';
 import SideNavigation from './SideNavigation';
-import Dashboard from './Dashboard';
 import BlogGridSidebarPage from './BlogGridSidebar-Page';
 
 

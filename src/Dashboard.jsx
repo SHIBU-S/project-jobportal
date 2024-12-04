@@ -12,7 +12,7 @@ function Dashboard(){
     return(
         <>
             <Container fluid>
-                <Row className="border">
+                <Row className="border px-1">
                     <Col className="d-flex align-items-center">
                         <h2 className="Dashboard_title">Dashboard</h2>
                         <ul className="d-flex pt-4 Dashboard_lists">
@@ -26,7 +26,7 @@ function Dashboard(){
                     </Col>
                 </Row>
 
-                <Row className="mt-3">
+                <Row className="mt-3 px-1">
                     <Col md={3}>
                         <div className="border" style={{backgroundColor:"#1b80c2"}}>
                             <div className="" style={{backgroundColor:"rgba(255, 255, 255, 0.1)"}}><h6 className="d-flex p-1 text-white" style={{textTransform:"uppercase",textShadow:"0 -1px 0 rgba(0, 0, 0, .4)"}}>Total Orders <span style={{color:"whitesmoke"}} className="ms-auto">0%</span></h6></div>
@@ -61,7 +61,7 @@ function Dashboard(){
                 </Row>
 
                 
-                <Row>
+                <Row className="px-1">
                     <Col>
                         <div className="border mt-3" style={{height:"300px"}}>
                             <div className="border p-1"><h6>World Map</h6></div>
