@@ -604,6 +604,12 @@ background-image: url(./LeftArrow-ImgWhite.png); background-size: 60%;}
 .Dashboard_title,.Categories_title{font-weight: 100;}
 .Dashboard_lists li{list-style-type: none;}
 .settingslogo{ width: 7%; height: 40px; background-color: rgb(84, 183, 211);}
+.Demo_Logout:hover{background-color: #eee;}
+.dashlogo{fill: rgb(163, 201, 229);}
+.dashlogo_box:hover .dashlogo{fill: white;}
+.Demo_User_lists{position: absolute; list-style-type: none; top: 60px; display: none;}
+.Demo_User_lists.show { display: block; }
+
 
 /* ---- Animation --- */
 .body-img,.aboutUs2-animation,.Testimonial-Rightside
