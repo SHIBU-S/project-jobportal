@@ -14,7 +14,7 @@ function JobCategory(){
                         <Col className="text-center">
                             <span className="jobcategory-title" style={{backgroundColor:"#2042e3",padding:"5px 18px",color:"#fff",animationDelay:"0.4s"}}>Job Category</span>
                             <h2 className="jobcategory-titlename mt-lg-3 p-3" style={{fontWeight:"700",position:"relative",animationDelay:"0.5s"}}>Choose Your Desire Category</h2>
-                            <p className="jobcategory-paraname lightcolorline" style={{animationDelay:"0.6s"}}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered <br /> alteration in some form.</p>
+                            <p className="jobcategory-paraname lightcolorline" style={{animationDelay:"0.6s"}}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered <br/> alteration in some form.</p>
                         </Col>
                     </Row>
                 </Container>
