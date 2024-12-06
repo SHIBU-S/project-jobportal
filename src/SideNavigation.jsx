@@ -1,9 +1,8 @@
 
 // import { Container, Row, Col } from "react-bootstrap";
 // import AdminPageImg from './AdminPage-Img.png';
-// import { Link } from "react-router-dom";
+// import {Link } from "react-router-dom";
 // import Dashboard from "./Dashboard";
-// import Catalog from "./Catalog";
 // import { useState } from "react";
 // import { RxHamburgerMenu } from "react-icons/rx";
 // import { AiFillDashboard } from "react-icons/ai";
@@ -13,6 +12,8 @@
 // import { FaCaretDown } from "react-icons/fa";
 // import { HiUserCircle } from "react-icons/hi2";
 // import { PiGreaterThan } from "react-icons/pi";
+// import { TfiAngleDoubleRight } from "react-icons/tfi";
+// import Categories from "./Categories";
 
 
 // function SideNavigation(){
@@ -24,7 +25,7 @@
 
 //     const [activePage, setActivePage] = useState(1); 
 //     const pageNames = ["Dashboard","Catalog","Service","Bannar","Blog","Users","Orders"];
-//     const pagelogos = [<AiFillDashboard />,<BsTagsFill/>]
+//     const pagelogos = [<AiFillDashboard />,<BsTagsFill/>];
 
 //     const items = [];
 //     for (let number = 1; number <= 7; number++) {
@@ -33,6 +34,16 @@
 //            {pagelogos[number-1]}  {pageNames[number - 1]}   {<PiGreaterThan className="ms-auto p-1"/>}
 //         </li>
 //       );
+//     }
+
+//     const [Catalog_submenuVisible, setCatalog_SubmenuVisible] = useState(false);
+//     const [Service_submenuVisible, setService_submenuVisible] = useState(false);
+
+//     function displayCatalogmenus(){
+//         setCatalog_SubmenuVisible(!Catalog_submenuVisible);
+//     };
+//     function displayServicemenus(){
+//         setService_submenuVisible(!Service_submenuVisible);
 //     }
 
 //     return(
@@ -70,13 +81,38 @@
 //                         </div>
 
 //                         <ul className="sidenav_lists" style={{paddingLeft:"0",height:"700px"}}>
-//                             {items}
+//                             {items[0]}
+//                             {items[1] && (<li onClick={displayCatalogmenus}>
+//                                             {items[1]}
+//                                             {Catalog_submenuVisible && (
+//                                                 <ul className="sidenav_submenus ps-0">
+//                                                     <li className="p-1 ps-4"><Link to="Cat"><TfiAngleDoubleRight/>Categories</Link></li>    
+//                                                     <li className="p-1 ps-4"><TfiAngleDoubleRight/>Attributes</li> 
+//                                                     <li className="p-1 ps-4"><TfiAngleDoubleRight/>Product</li>
+//                                                 </ul>
+//                                             )}
+//                                         </li>)}
+
+//                             {items[2] && (<li onClick={displayServicemenus}>
+//                                             {items[2]}
+//                                             {Service_submenuVisible && (
+//                                                 <ul>
+//                                                     <li>Hai</li>
+//                                                     <li>Hello</li>
+//                                                     <li></li>
+//                                                 </ul>
+//                                             )}
+//                                         </li>)}
+//                             {items[3]}
+//                             {items[4]}
+//                             {items[5]}
+//                             {items[6]}
 //                         </ul>
 //                     </Col>
 
 //                     <Col className="border px-0"  style={{backgroundColor:"#f6f6f6"}} >
-//                         {activePage === 1 && (<Dashboard/>)}
-//                         {activePage === 2 && (<Catalog/>)}
+//                         {activePage >= 1 && activePage <= 7 && (<Dashboard/>)}
+//                         {activePage === "Cat" && (<Categories/>)}
 //                     </Col> 
 //                 </Row>
 //             </Container>
@@ -92,13 +128,10 @@
 
 
 
-
-
 import { Container, Row, Col } from "react-bootstrap";
 import AdminPageImg from './AdminPage-Img.png';
-import { Link } from "react-router-dom";
+import {Link } from "react-router-dom";
 import Dashboard from "./Dashboard";
-import Catalog from "./Catalog";
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiFillDashboard } from "react-icons/ai";
@@ -109,6 +142,7 @@ import { FaCaretDown } from "react-icons/fa";
 import { HiUserCircle } from "react-icons/hi2";
 import { PiGreaterThan } from "react-icons/pi";
 import { TfiAngleDoubleRight } from "react-icons/tfi";
+import Categories from "./Categories";
 
 
 function SideNavigation(){
@@ -120,7 +154,7 @@ function SideNavigation(){
 
     const [activePage, setActivePage] = useState(1); 
     const pageNames = ["Dashboard","Catalog","Service","Bannar","Blog","Users","Orders"];
-    const pagelogos = [<AiFillDashboard />,<BsTagsFill/>]
+    const pagelogos = [<AiFillDashboard />,<BsTagsFill/>];
 
     const items = [];
     for (let number = 1; number <= 7; number++) {
@@ -181,7 +215,7 @@ function SideNavigation(){
                                             {items[1]}
                                             {Catalog_submenuVisible && (
                                                 <ul className="sidenav_submenus ps-0">
-                                                    <li className="p-1 ps-4"><TfiAngleDoubleRight/>Categories</li>    
+                                                    <li className="p-1 ps-4"><Link to="Cat"><TfiAngleDoubleRight/>Categories</Link></li>    
                                                     <li className="p-1 ps-4"><TfiAngleDoubleRight/>Attributes</li> 
                                                     <li className="p-1 ps-4"><TfiAngleDoubleRight/>Product</li>
                                                 </ul>
@@ -206,8 +240,8 @@ function SideNavigation(){
                     </Col>
 
                     <Col className="border px-0"  style={{backgroundColor:"#f6f6f6"}} >
-                        {activePage === 1 && (<Dashboard/>)}
-                        {activePage === 2 && (<Catalog/>)}
+                        {activePage >= 1 && activePage <= 7 && (<Dashboard/>)}
+                        {activePage === "Cat" && (<Categories/>)}
                     </Col> 
                 </Row>
             </Container>
@@ -216,6 +250,7 @@ function SideNavigation(){
 }
 
 export default SideNavigation;
+
 
 
 

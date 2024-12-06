@@ -1,3 +1,4 @@
+
 import { Container,Row,Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaPlus } from "react-icons/fa";
@@ -7,7 +8,7 @@ import { FaPen } from "react-icons/fa6";
 import { IoListSharp } from "react-icons/io5";
 import { PiGreaterThanLight } from "react-icons/pi";
 
-function Catalog(){
+function Categories(){
     return(
         <>
             <Container fluid>
@@ -57,4 +58,4 @@ function Catalog(){
     )
 }
 
-export default Catalog;
+export default Categories;

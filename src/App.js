@@ -11,8 +11,7 @@ import BrowseJobsPage from './BrowseJobs-Page';
 import BrowseCategoryPage from './BrowseCategory-Page';
 import SideNavigation from './SideNavigation';
 import BlogGridSidebarPage from './BlogGridSidebar-Page';
-import Dashboard from './Dashboard';
-import Categories from './Catalog';
+import Categories from './Categories';
 
 
 function App() {
@@ -32,7 +31,7 @@ function App() {
                   <Route path='/Admin' element={<AdminPage/>}/>
                   <Route path='/Admin/Sidenavigation' element={<SideNavigation/>}/>
 
-                  
+                  <Route path='/Cat' element={<Categories/>} />
               </Routes>
     </div>
   );
@@ -40,6 +39,4 @@ function App() {
 
 
 export default App;
-
-
 
