@@ -12,7 +12,7 @@ import BrowseCategoryPage from './BrowseCategory-Page';
 import SideNavigation from './SideNavigation';
 import BlogGridSidebarPage from './BlogGridSidebar-Page';
 import Dashboard from './Dashboard';
-import Categories from './Categories';
+import Categories from './Catalog';
 
 
 function App() {
@@ -32,9 +32,7 @@ function App() {
                   <Route path='/Admin' element={<AdminPage/>}/>
                   <Route path='/Admin/Sidenavigation' element={<SideNavigation/>}/>
 
-                  {/* <Route path='/Dashboard' element={<Dashboard/>}/> */}
-                  <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/categories" element={<Categories />} />
+                  
               </Routes>
     </div>
   );

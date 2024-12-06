@@ -604,11 +604,15 @@ background-image: url(./LeftArrow-ImgWhite.png); background-size: 60%;}
 .Dashboard_title,.Categories_title{font-weight: 100;}
 .Dashboard_lists li{list-style-type: none;}
 .settingslogo{ width: 7%; height: 40px; background-color: rgb(84, 183, 211);}
+.settingslogo:hover{background-color: rgb(70, 164, 190);}
 .Demo_Logout:hover{background-color: #eee;}
 .dashlogo{fill: rgb(163, 201, 229);}
 .dashlogo_box:hover .dashlogo{fill: white;}
 .Demo_User_lists{position: absolute; list-style-type: none; top: 60px; display: none;}
 .Demo_User_lists.show { display: block; }
+.sidenav_submenus{background-color: rgb(64, 64, 85);}
+.sidenav_submenus li{border-bottom: none; color: #7f8a9b;}
+.sidenav_submenus li:hover{color: white; background-color: #283443;}
 
 
 /* ---- Animation --- */

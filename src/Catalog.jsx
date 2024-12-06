@@ -5,8 +5,9 @@ import { FiRefreshCw } from "react-icons/fi";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { FaPen } from "react-icons/fa6";
 import { IoListSharp } from "react-icons/io5";
+import { PiGreaterThanLight } from "react-icons/pi";
 
-function Categories(){
+function Catalog(){
     return(
         <>
             <Container fluid>
@@ -14,14 +15,14 @@ function Categories(){
                     <Col className="d-flex align-items-center">
                         <h2 className="Categories_title">Categories</h2>
                         <ul className="d-flex pt-4 Dashboard_lists">
-                            <li><Link to="" className="text-decoration-none text-dark pe-3">Home</Link></li>
+                            <li><Link to="" className="text-decoration-none" style={{color:"grey"}}>Home <PiGreaterThanLight className="p-1"/></Link></li>
                             <li><Link to=""  className="text-decoration-none">Categories</Link></li>    
                         </ul>    
                     </Col>
 
                     <Col className=" d-flex align-items-center grid gap-2">
                         <div className="ms-auto p-2 d-flex bg-primary"><FaPlus fill="white"/></div>
-                        <div className="border p-2 d-flex"><FiRefreshCw/></div>
+                        <div className="border p-2 d-flex bg-white"><FiRefreshCw/></div>
                         <div className="border p-2 d-flex bg-danger"><RiDeleteBin5Fill fill="white"/></div>
                     </Col>
                 </Row>
@@ -56,4 +57,4 @@ function Categories(){
     )
 }
 
-export default Categories;
+export default Catalog;

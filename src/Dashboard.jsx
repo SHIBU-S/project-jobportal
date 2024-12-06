@@ -17,7 +17,7 @@ function Dashboard(){
                     <Col className="d-flex align-items-center">
                         <h2 className="Dashboard_title">Dashboard</h2>
                         <ul className="d-flex pt-4 Dashboard_lists">
-                            <li><Link to="" className="text-decoration-none text-dark">Home <PiGreaterThanLight className="p-1"/></Link></li>
+                            <li><Link to="" className="text-decoration-none" style={{color:"grey"}}>Home <PiGreaterThanLight className="p-1"/></Link></li>
                             <li><Link to=""  className="text-decoration-none">Dashboard</Link></li>    
                         </ul>    
                     </Col>
@@ -30,32 +30,32 @@ function Dashboard(){
                 <Row className="mt-3 px-1">
                     <Col md={3}>
                         <div className="border" style={{backgroundColor:"#1b80c2"}}>
-                            <div className="" style={{backgroundColor:"rgba(255, 255, 255, 0.1)"}}><p className="d-flex p-1 text-white ps-2" style={{textTransform:"uppercase",textShadow:"0 -1px 0 rgba(0, 0, 0, .4)"}}>Total Orders <span style={{color:"whitesmoke"}} className="ms-auto">0%</span></p></div>
-                            <div className="p-2 d-flex align-items-center dashlogo_box"><ImCart className="fs-1 dashlogo"/><h2 style={{fontSize:"42px",fontWeight:"400"}} className=" ms-auto text-white">757</h2></div>
+                            <div style={{backgroundColor:"rgba(255, 255, 255, 0.1)"}}><p className="d-flex p-1 text-white ps-2" style={{textTransform:"uppercase",textShadow:"0 -1px 0 rgba(0, 0, 0, .4)"}}>Total Orders <span style={{color:"whitesmoke"}} className="ms-auto">0%</span></p></div>
+                            <div className="px-2 mb-3 d-flex align-items-center dashlogo_box"><ImCart className="fs-1 dashlogo"/><h2 style={{fontSize:"42px",fontWeight:"400"}} className=" ms-auto text-white">757</h2></div>
                             <div className="p-1" style={{backgroundColor:"rgba(0, 0, 0, 0.1)"}}><Link className="text-decoration-none text-white ps-1" to="">View more..</Link></div>
                         </div>
                     </Col>
 
                     <Col md={3}>
                         <div className="border" style={{backgroundColor:"#1b80c2"}}>
-                            <div className="" style={{backgroundColor:"rgba(255, 255, 255, 0.1)"}}><p className="d-flex p-1 text-white ps-2" style={{textTransform:"uppercase",textShadow:"0 -1px 0 rgba(0, 0, 0, .4)"}}>Total Sales <span style={{color:"whitesmoke"}} className="ms-auto">0%</span></p></div>
-                            <div className="p-2 d-flex align-items-center dashlogo_box"><PiCreditCard className="fs-1 dashlogo"/><h2 style={{fontSize:"42px",fontWeight:"400"}} className=" ms-auto text-white">146.9K</h2></div>
+                            <div style={{backgroundColor:"rgba(255, 255, 255, 0.1)"}}><p className="d-flex p-1 text-white ps-2" style={{textTransform:"uppercase",textShadow:"0 -1px 0 rgba(0, 0, 0, .4)"}}>Total Sales <span style={{color:"whitesmoke"}} className="ms-auto">0%</span></p></div>
+                            <div className="px-2 mb-3 d-flex align-items-center dashlogo_box"><PiCreditCard className="fs-1 dashlogo"/><h2 style={{fontSize:"42px",fontWeight:"400"}} className=" ms-auto text-white">146.9K</h2></div>
                             <div className="p-1" style={{backgroundColor:"rgba(0, 0, 0, 0.1)"}}><Link className="text-decoration-none text-white ps-1" to="">View more..</Link></div>
                         </div>
                     </Col>
 
                     <Col md={3}>
                         <div className="border" style={{backgroundColor:"#1b80c2"}}>
-                            <div className="" style={{backgroundColor:"rgba(255, 255, 255, 0.1)"}}><p className="d-flex p-1 text-white ps-2" style={{textTransform:"uppercase",textShadow:"0 -1px 0 rgba(0, 0, 0, .4)"}}>Total Customers <span style={{color:"whitesmoke"}} className="ms-auto">0%</span></p></div>
-                            <div className="p-2 d-flex align-items-center dashlogo_box"><FaUser className="fs-1 dashlogo"/><h2 style={{fontSize:"42px",fontWeight:"400"}} className=" ms-auto text-white">900</h2></div>
+                            <div style={{backgroundColor:"rgba(255, 255, 255, 0.1)"}}><p className="d-flex p-1 text-white ps-2" style={{textTransform:"uppercase",textShadow:"0 -1px 0 rgba(0, 0, 0, .4)"}}>Total Customers <span style={{color:"whitesmoke"}} className="ms-auto">0%</span></p></div>
+                            <div className="px-2 mb-3 d-flex align-items-center dashlogo_box"><FaUser className="fs-1 dashlogo"/><h2 style={{fontSize:"42px",fontWeight:"400"}} className=" ms-auto text-white">900</h2></div>
                             <div className="p-1" style={{backgroundColor:"rgba(0, 0, 0, 0.1)"}}><Link className="text-decoration-none text-white ps-1" to="">View more..</Link></div>
                         </div>
                     </Col>
 
                     <Col md={3}>
                         <div className="border" style={{backgroundColor:"#1b80c2"}}>
-                            <div className="" style={{backgroundColor:"rgba(255, 255, 255, 0.1)"}}><p className="d-flex p-1 text-white ps-2" style={{textTransform:"uppercase",textShadow:"0 -1px 0 rgba(0, 0, 0, .4)"}}>People Online <span style={{color:"whitesmoke"}} className="ms-auto">0%</span></p></div>
-                            <div className="p-2 d-flex align-items-center dashlogo_box"><FaUsers className="fs-1 dashlogo"/><h2 style={{fontSize:"42px",fontWeight:"400"}} className=" ms-auto text-white">5</h2></div>
+                            <div style={{backgroundColor:"rgba(255, 255, 255, 0.1)"}}><p className="d-flex p-1 text-white ps-2" style={{textTransform:"uppercase",textShadow:"0 -1px 0 rgba(0, 0, 0, .4)"}}>People Online <span style={{color:"whitesmoke"}} className="ms-auto">0%</span></p></div>
+                            <div className="px-2 mb-3 d-flex align-items-center dashlogo_box"><FaUsers className="fs-1 dashlogo"/><h2 style={{fontSize:"42px",fontWeight:"400"}} className=" ms-auto text-white">5</h2></div>
                             <div className="p-1" style={{backgroundColor:"rgba(0, 0, 0, 0.1)"}}><Link className="text-decoration-none text-white ps-1" to="">View more..</Link></div>
                         </div>
                     </Col>
