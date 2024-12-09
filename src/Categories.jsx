@@ -22,7 +22,7 @@ function Categories(){
                     </Col>
 
                     <Col className=" d-flex align-items-center grid gap-2">
-                        <div className="ms-auto p-2 d-flex bg-primary"><FaPlus fill="white"/></div>
+                        <div className="ms-auto d-flex bg-primary"><Link to="AddCategory" className="p-1 px-2"><FaPlus fill="white"/></Link></div>
                         <div className="border p-2 d-flex bg-white"><FiRefreshCw/></div>
                         <div className="border p-2 d-flex bg-danger"><RiDeleteBin5Fill fill="white"/></div>
                     </Col>

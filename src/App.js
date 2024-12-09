@@ -11,7 +11,7 @@ import BrowseJobsPage from './BrowseJobs-Page';
 import BrowseCategoryPage from './BrowseCategory-Page';
 import SideNavigation from './SideNavigation';
 import BlogGridSidebarPage from './BlogGridSidebar-Page';
-import Categories from './Categories';
+import AddCategory from './AddCategory';
 
 
 function App() {
@@ -31,7 +31,8 @@ function App() {
                   <Route path='/Admin' element={<AdminPage/>}/>
                   <Route path='/Admin/Sidenavigation' element={<SideNavigation/>}/>
 
-                  <Route path='/Cat' element={<Categories/>} />
+                  <Route path='/AddCategory' element={<AddCategory/>}/>
+
               </Routes>
     </div>
   );

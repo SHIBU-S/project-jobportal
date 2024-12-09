@@ -96,14 +96,14 @@ function AdminPage() {
     );
 
     function AdminPagelogin(){
-        const username_pattern = /^([a-zA-Z]{2,30})$/;
-        const password_pattern = /^[A-Za-z]\w{7,14}$/;
+        const username_pattern = "demoadmin";
+        const password_pattern = "demopass";
 
         if(username === "" && password === "")
         {
             setShow(true);
         }
-        else if(!username_pattern.test(username) || !password_pattern.test(password))
+        else if(username_pattern!==username || password_pattern!==password )
         {
             setShow(true);
         }
