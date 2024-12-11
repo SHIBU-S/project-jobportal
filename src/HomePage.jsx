@@ -12,7 +12,6 @@ import PricingTable from './PricingTable';
 import LatestNews from './LatestNews';
 import Footer from './Footer';
 
-
 function HomePage() {
   return (
     <div className="App">
