@@ -611,8 +611,10 @@ background-image: url(./LeftArrow-ImgWhite.png); background-size: 60%;}
 .Demo_User_lists{position: absolute; list-style-type: none; top: 60px; display: none;}
 .Demo_User_lists.show { display: block; }
 .sidenav_submenus{background-color: rgb(64, 64, 85);}
-.sidenav_submenus li{border-bottom: none; color: #7f8a9b;}
-.sidenav_submenus li:hover{color: white; background-color: #283443;}
+.sidenav_submenus li a{border-bottom: none; color: #7f8a9b;}
+.sidenav_submenus li:hover{ background-color: #283443;}
+.sidenav_submenus li:hover a{color: white;}
+.nav-tabs .nav-link{border: none;}
 
 
 /* ---- Animation --- */

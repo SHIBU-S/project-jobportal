@@ -1,6 +1,6 @@
 
 import { Container,Row,Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaPlus } from "react-icons/fa";
 import { FiRefreshCw } from "react-icons/fi";
 import { RiDeleteBin5Fill } from "react-icons/ri";
@@ -8,15 +8,18 @@ import { FaPen } from "react-icons/fa6";
 import { IoListSharp } from "react-icons/io5";
 import { PiGreaterThanLight } from "react-icons/pi";
 import { useState } from "react";
-
+import AddCategory from "./AddCategory";
+import Nav from 'react-bootstrap/Nav';
 
 
 function Categories(){
 
     const [showAddCategory,setshowAddCategory] = useState(false);
+    const navigateto = useNavigate();
 
     function displaynew(){
         setshowAddCategory(true);
+        navigateto(<AddCategory/>)
     }
 
     return(
@@ -32,7 +35,7 @@ function Categories(){
                     </Col>
 
                     <Col className=" d-flex align-items-center grid gap-2">
-                        <div className="ms-auto p-2 d-flex bg-primary" onClick={displaynew}><FaPlus fill="white"/></div>
+                        <div className="ms-auto p-2 d-flex bg-primary" onClick={displaynew}><FaPlus fill="white"/></div> 
                         <div className="border p-2 d-flex bg-white"><FiRefreshCw/></div>
                         <div className="border p-2 d-flex bg-danger"><RiDeleteBin5Fill fill="white"/></div>
                     </Col>

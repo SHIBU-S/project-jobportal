@@ -138,25 +138,32 @@ import Nav from 'react-bootstrap/Nav';
 import { IoLogOutOutline } from "react-icons/io5";
 import { HiUserCircle } from "react-icons/hi2";
 import { FaCaretDown } from "react-icons/fa";
-// import DemoUserLogo from './DemoUserlogo.png';
+import DemoUserLogo from './DemoUserlogo.png';
 import AdminPageImg from './AdminPage-Img.png';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import Dashboard from './Dashboard';
 import { RxHamburgerMenu } from "react-icons/rx";
+import { TfiAngleDoubleRight } from "react-icons/tfi";
+import { PiGreaterThan } from "react-icons/pi";
 import Categories from './Categories';
+
 
 function SideNavigation() {
     const [activeTab, setActiveTab] = useState("Dashboard");
+    const [activesubmenus, setactivesubmenus] = useState(null);
     const [isDisplay, setIsDisplay] = useState(false);
+    const [Catalog_submenuVisible, setCatalog_SubmenuVisible] = useState(false);
 
     function displaylists() {
         setIsDisplay(true);
     }
-
     const handleTabClick = (tab) => {
         setActiveTab(tab);
     };
+    function displayCatalogmenus(){
+        setCatalog_SubmenuVisible(!Catalog_submenuVisible);
+    }
 
     return (
         <>
@@ -170,7 +177,7 @@ function SideNavigation() {
 
                     <Col className="pe-0 d-flex align-items-center">
                         <div className="position-relative Demo_Logout d-flex p-1 px-2 border align-items-center ms-auto gap-2" onClick={displaylists}>
-                            {/* <img src={DemoUserLogo} className="img-fluid rounded-circle" alt="..." /> */}
+                            <img src={DemoUserLogo} className="img-fluid rounded-circle" alt="..." />
                             Demo User <FaCaretDown />
                             <ul className={`bg-white px-4 py-2 Demo_User_lists ${isDisplay ? 'show' : ''}`}>
                                 <li className=" d-flex align-items-center gap-1"><HiUserCircle />Your Profile</li>
@@ -187,39 +194,45 @@ function SideNavigation() {
             </Container>
 
             <Container fluid>
-                <Row>
-                    <Col md={2}>
-                        <Nav justify variant="tabs" activeKey={activeTab} className='d-block'>
+                <Row style={{height:"700px"}}>
+                    <Col md={2} className='px-0'>
+                        <Nav justify variant="tabs" activeKey={activeTab} className='d-block sidenav_lists' style={{paddingLeft:"0",height:"700px"}}>
                             <div className="p-2" style={{ backgroundColor: "#19222E" }}>
                                 <span className="text-white p-1 d-flex align-items-center"><RxHamburgerMenu /> NAVIGATION</span>
                             </div>
-                            <Nav.Item className='text-start'>
-                                <Nav.Link eventKey="dashboard" onClick={() => handleTabClick('Dashboard')}>Dashboard</Nav.Link>
+                            <Nav.Item className='text-start d-flex'>
+                                <Nav.Link className='text-white d-flex align-items-center' eventKey="dashboard" onClick={() => handleTabClick('Dashboard')}>Dashboard <PiGreaterThan className="ms-auto p-1"/></Nav.Link>
                             </Nav.Item>
                             <Nav.Item className='text-start'>
-                                <Nav.Link eventKey="categories" onClick={() => handleTabClick('Categories')}>Categories</Nav.Link>
+                                <Nav.Link eventKey="catalog" className='text-white d-flex align-items-center' onClick={displayCatalogmenus}>Catalog <PiGreaterThan className="ms-auto p-1"/></Nav.Link>
+                                    {Catalog_submenuVisible && (
+                                        <ul className='sidenav_submenus ps-0'>
+                                            <li className="p-1 ps-4"><Nav.Link  eventKey="catagories" onClick={()=>{setActiveTab(null);setactivesubmenus("Categories")}}><TfiAngleDoubleRight/> Catagories</Nav.Link></li>
+                                            <li className="p-1 ps-4"><Nav.Link eventKey="Attributes"><TfiAngleDoubleRight/> Attributes</Nav.Link></li>
+                                            <li className="p-1 ps-4"><Nav.Link eventKey="Product"><TfiAngleDoubleRight/> Product</Nav.Link></li>
+                                        </ul>
+                                    )}
                             </Nav.Item>
                             <Nav.Item className='text-start'>
-                                <Nav.Link eventKey="service" onClick={() => handleTabClick('Service')}>Service</Nav.Link>
+                                <Nav.Link className='text-white d-flex align-items-center' eventKey="service" onClick={() => handleTabClick('Service')}>Service <PiGreaterThan className="ms-auto p-1"/></Nav.Link>
                             </Nav.Item>
                             <Nav.Item className='text-start'>
-                                <Nav.Link eventKey="banner" onClick={() => handleTabClick('Banner')}>Banner</Nav.Link>
+                                <Nav.Link className='text-white d-flex align-items-center' eventKey="banner" onClick={() => handleTabClick('Banner')}>Banner <PiGreaterThan className="ms-auto p-1"/></Nav.Link>
                             </Nav.Item>
                             <Nav.Item className='text-start'>
-                                <Nav.Link eventKey="blog" onClick={() => handleTabClick('Blog')}>Blog</Nav.Link>
+                                <Nav.Link className='text-white d-flex align-items-center' eventKey="blog" onClick={() => handleTabClick('Blog')}>Blog <PiGreaterThan className="ms-auto p-1"/></Nav.Link>
                             </Nav.Item>
                             <Nav.Item className='text-start'>
-                                <Nav.Link eventKey="users" onClick={() => handleTabClick('Users')}>Users</Nav.Link>
+                                <Nav.Link className='text-white d-flex align-items-center' eventKey="users" onClick={() => handleTabClick('Users')}>Users <PiGreaterThan className="ms-auto p-1"/></Nav.Link>
                             </Nav.Item>
                             <Nav.Item className='text-start'>
-                                <Nav.Link eventKey="orders" onClick={() => handleTabClick('Orders')}>Orders</Nav.Link>
+                                <Nav.Link className='text-white d-flex align-items-center' eventKey="orders" onClick={() => handleTabClick('Orders')}>Orders <PiGreaterThan className="ms-auto p-1"/></Nav.Link>
                             </Nav.Item>
                         </Nav>
                     </Col>
 
                     <Col>
-                        {activeTab ? (<Dashboard/>) : (null) }
-                        {activeTab === "Categories" ? (<Categories />) : (null) }
+                        {activeTab ? (<Dashboard/>) : (activesubmenus==="Categories" && (<Categories/>)) }
                     </Col>
                 </Row>
             </Container>
