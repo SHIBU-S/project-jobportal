@@ -1,4 +1,3 @@
-
 import { Container,Row,Col } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { FaPlus } from "react-icons/fa";
@@ -9,17 +8,16 @@ import { IoListSharp } from "react-icons/io5";
 import { PiGreaterThanLight } from "react-icons/pi";
 import { useState } from "react";
 import AddCategory from "./AddCategory";
-import Nav from 'react-bootstrap/Nav';
 
 
-function Categories(){
+function Categories({setActiveTab}){
 
     const [showAddCategory,setshowAddCategory] = useState(false);
     const navigateto = useNavigate();
 
     function displaynew(){
         setshowAddCategory(true);
-        navigateto(<AddCategory/>)
+        setActiveTab('AddCategory');
     }
 
     return(
