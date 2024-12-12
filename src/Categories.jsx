@@ -7,13 +7,11 @@ import { FaPen } from "react-icons/fa6";
 import { IoListSharp } from "react-icons/io5";
 import { PiGreaterThanLight } from "react-icons/pi";
 import { useState } from "react";
-import AddCategory from "./AddCategory";
 
 
 function Categories({setActiveTab}){
 
     const [showAddCategory,setshowAddCategory] = useState(false);
-    const navigateto = useNavigate();
 
     function displaynew(){
         setshowAddCategory(true);
@@ -22,8 +20,8 @@ function Categories({setActiveTab}){
 
     return(
         <>
-            <Container fluid>
-                <Row className="border">
+            <Container fluid  className="adminpagebg ">
+                <Row className="px-2">
                     <Col className="d-flex align-items-center">
                         <h2 className="Categories_title">Categories</h2>
                         <ul className="d-flex pt-4 Dashboard_lists">
@@ -40,7 +38,7 @@ function Categories({setActiveTab}){
                 </Row>
             </Container>
 
-            <Container fluid>
+            <Container fluid className="adminpagebg border px-3">
                 <div className="border p-2 mt-3"><h6 className="Categories_title"><IoListSharp /> Category List</h6></div>
 
                 <div className="border p-3 bg-white" style={{height:"500px"}}>

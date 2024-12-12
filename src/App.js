@@ -32,7 +32,6 @@ function App() {
                   <Route path='/Admin/Sidenavigation' element={<SideNavigation/>}/>
 
                   <Route path='/AddCategory' element={<AddCategory/>}/>
-
               </Routes>
     </div>
   );

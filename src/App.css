@@ -615,7 +615,9 @@ background-image: url(./LeftArrow-ImgWhite.png); background-size: 60%;}
 .sidenav_submenus li:hover{ background-color: #283443;}
 .sidenav_submenus li:hover a{color: white;}
 .nav-tabs .nav-link{border: none;}
+.adminpagebg{background-color: #f6f6f6;}
 
+/* ---Add Category--- */
 
 /* ---- Animation --- */
 .body-img,.aboutUs2-animation,.Testimonial-Rightside

@@ -12,7 +12,7 @@ import { FaChartBar } from "react-icons/fa";
 function Dashboard(){
     return(
         <>
-            <Container fluid>
+            <Container fluid className="adminpagebg px-3">
                 <Row className="border px-1">
                     <Col className="d-flex align-items-center">
                         <h2 className="Dashboard_title">Dashboard</h2>
