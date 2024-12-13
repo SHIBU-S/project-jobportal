@@ -203,32 +203,32 @@ function SideNavigation() {
                             <div className="p-2" style={{ backgroundColor: "#19222E" }}>
                                 <span className="text-white p-1 d-flex align-items-center"><RxHamburgerMenu /> NAVIGATION</span>
                             </div>
-                            <Nav.Item className='text-start d-flex'>
+                            <Nav.Item className='text-start d-flex navitem'>
                                 <Nav.Link className='text-white d-flex align-items-center' eventKey="dashboard" onClick={() => handleTabClick('Dashboard')}>Dashboard <PiGreaterThan className="ms-auto p-1"/></Nav.Link>
                             </Nav.Item>
-                            <Nav.Item className='text-start'>
+                            <Nav.Item className='text-start navitem'>
                                 <Nav.Link eventKey="catalog" className='text-white d-flex align-items-center' onClick={displayCatalogmenus}>Catalog <PiGreaterThan className="ms-auto p-1"/></Nav.Link>
                                     {Catalog_submenuVisible && (
-                                        <ul className='sidenav_submenus ps-0'>
+                                        <ul className='sidenav_submenus ps-0 mb-0'>
                                             <li className="p-1 ps-4"><Nav.Link eventKey="catagories" onClick={() => { setActiveTab('Categories'); setactivesubmenus("Categories"); }}><TfiAngleDoubleRight/> Categories</Nav.Link></li>
                                             <li className="p-1 ps-4"><Nav.Link eventKey="Attributes"><TfiAngleDoubleRight/> Attributes</Nav.Link></li>
                                             <li className="p-1 ps-4"><Nav.Link eventKey="Product"><TfiAngleDoubleRight/> Product</Nav.Link></li>
                                         </ul>
                                     )}
                             </Nav.Item>
-                            <Nav.Item className='text-start'>
+                            <Nav.Item className='text-start navitem'>
                                 <Nav.Link className='text-white d-flex align-items-center' eventKey="service" onClick={() => handleTabClick('Service')}>Service <PiGreaterThan className="ms-auto p-1"/></Nav.Link>
                             </Nav.Item>
-                            <Nav.Item className='text-start'>
+                            <Nav.Item className='text-start navitem'>
                                 <Nav.Link className='text-white d-flex align-items-center' eventKey="banner" onClick={() => handleTabClick('Banner')}>Banner <PiGreaterThan className="ms-auto p-1"/></Nav.Link>
                             </Nav.Item>
-                            <Nav.Item className='text-start'>
+                            <Nav.Item className='text-start navitem'>
                                 <Nav.Link className='text-white d-flex align-items-center' eventKey="blog" onClick={() => handleTabClick('Blog')}>Blog <PiGreaterThan className="ms-auto p-1"/></Nav.Link>
                             </Nav.Item>
-                            <Nav.Item className='text-start'>
+                            <Nav.Item className='text-start navitem'>
                                 <Nav.Link className='text-white d-flex align-items-center' eventKey="users" onClick={() => handleTabClick('Users')}>Users <PiGreaterThan className="ms-auto p-1"/></Nav.Link>
                             </Nav.Item>
-                            <Nav.Item className='text-start'>
+                            <Nav.Item className='text-start navitem'>
                                 <Nav.Link className='text-white d-flex align-items-center' eventKey="orders" onClick={() => handleTabClick('Orders')}>Orders <PiGreaterThan className="ms-auto p-1"/></Nav.Link>
                             </Nav.Item>
                         </Nav>
@@ -236,12 +236,9 @@ function SideNavigation() {
 
                     <Col className='px-0'>
                     {
-                        (activeTab !== "Categories" && (
-                            (activeTab === "Dashboard" || activeTab === "Service" || activeTab === "Banner" || activeTab === "Blog" || activeTab === "Users" || activeTab === "Orders") && 
-                                <Dashboard />
-                            )
-                        )
-                        || (activeTab === "Categories" && <Categories setActiveTab={setActiveTab}/> || activeTab === "AddCategory" && <AddCategory />)
+                         ((activeTab === "Dashboard" || activeTab === "Service" || activeTab === "Banner" || activeTab === "Blog" || activeTab === "Users" || activeTab === "Orders") && <Dashboard />) 
+                        || ( activeTab === "Categories" && <Categories setActiveTab={setActiveTab}/> )
+                        || (activeTab === "AddCategory" &&  <AddCategory setActiveTab={setActiveTab}/>)
                     }
                     </Col>
 
@@ -253,3 +250,6 @@ function SideNavigation() {
 }
 
 export default SideNavigation;
+
+
+

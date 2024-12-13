@@ -545,6 +545,9 @@ background-image: url(./LeftArrow-ImgWhite.png); background-size: 60%;}
 .footer-social ul li a:hover svg{fill: white;}
 .right ul li{list-style-type: none; display: inline-block;}
 
+/* BlogSingle */
+.blogsingle-lists li{list-style-type: none; display: inline-block;}
+
 
 /* AboutUsPage-Img */
 .AboutUsPage{position: relative; background-image: url(./AboutUsPage-Img.jpg); background-position: center; background-size: cover; z-index: 2;}
@@ -592,8 +595,8 @@ background-image: url(./LeftArrow-ImgWhite.png); background-size: 60%;}
 
 .alert-dismissible .btn-close{padding: 0; top: 17px; right: 8px; width: 3%; height: 10px;}
 .sidenav_lists{background-color: #283443;}
-.sidenav_lists li{list-style-type: none; border-bottom: 1px solid rgb(80, 79, 79);}
-.sidenav_lists li:hover{background-color: #46505c;}
+.sidenav_lists .navitem{border-bottom: 1px solid rgb(80, 79, 79);}
+.sidenav_lists .navitem:hover{background-color: #46505c;}
 .BlogGridCategorieslists li{position: relative;}
 .BlogGridCategorieslists li a span{position: absolute; right: 0; top: 0; border: 1px solid #eee; border-radius: 4px; height: 35px; width: 35px;}
 .BlogGridCategorieslists li a:hover span{background-color: blue; color: white;}

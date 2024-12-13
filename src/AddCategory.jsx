@@ -9,12 +9,10 @@ import { FaRegSave } from "react-icons/fa";
 import { FcUpLeft } from "react-icons/fc";
 
 
-function AddCategory(){
-
-    const navigateto = useNavigate();
+function AddCategory({setActiveTab}){
 
     function backtocategory(){
-        navigateto("/categories");
+        setActiveTab("Categories");
     }
 
     return(
@@ -89,3 +87,5 @@ function AddCategory(){
 }
 
 export default AddCategory;
+
+
