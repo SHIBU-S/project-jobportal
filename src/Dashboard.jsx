@@ -8,6 +8,7 @@ import { MdSettings } from "react-icons/md";
 import { PiGreaterThanLight } from "react-icons/pi";
 import { BiWorld } from "react-icons/bi";
 import { FaChartBar } from "react-icons/fa";
+import worldmap from "./Worldmap-img.png";
 
 function Dashboard(){
     return(
@@ -64,9 +65,10 @@ function Dashboard(){
                 
                 <Row className="px-1">
                     <Col>
-                        <div className="border mt-3" style={{height:"300px"}}>
+                        <div className="border mt-3" style={{height:"auto"}}>
                             <div className="border p-2"><h6 className="d-flex align-items-center gap-1"><BiWorld/> World Map</h6></div>
-                            <div><iframe width="100%" height={250} src="https://maps.google.com/maps?q=New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"></iframe></div>
+                           {/* <div><iframe width="100%" height={250} src="https://maps.google.com/maps?q=New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"></iframe></div> */}
+                            <div><img style={{width:"100%", height:"250px"}} src={worldmap} className="img-fluid" alt="..." /></div>
                         </div>
                     </Col>
 

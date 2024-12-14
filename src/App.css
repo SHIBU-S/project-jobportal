@@ -531,25 +531,29 @@ background-image: url(./LeftArrow-ImgWhite.png); background-size: 60%;}
     background-color: #2042e3;
     color: #fff;
 }
-.footer-social ul li{display: inline-block;}
-.footer-social ul li a{
+.footer-social ul li,.blogsingle-social ul li{display: inline-block;}
+.footer-social ul li a{color: #081828; background-color: #E8ECF1;}
+.footer-social ul li a,.blogsingle-social ul li a{
     font-size: 14px;
-    color: #081828; height: 40px;
+    height: 40px;
     width: 40px; text-align: center;
     display: block;
     line-height: 40px;
-    background-color: #E8ECF1; border: none;
+     border: none;
     border-radius: 4px;
 }
-.footer-social ul li a:hover{background-color: blue;}
-.footer-social ul li a:hover svg{fill: white;}
+.footer-social ul li a:hover,.blogsingle-social ul li a:hover{background-color: blue;}
+.footer-social ul li a:hover svg,.blogsingle-social ul li a:hover svg{fill: white;}
 .right ul li{list-style-type: none; display: inline-block;}
 
 /* BlogSingle */
 .blogsingle-lists li{list-style-type: none; display: inline-block;}
 .blogsinglelists{background-color: blue; height: 23px;}
 .blogsinglecleansingbox{position: relative;}
-.blogsinglecleansingboxpattern{position: absolute; top: -82px; right: -82px; transform: rotate(45deg);}
+/* .blogsinglecleansingboxpattern{position: absolute; top: -82px; right: -82px; transform: rotate(45deg);} */
+.blogsingle-social ul li a{color: gray; border: 1px solid rgb(223, 222, 222);}
+.commentbox{position: relative;}
+.commentboxreply{position: absolute; right: 0; top: 0;}
 
 /* AboutUsPage-Img */
 .AboutUsPage{position: relative; background-image: url(./AboutUsPage-Img.jpg); background-position: center; background-size: cover; z-index: 2;}
