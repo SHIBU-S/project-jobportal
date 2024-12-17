@@ -37,16 +37,23 @@ function AddCategory({setActiveTab}){
             <Container fluid className="adminpagebg border px-3">
                 <Row>
                     <Col>
-                        <div className="border bg-white mt-3" style={{height:"auto"}}>
+                        <div className="border mt-3" style={{height:"auto"}}>
                             <div className="border p-2"><h6 className="d-flex fw-lighter"><FaPencilAlt className="me-2"/> Add category</h6></div>
 
-                            <div>
+                            <div className="bg-white">
                                 <Row>
                                     <Col sm={2} className="d-flex align-items-center"><span className="ms-auto d-flex"><RiStarSFill className="p-1" fill="red"/>Category Name :</span></Col>
                                     <Col className="px-4"> 
                                         <FloatingLabel controlId="floatingInput" label="CategoryName" className="mb-3 mt-3" >
                                             <Form.Control type="text" className="p-0" placeholder="Category Name" />
                                         </FloatingLabel>
+                                    </Col>
+                                </Row>
+
+                                <Row>
+                                    <Col sm={2} className="d-flex align-items-center"><span className="ms-auto d-flex">Description :</span></Col>
+                                    <Col className="px-4"> 
+                                    
                                     </Col>
                                 </Row>
 
@@ -72,7 +79,7 @@ function AddCategory({setActiveTab}){
                                     <Col sm={2} className="d-flex align-items-center"><span className="ms-auto">Image :</span></Col>
                                     <Col className="px-4"> 
                                         <FloatingLabel controlId="floatingInput" className="mb-3 mt-3" >
-                                            <Form.Control type="file" className="p-0"  />
+                                            <Form.Control type="file" className="py-3"  />
                                         </FloatingLabel>
                                     </Col>
                                 </Row>
