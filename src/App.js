@@ -1,5 +1,6 @@
 
 import { Routes,Route } from 'react-router-dom';
+import '../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import './App.css';
 
 import AboutUsPage from './AboutUs-Page';

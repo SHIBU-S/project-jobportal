@@ -1,5 +1,5 @@
 import { Container,Row,Col } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { PiGreaterThanLight } from "react-icons/pi";
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
@@ -7,9 +7,18 @@ import { RiStarSFill } from "react-icons/ri";
 import { FaPencilAlt } from "react-icons/fa";
 import { FaRegSave } from "react-icons/fa";
 import { FcUpLeft } from "react-icons/fc";
+import { EditorState } from 'draft-js';
+import { Editor } from 'react-draft-wysiwyg';
+import { useState } from "react";
 
 
 function AddCategory({setActiveTab}){
+
+    const [editorState, setEditorState] = useState(EditorState.createEmpty());
+
+  const onEditorStateChange = (newEditorState) => {
+    setEditorState(newEditorState);
+  };
 
     function backtocategory(){
         setActiveTab("Categories");
@@ -40,8 +49,8 @@ function AddCategory({setActiveTab}){
                         <div className="border mt-3" style={{height:"auto"}}>
                             <div className="border p-2"><h6 className="d-flex fw-lighter"><FaPencilAlt className="me-2"/> Add category</h6></div>
 
-                            <div className="bg-white">
-                                <Row>
+                            <div className="bg-white px-2">
+                                <Row className="border">
                                     <Col sm={2} className="d-flex align-items-center"><span className="ms-auto d-flex"><RiStarSFill className="p-1" fill="red"/>Category Name :</span></Col>
                                     <Col className="px-4"> 
                                         <FloatingLabel controlId="floatingInput" label="CategoryName" className="mb-3 mt-3" >
@@ -51,9 +60,14 @@ function AddCategory({setActiveTab}){
                                 </Row>
 
                                 <Row>
-                                    <Col sm={2} className="d-flex align-items-center"><span className="ms-auto d-flex">Description :</span></Col>
+                                    <Col sm={2} className="d-flex "><span className="ms-auto d-flex">Description :</span></Col>
                                     <Col className="px-4"> 
-                                    
+                                        <Editor
+                                            editorState={editorState}
+                                            wrapperClassName="demo-wrapper"
+                                            editorClassName="demo-editor"
+                                            onEditorStateChange={onEditorStateChange}
+                                        />
                                     </Col>
                                 </Row>
 
@@ -94,5 +108,4 @@ function AddCategory({setActiveTab}){
 }
 
 export default AddCategory;
-
 

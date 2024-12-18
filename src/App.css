@@ -627,6 +627,13 @@ background-image: url(./LeftArrow-ImgWhite.png); background-size: 60%;}
 .adminpagebg{background-color: #f6f6f6;}
 
 /* ---Add Category--- */
+.rdw-editor-toolbar{background-color: #f6f6f6;}
+.rdw-editor-main{
+    border: 1px solid #F1F1F1;
+    height: 350px;
+}
+.rdw-editor-toolbar{margin-bottom: 0px;}
+.rdw-block-wrapper,.rdw-colorpicker-wrapper,.rdw-link-wrapper{display: none;}
 
 /* ---- Animation --- */
 .body-img,.aboutUs2-animation,.Testimonial-Rightside
