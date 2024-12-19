@@ -16,9 +16,9 @@ function AddCategory({setActiveTab}){
 
     const [editorState, setEditorState] = useState(EditorState.createEmpty());
 
-  const onEditorStateChange = (newEditorState) => {
-    setEditorState(newEditorState);
-  };
+    const onEditorStateChange = (newEditorState) => {
+        setEditorState(newEditorState);
+    };
 
     function backtocategory(){
         setActiveTab("Categories");
@@ -26,7 +26,7 @@ function AddCategory({setActiveTab}){
 
     return(
         <>
-            <Container fluid className="adminpagebg ">
+            <Container fluid className="adminpagebg">
                 <Row className="border px-2">
                     <Col className="d-flex align-items-center">
                         <h2 className="Categories_title">Categories</h2>
@@ -47,13 +47,13 @@ function AddCategory({setActiveTab}){
                 <Row>
                     <Col>
                         <div className="border mt-3" style={{height:"auto"}}>
-                            <div className="border p-2"><h6 className="d-flex fw-lighter"><FaPencilAlt className="me-2"/> Add category</h6></div>
+                            <div className="border p-2"><h6 className="d-flex fw-lighter"><FaPencilAlt className="me-2"/> Add Category</h6></div>
 
                             <div className="bg-white px-2">
-                                <Row className="border">
+                                <Row>
                                     <Col sm={2} className="d-flex align-items-center"><span className="ms-auto d-flex"><RiStarSFill className="p-1" fill="red"/>Category Name :</span></Col>
                                     <Col className="px-4"> 
-                                        <FloatingLabel controlId="floatingInput" label="CategoryName" className="mb-3 mt-3" >
+                                        <FloatingLabel controlId="floatingInput" label="Category Name" className="mb-3 mt-3" >
                                             <Form.Control type="text" className="p-0" placeholder="Category Name" />
                                         </FloatingLabel>
                                     </Col>

@@ -39,7 +39,7 @@ function Categories({setActiveTab}){
             </Container>
 
             <Container fluid className="adminpagebg border px-3">
-                <div className="border p-2 mt-3"><h6 className="Categories_title"><IoListSharp /> Category List</h6></div>
+                <div className="border p-2 mt-3 pb-0"><h6 className="Categories_title p-1"><IoListSharp/> Category List</h6></div>
 
                 <div className="border p-3 bg-white" style={{height:"500px"}}>
                     <table style={{width:"100%"}} className="border">
@@ -57,7 +57,7 @@ function Categories({setActiveTab}){
                                 <td className="border p-2 py-3" style={{width:"1px"}}><input type="checkbox"></input></td>
                                 <td className="border p-2" style={{width:"55%"}}></td>
                                 <td className="border p-2 text-end"></td>
-                                <td className="p-2 d-flex"><div className="ms-auto p-2 d-flex align-items-center bg-primary"><FaPen fill="white"/></div></td>
+                                <td className="p-2 d-flex mt-1"><div className="ms-auto p-2 d-flex align-items-center bg-primary"><FaPen fill="white"/></div></td>
                             </tr>
                         </tbody>
                     </table>

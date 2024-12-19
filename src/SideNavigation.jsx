@@ -146,11 +146,6 @@ function SideNavigation() {
     function displaylists() {
         setIsDisplay(true);
     }
-
-    // function handleTabClick(tab){
-    //     setActiveTab(tab);
-    // };
-
     function displayCatalogmenus(){
         setCatalog_SubmenuVisible(!Catalog_submenuVisible);
     }
@@ -185,7 +180,7 @@ function SideNavigation() {
 
             <Container fluid>
                 <Row style={{height:"700px"}}>
-                    <Col md={2} className='px-0'>
+                    <Col md={4} lg={2} className='px-0'>
                         <Nav justify variant="tabs" activeKey={activeTab} className='d-block sidenav_lists' style={{paddingLeft:"0",height:"700px"}}>
                             <div className="p-2" style={{ backgroundColor: "#19222E" }}>
                                 <span className="text-white p-1 d-flex align-items-center"><RxHamburgerMenu /> NAVIGATION</span>
