@@ -14,6 +14,7 @@ import SideNavigation from './SideNavigation';
 import BlogGridSidebarPage from './BlogGridSidebar-Page';
 import AddCategory from './AddCategory';
 import BlogSingle from './BlogSingle';
+import BlogSingleSidebar from './BlogSingleSidebar';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
                   <Route path='BrowseCategories' element={<BrowseCategoryPage/>}/>
                   <Route path='/BlogGridSidebar' element={<BlogGridSidebarPage/>}/>
                   <Route path='/BlogSingle' element={<BlogSingle/>}/>
+                  <Route path='/BlogSingleSidebar' element={<BlogSingleSidebar/>}/>
                   <Route path='/Contact' element={<ContactUsPage/>}/>
 
                   <Route path='/Admin' element={<AdminPage/>}/>

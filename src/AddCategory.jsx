@@ -36,7 +36,7 @@ function AddCategory({setActiveTab}){
                         </ul>    
                     </Col>
 
-                    <Col className=" d-flex align-items-center justify-content-end grid gap-2">
+                    <Col className="d-flex align-items-center justify-content-end grid gap-2">
                         <div className="bg-primary p-2 d-flex"><FaRegSave fill="white"/></div>
                         <div className="bg-white p-2 d-flex" onClick={backtocategory}><FcUpLeft/></div>
                     </Col>
@@ -50,7 +50,7 @@ function AddCategory({setActiveTab}){
                             <div className="border p-2"><h6 className="d-flex fw-lighter"><FaPencilAlt className="me-2"/> Add Category</h6></div>
 
                             <div className="bg-white px-2">
-                                <Row>
+                                <Row className="adminpanelformpage">
                                     <Col sm={2} className="d-flex align-items-center"><span className="ms-auto d-flex"><RiStarSFill className="p-1" fill="red"/>Category Name :</span></Col>
                                     <Col className="px-4"> 
                                         <FloatingLabel controlId="floatingInput" label="Category Name" className="mb-3 mt-3" >
@@ -59,7 +59,7 @@ function AddCategory({setActiveTab}){
                                     </Col>
                                 </Row>
 
-                                <Row>
+                                <Row className="adminpanelformpage mt-3 pb-3">
                                     <Col sm={2} className="d-flex "><span className="ms-auto d-flex">Description :</span></Col>
                                     <Col className="px-4"> 
                                         <Editor
@@ -71,7 +71,7 @@ function AddCategory({setActiveTab}){
                                     </Col>
                                 </Row>
 
-                                <Row>
+                                <Row className="adminpanelformpage ">
                                     <Col sm={2} className="d-flex align-items-center"><span className="ms-auto">Salary :</span></Col>
                                     <Col className="px-4"> 
                                         <FloatingLabel controlId="floatingInput" label="Salary" className="mb-3 mt-3" >
@@ -80,7 +80,7 @@ function AddCategory({setActiveTab}){
                                     </Col>
                                 </Row>
 
-                                <Row>
+                                <Row className="adminpanelformpage ">
                                     <Col sm={2} className="d-flex align-items-center"><span className="ms-auto">Location :</span></Col>
                                     <Col className="px-4"> 
                                         <FloatingLabel controlId="floatingInput" label="Location" className="mb-3 mt-3" >
@@ -89,7 +89,7 @@ function AddCategory({setActiveTab}){
                                     </Col>
                                 </Row>
 
-                                <Row>
+                                <Row className="adminpanelformpage ">
                                     <Col sm={2} className="d-flex align-items-center"><span className="ms-auto">Image :</span></Col>
                                     <Col className="px-4"> 
                                         <FloatingLabel controlId="floatingInput" className="mb-3 mt-3" >

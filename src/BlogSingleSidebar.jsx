@@ -1,20 +1,19 @@
+import Header from "./Header";
 import { Container,Row,Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Header from "./Header";
-import BlogSingleImg from "./blog-single-img.jpg";
-import { LiaCommentDots } from "react-icons/lia";
-import { GoEye } from "react-icons/go";
-import blogsingleimage1 from './blog-singleimage-1.jpeg';
-import blogsingleimage2 from './blog-singleimage-2.jpeg';
-import { FaGreaterThan } from "react-icons/fa6";
-import blogsinglepattern from "./blogsingle-patern1.png";
 import comment1Img from "./comment1-Img.png";
 import comment2Img from "./comment2-Img.png";
 import comment3Img from "./comment3-Img.png";
+import { FaGreaterThan } from "react-icons/fa6";
+import blogsingleimage1 from './blog-singleimage-1.jpeg';
+import blogsingleimage2 from './blog-singleimage-2.jpeg';
+import { GoEye } from "react-icons/go";
+import { LiaCommentDots } from "react-icons/lia";
+import BlogSingleImg from "./blog-single-img.jpg";
 import Footer from "./Footer";
 
 
-function BlogSingle(){
+function BlogSingleSidebar(){
     return(
         <>
             <Header/>
@@ -24,12 +23,12 @@ function BlogSingle(){
                                 <Row>
                                     <Col>
                                         <div className="text-white">
-                                            <h1 className="SubPageTitle pb-4">Blog Single</h1>
+                                            <h1 className="SubPageTitle pb-4">Blog Single Sidebar</h1>
                                             <p className="mt-3">Business plan draws on a wide range of knowledge from different business <br />
                                                                 disciplines.Business draws on a wide range of different business .</p>
                                             <ul className="breadcrumb-nav d-flex ps-0 mt-5">
                                                 <li className="pe-3" style={{borderRight:"3px solid white"}}><Link to="/" style={{color:"#fff"}}>Home</Link></li>
-                                                <li className="ps-3">Blog Single</li>
+                                                <li className="ps-3">Blog Single Sidebar</li>
                                             </ul>
                                         </div>
                                     </Col>
@@ -37,9 +36,12 @@ function BlogSingle(){
                             </Container>
             </Container>
 
-            <Container fluid style={{backgroundColor:"#f6f9fc"}}>
-                <Container className="mt-5 pt-0 pt-lg-5 mb-5 pb-5">
+
+            <Container fluid>
+                <Container>
                     <Row>
+                        <Col lg={9}>
+                        <Row>
                         <Col sm={12} lg={10} className="ms-auto me-auto">
                             <div className="p-4 bg-white border">
                                 <img src={BlogSingleImg} class="img-fluid w-100"  alt="..."/>
@@ -183,26 +185,21 @@ function BlogSingle(){
                                 </Col>
                             </Row>
 
-
-                            <Row className="mt-5">
-                                <Col>
-                                    <div className="border px-5 p-4">
-                                        <h4>Leave A Comment</h4>
-                                        
-                                    </div>
-                                </Col>
-                            </Row>
-
-
                             </div>
+                        </Col>
+                    </Row>
+                        </Col>
+
+                        <Col>
                         </Col>
                     </Row>
                 </Container>
             </Container>
+
 
             <Footer/>
         </>
     )
 }
 
-export default BlogSingle;
+export default BlogSingleSidebar;
