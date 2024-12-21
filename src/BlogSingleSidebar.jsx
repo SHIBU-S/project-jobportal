@@ -1,5 +1,6 @@
+
 import Header from "./Header";
-import { Container,Row,Col } from "react-bootstrap";
+import { Container,Row,Col,FloatingLabel } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import comment1Img from "./comment1-Img.png";
 import comment2Img from "./comment2-Img.png";
@@ -11,6 +12,9 @@ import { GoEye } from "react-icons/go";
 import { LiaCommentDots } from "react-icons/lia";
 import BlogSingleImg from "./blog-single-img.jpg";
 import Footer from "./Footer";
+import { IoSearch } from "react-icons/io5";
+import Form from 'react-bootstrap/Form';
+
 
 
 function BlogSingleSidebar(){
@@ -40,10 +44,8 @@ function BlogSingleSidebar(){
             <Container fluid>
                 <Container>
                     <Row>
-                        <Col lg={9}>
-                        <Row>
-                        <Col sm={12} lg={10} className="ms-auto me-auto">
-                            <div className="p-4 bg-white border">
+                        <Col lg={8}>
+                        <div className="p-4 bg-white border">
                                 <img src={BlogSingleImg} class="img-fluid w-100"  alt="..."/>
                                 <h3 className="mt-5"><Link to="#" className="text-decoration-none text-dark">Let's explore 5 cool new features in JobBoard theme</Link></h3>
                                 <ul className="ps-0 mt-4 blogsingle-lists">
@@ -118,14 +120,14 @@ function BlogSingleSidebar(){
                                 </Col>
                                 <Col sm={12}>
                                     <Row>
-                                        <Col className="d-flex mt-2">
+                                        <Col className="d-md-flex mt-2">
                                             <div className=" populartags"><Link to="" className="py-1 px-3 text-center">Announcement</Link></div>
                                             <div className="ms-2 populartags"><Link to="" className="py-1 px-3 text-center">Experiences</Link></div>
                                             <div className="ms-2 populartags"><Link to="" className="py-1 px-3 text-center">Market News</Link></div>
                                         </Col>
                                         <Col>
                                             <div className="blogsingle-social">
-                                                <ul className=" d-flex justify-content-end">
+                                                <ul className=" d-md-flex justify-content-end">
                                                     <li className="me-2"><Link to=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16"><path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"/></svg></Link></li>
                                                     <li className="me-2"><Link to=""><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/></svg></Link></li>
                                                     <li><Link to=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/></svg></Link></li>
@@ -139,7 +141,7 @@ function BlogSingleSidebar(){
                             <Row>
                                 <Col>
                                     <div className="border px-5 p-4">
-                                        <h4>3 Comments On This Post</h4>
+                                        <Row><Col md={6}><h4>3 Comments On This Post</h4></Col>,<Col><hr /></Col></Row>
                                         <Row className="mt-5">
                                             <Col sm={2}><div><img src={comment1Img} class="img-fluid rounded-circle"  alt="..."/></div></Col>
                                             <Col sm={10}>
@@ -185,21 +187,127 @@ function BlogSingleSidebar(){
                                 </Col>
                             </Row>
 
+
+                            <Row className="mt-5">
+                                <Col>
+                                    <div className="border px-5 p-4">
+                                        <Row><Col md={4}><h4>Leave A Comment</h4></Col>,<Col><hr /></Col></Row>
+                                        <Row className="mt-5">
+                                            <Col>
+                                                <FloatingLabel controlId="floatingInput" label="Your Name" className="mb-3" >
+                                                    <Form.Control type="text" placeholder="Your Name" />
+                                                </FloatingLabel>    
+                                            </Col>
+                                            <Col>
+                                                <FloatingLabel controlId="floatingInput" label="Email address" className="mb-3" >
+                                                    <Form.Control type="email" placeholder="name@example.com" />
+                                                </FloatingLabel>
+                                            </Col>
+                                        </Row>
+
+                                        <Row>
+                                            <Col sm={12}>
+                                                <FloatingLabel controlId="floatingInput" label="Your Subject" className="mb-3" >
+                                                    <Form.Control type="text" placeholder="Your Subject" />
+                                                </FloatingLabel>
+                                            </Col>
+                                            <Col sm={12}>
+                                                <FloatingLabel controlId="floatingTextarea2" label="Comments">
+                                                    <Form.Control as="textarea" placeholder="Leave a comment here" style={{ height: '200px' }} />
+                                                </FloatingLabel>
+                                            </Col>
+                                        </Row>
+
+                                        <Row className="mt-4">
+                                            <Col>
+                                                <div><button type="submit" className="button text-white px-4 py-2 rounded-2">Post Comment</button></div>
+                                            </Col>
+                                        </Row>
+                                    </div>   
+                                </Col>
+                            </Row>
                             </div>
                         </Col>
-                    </Row>
-                        </Col>
+
 
                         <Col>
+                        <div className=" p-5 bg-white">
+                                <Row><Col><h5>Search This Site</h5></Col><Col className="ps-0"><hr /></Col></Row>
+                                <form action="" className="position-relative mt-4">
+                                    <input type="text" placeholder="Search Here..." className="p-3" style={{width:"100%"}}/>
+                                    <button type="button" style={{position:"absolute",right:"7px",top:"6px",height:"42px",width:"55px",backgroundColor:"#2042e3"}}>
+                                        <IoSearch fill="white"/>
+                                    </button>
+                                </form>
+                            </div>
+
+                            <div className="bg-white p-4 mt-4">
+                                <Row className="p-4"><Col><h5 >Popular Feeds</h5></Col><Col className="ps-0"><hr /></Col></Row>
+
+                                <div className="p-4">   
+                                    <h6><Link to="" className="text-decoration-none text-dark">Tips to write an impressive resume online for beginner</Link></h6>
+                                    <span> 5th Nov 2023</span>
+                                </div>
+
+                                <div className="p-4">
+                                    <h6><Link to="" className="text-decoration-none text-dark">10 most important SEO focus areas for colleges and universities</Link></h6>
+                                    <span>24th March 2023</span>
+                                </div>
+
+                                <div className="p-4">
+                                    <h6><Link to="" className="text-decoration-none text-dark">7 things you should never say to your boss in your joblife</Link></h6>
+                                    <span>30th Jan 2023</span>
+                                </div>
+                            </div>
+
+                            <div className="p-4 bg-white mt-4">
+                                <Row className="p-4"><Col md={5}><h5 >Categories</h5></Col><Col className="ps-0"><hr /></Col></Row>
+                                <ul className="BlogGridCategorieslists" style={{listStyleType:"none"}}>
+                                    <li className="mt-3"><Link className=" d-block text-decoration-none text-dark" to="">Announcement <span className="d-flex align-items-center justify-content-center">26</span></Link></li>
+                                    <li className="mt-3"><Link className=" d-block text-decoration-none text-dark" to="">Indeed Events <span className="d-flex align-items-center justify-content-center">26</span></Link></li>
+                                    <li className="mt-3"><Link className=" d-block text-decoration-none text-dark" to="">Tips & Tricks<span className="d-flex align-items-center justify-content-center">26</span></Link></li>
+                                    <li className="mt-3"><Link className=" d-block text-decoration-none text-dark" to="">Experiences <span className="d-flex align-items-center justify-content-center">26</span></Link></li>
+                                    <li className="mt-3"><Link className=" d-block text-decoration-none text-dark" to="">Case Studies <span className="d-flex align-items-center justify-content-center">26</span></Link></li>
+                                    <li className="mt-3"><Link className=" d-block text-decoration-none text-dark" to="">Labor Market News <span className="d-flex align-items-center justify-content-center">26</span></Link></li>
+                                    <li className="mt-3"><Link className=" d-block text-decoration-none text-dark" to="">HR Best Practices <span className="d-flex align-items-center justify-content-center">26</span></Link></li>
+                                </ul>
+                            </div>
+
+                            <div className="p-4 bg-white mt-4">
+                                <Row className="p-4"><Col><h5 >Popular Tags</h5></Col><Col className="ps-0"><hr /></Col></Row>
+                                <div className="populartags">
+                                    <Row>
+                                        <Col sm={4}><div className="ms-3"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
+                                        <Col sm={4}><div><Link to="" className="p-1 text-center">Design</Link></div></Col>
+                                        <Col sm={4}><div className="me-5"><Link to="" className="p-1 text-center">HR</Link></div></Col>
+
+                                        <Col sm={4}><div className="mt-2 ms-3"><Link to="" className="p-1 text-center">Recruiter</Link></div></Col>
+                                        <Col sm={4}><div className="mt-2"><Link to="" className="p-1 text-center">Interview</Link></div></Col>
+                                        <Col sm={4}><div className="mt-2 me-2"><Link to="" className="p-1 text-center">Employee</Link></div></Col>
+                                    </Row>
+
+                                    <Row>
+                                        <Col sm={4}><div className="mt-2 ms-3"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
+                                        <Col sm={4}><div className="mt-2"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
+                                        <Col sm={4}><div className="mt-2 me-4"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
+
+                                        <Col sm={4}><div className="mt-2 ms-3"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
+                                        <Col sm={4}><div className="mt-2"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
+                                        <Col sm={4}><div className="mt-2 me-5"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
+                                    </Row>
+                                </div>
+                            </div>
                         </Col>
                     </Row>
                 </Container>
             </Container>
-
-
+            
             <Footer/>
         </>
     )
 }
 
 export default BlogSingleSidebar;
+
+
+

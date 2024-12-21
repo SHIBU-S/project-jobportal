@@ -5,6 +5,7 @@ import NewsBlogImg1 from './Newsblog-Img1.jpg';
 import NewsBlogImg2 from './Newsblog-Img2.jpg';
 import NewsBlogImg3 from './Newsblog-Img3.jpg';
 import Footer from "./Footer";
+import { IoSearch } from "react-icons/io5";
 
 
 function BlogGridSidebarPage(){
@@ -208,17 +209,17 @@ function BlogGridSidebarPage(){
 
                         <Col sm={12} md={6} lg={4}>
                             <div className=" p-5 bg-white">
-                                <h5>Search This Site</h5>
-                                <form action="" className="position-relative">
+                                <Row><Col><h5>Search This Site</h5></Col><Col className="ps-0"><hr /></Col></Row>
+                                <form action="" className="position-relative mt-4">
                                     <input type="text" placeholder="Search Here..." className="p-3" style={{width:"100%"}}/>
                                     <button type="button" style={{position:"absolute",right:"7px",top:"6px",height:"42px",width:"55px",backgroundColor:"#2042e3"}}>
-                                        
+                                        <IoSearch fill="white"/>
                                     </button>
                                 </form>
                             </div>
 
                             <div className="bg-white p-4 mt-4">
-                                <h5 className="p-4">Popular Feeds</h5>
+                                <Row className="p-4"><Col><h5 >Popular Feeds</h5></Col><Col className="ps-0"><hr /></Col></Row>
 
                                 <div className="p-4">   
                                     <h6><Link to="" className="text-decoration-none text-dark">Tips to write an impressive resume online for beginner</Link></h6>
@@ -237,7 +238,7 @@ function BlogGridSidebarPage(){
                             </div>
 
                             <div className="p-4 bg-white mt-4">
-                                <h5 className="p-4">Categories</h5>
+                                <Row className="p-4"><Col md={5}><h5 >Categories</h5></Col><Col className="ps-0"><hr /></Col></Row>
                                 <ul className="BlogGridCategorieslists" style={{listStyleType:"none"}}>
                                     <li className="mt-3"><Link className=" d-block text-decoration-none text-dark" to="">Announcement <span className="d-flex align-items-center justify-content-center">26</span></Link></li>
                                     <li className="mt-3"><Link className=" d-block text-decoration-none text-dark" to="">Indeed Events <span className="d-flex align-items-center justify-content-center">26</span></Link></li>
@@ -250,26 +251,26 @@ function BlogGridSidebarPage(){
                             </div>
 
                             <div className="p-4 bg-white mt-4">
-                                <h5 className="p-4">Popular Tags</h5>
+                                <Row className="p-4"><Col><h5 >Popular Tags</h5></Col><Col className="ps-0"><hr /></Col></Row>
                                 <div className="populartags">
                                     <Row>
-                                        <Col sm={4}><div className="ms-1"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
-                                        <Col sm={4}><div><Link to="" className="p-1 text-center">Design</Link></div></Col>
-                                        <Col sm={4}><div className="me-5"><Link to="" className="p-1 text-center">HR</Link></div></Col>
+                                        <Col xs={4} sm={4}><div className="ms-3"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
+                                        <Col xs={4} sm={4}><div><Link to="" className="p-1 text-center">Design</Link></div></Col>
+                                        <Col xs={4} sm={4}><div className="me-5"><Link to="" className="p-1 text-center">HR</Link></div></Col>
 
-                                        <Col sm={4}><div className="mt-2 ms-3"><Link to="" className="p-1 text-center">Recruiter</Link></div></Col>
-                                        <Col sm={4}><div className="mt-2"><Link to="" className="p-1 text-center">Interview</Link></div></Col>
-                                        <Col sm={4}><div className="mt-2 me-2"><Link to="" className="p-1 text-center">Employee</Link></div></Col>
+                                        <Col xs={4} sm={4}><div className="mt-2 ms-3"><Link to="" className="p-1 text-center">Recruiter</Link></div></Col>
+                                        <Col xs={4} sm={4}><div className="mt-2"><Link to="" className="p-1 text-center">Interview</Link></div></Col>
+                                        <Col xs={4} sm={4}><div className="mt-2 me-2"><Link to="" className="p-1 text-center">Employee</Link></div></Col>
                                     </Row>
 
                                     <Row>
-                                        <Col sm={4}><div className="mt-2 ms-3"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
-                                        <Col sm={4}><div className="mt-2"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
-                                        <Col sm={4}><div className="mt-2 me-4"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
+                                        <Col xs={4} sm={4}><div className="mt-2 ms-3"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
+                                        <Col xs={4} sm={4}><div className="mt-2"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
+                                        <Col xs={4} sm={4}><div className="mt-2 me-4"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
 
-                                        <Col sm={4}><div className="mt-2 ms-3"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
-                                        <Col sm={4}><div className="mt-2"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
-                                        <Col sm={4}><div className="mt-2 me-5"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
+                                        <Col xs={4} sm={4}><div className="mt-2 ms-3"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
+                                        <Col xs={4} sm={4}><div className="mt-2"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
+                                        <Col xs={4} sm={4}><div className="mt-2 me-5"><Link to="" className="p-1 text-center">Jobpress</Link></div></Col>
                                     </Row>
                                 </div>
                             </div>
