@@ -193,10 +193,13 @@ function SideNavigation() {
                                     {Catalog_submenuVisible && (
                                         <ul className='sidenav_submenus ps-0 mb-0'>
                                             <li className="p-1 ps-4"><Nav.Link eventKey="categories" onClick={() => { setActiveTab('Categories'); setactivesubmenus("Categories"); }}><TfiAngleDoubleRight/> Categories</Nav.Link></li>
-                                            <li className="p-1 ps-4"><Nav.Link eventKey="Attributes"><TfiAngleDoubleRight/> Attributes</Nav.Link></li>
-                                            <li className="p-1 ps-4"><Nav.Link eventKey="Product"><TfiAngleDoubleRight/> Product</Nav.Link></li>
+                                            {/* <li className="p-1 ps-4"><Nav.Link eventKey="Attributes"><TfiAngleDoubleRight/> Attributes</Nav.Link></li>
+                                            <li className="p-1 ps-4"><Nav.Link eventKey="Product"><TfiAngleDoubleRight/> Product</Nav.Link></li> */}
                                         </ul>
                                     )}
+                            </Nav.Item>
+                            <Nav.Item className='text-start navitem'>
+                                <Nav.Link className='text-white d-flex align-items-center' eventKey="service" onClick={() => setActiveTab("Jobs")}>Jobs <PiGreaterThan className="ms-auto p-1"/></Nav.Link>
                             </Nav.Item>
                             <Nav.Item className='text-start navitem'>
                                 <Nav.Link className='text-white d-flex align-items-center' eventKey="service" onClick={() => setActiveTab("Service")}>Service <PiGreaterThan className="ms-auto p-1"/></Nav.Link>
