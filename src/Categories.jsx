@@ -103,6 +103,7 @@
 
 
 
+
 import { Container, Row, Col } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { FaPlus } from "react-icons/fa";
@@ -116,10 +117,26 @@ import axios from "axios";
 import { BsFiletypeCsv } from "react-icons/bs";
 import { FaRegFileExcel } from "react-icons/fa";
 import { FaRegFilePdf } from "react-icons/fa";
+import Button from 'react-bootstrap/Button';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip'; 
+import Pagination from 'react-bootstrap/Pagination';
+
 
 function Categories({ setActiveTab }) {
     const [showAddCategory, setshowAddCategory] = useState(false);
     const [categoryData, setCategoryData] = useState([]); 
+    const [Category_activePage,setCategory_ActivePage] = useState(1);
+
+    let active = 1;
+    let items = [];
+    for (let number = 1; number <= 5; number++) {
+        items.push(
+            <Pagination.Item key={number} active={number === Category_activePage} onClick={()=>{setCategory_ActivePage(number)}} >
+                {number}
+            </Pagination.Item>,
+        );
+    }
 
 
     useEffect(() => {
@@ -137,6 +154,17 @@ function Categories({ setActiveTab }) {
     function displaynew() {
         setshowAddCategory(true);
         setActiveTab('AddCategory');
+    }
+
+    function backpage(){
+        if(Category_activePage>1){
+            setCategory_ActivePage(Category_activePage-1);
+        }
+    }
+    function nextpage(){
+        if(Category_activePage<5){
+            setCategory_ActivePage(Category_activePage+1);
+        }
     }
 
     return (
@@ -160,12 +188,33 @@ function Categories({ setActiveTab }) {
             </Container>
 
             <Container fluid className="adminpagebg border px-3">
-                <div className="border p-2 mt-3 pb-0 d-flex">
-                    <h6 className="Categories_title p-1"><IoListSharp /> Category List</h6>
-                    <div className="ms-auto d-flex gap-2">
-                        <div className="border bg-light p-1"><BsFiletypeCsv /></div>
-                        <div className="border bg-light p-1"><FaRegFileExcel/></div>
-                        <div className="border bg-light p-1"><FaRegFilePdf/></div>
+                <div className="border p-1 mt-3 pb-0 d-flex">
+                    <h6 className="Categories_title p-1 d-flex align-items-center"><IoListSharp /> Category List</h6>
+                    <div className="ms-auto m-1 d-flex gap-1">
+                        {/* <div className="border bg-light p-2"><BsFiletypeCsv /></div>
+                        <div className="border bg-light p-2"><FaRegFileExcel/></div>
+                        <div className="border bg-light p-2"><FaRegFilePdf/></div> */}
+                        {['top'].map((placement) => (
+                                                    <>
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>Csv</Tooltip>
+                                                            } >
+                                                            <Button type="button" className="border ms-auto p-2 m-1 btn-light"><BsFiletypeCsv /> </Button>
+                                                        </OverlayTrigger>
+
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>Excel</Tooltip>
+                                                            } >
+                                                            <Button type="button" className="border p-2 m-1 btn-light"><FaRegFileExcel/> </Button>
+                                                        </OverlayTrigger>
+
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>Pdf</Tooltip>
+                                                            } >
+                                                            <Button type="button" className="border p-2 m-1 btn-light"><FaRegFilePdf/> </Button>
+                                                        </OverlayTrigger>
+                                                    </>
+                                                ))}
                     </div>
                 </div>
 
@@ -181,7 +230,8 @@ function Categories({ setActiveTab }) {
                             </tr>
                         </thead>
 
-                        <tbody>
+            {/*  ------------------------------------  (1) Category Table  -----------------------------------------  */}
+                        {Category_activePage===1 && (<tbody>
                             {
                             categoryData.length > 0 ? (
                                 categoryData.map((category,image) => (
@@ -198,17 +248,30 @@ function Categories({ setActiveTab }) {
                                                 <img src={category.CategoryImage}  alt={`Image ${category._id}`}  style={{ width: '300px', margin: '10px' }} />
                                             </div>
                                         </td>
-                                        <td className="border p-2 d-flex ">
-                                            <div className="ms-auto p-2 m-1 d-flex align-items-center bg-primary text-white">
-                                                View
-                                            </div>
-                                            <div className=" p-2 m-1 d-flex align-items-center bg-warning">
-                                                Edit
-                                            </div>
-                                            <div className=" p-2 m-1 d-flex align-items-center bg-danger text-white">
-                                                Delete
-                                            </div>
-                                        </td>
+                                        <td className=" p-2 d-flex align-items-center">
+                                                {['top'].map((placement) => (
+                                                    <>
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>View</Tooltip>
+                                                            } >
+                                                            <Button type="button" className="ms-auto p-2 m-1 bg-primary text-white">View </Button>
+                                                        </OverlayTrigger>
+
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>Edit</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-2 m-1  bg-warning">Edit </Button>
+                                                        </OverlayTrigger>
+
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>Delete</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-2 m-1 bg-danger text-white">Delete </Button>
+                                                        </OverlayTrigger>
+                                                    </>
+                                                ))}
+                                        </td> 
+
                                     </tr>
                                 ))                           
                             ) : (
@@ -216,8 +279,22 @@ function Categories({ setActiveTab }) {
                                     <td colSpan="4" className="text-center"></td>
                                 </tr>
                             )}
-                        </tbody>
+                        </tbody>)}
+
+
+                {/*  ------------------------------------  (1) Category Table  -----------------------------------------  */}      
+                        {Category_activePage === 2 && (<p>Hello</p>)}
+
+                       
                     </table>
+
+                    <div className="mt-3 d-flex justify-content-center">
+                        <Pagination>
+                            <span aria-hidden="true" className="border d-flex align-items-center px-3 me-3" onClick={backpage}>&raquo;</span>
+                            {items} 
+                            <span aria-hidden="true" className="border d-flex align-items-center px-3" onClick={nextpage}>&raquo;</span>
+                        </Pagination>
+                    </div>
                 </div>
             </Container>
         </>
