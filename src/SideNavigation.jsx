@@ -135,6 +135,7 @@ import { TfiAngleDoubleRight } from "react-icons/tfi";
 import { PiGreaterThan } from "react-icons/pi";
 import Categories from './Categories';
 import AddCategory from './AddCategory';
+import Jobs from './Jobs';
 
 
 function SideNavigation() {
@@ -199,7 +200,7 @@ function SideNavigation() {
                                     )}
                             </Nav.Item>
                             <Nav.Item className='text-start navitem'>
-                                <Nav.Link className='text-white d-flex align-items-center' eventKey="service" onClick={() => setActiveTab("Jobs")}>Jobs <PiGreaterThan className="ms-auto p-1"/></Nav.Link>
+                                <Nav.Link className='text-white d-flex align-items-center' eventKey="jobs" onClick={() => setActiveTab("Jobs")}>Jobs <PiGreaterThan className="ms-auto p-1"/></Nav.Link>
                             </Nav.Item>
                             <Nav.Item className='text-start navitem'>
                                 <Nav.Link className='text-white d-flex align-items-center' eventKey="service" onClick={() => setActiveTab("Service")}>Service <PiGreaterThan className="ms-auto p-1"/></Nav.Link>
@@ -223,6 +224,7 @@ function SideNavigation() {
                     {
                          ((activeTab === "Dashboard" || activeTab === "Service" || activeTab === "Banner" || activeTab === "Blog" || activeTab === "Users" || activeTab === "Orders") && <Dashboard />) 
                         || ( activeTab === "Categories" && <Categories setActiveTab={setActiveTab}/> )
+                        || ( activeTab === "Jobs" && <Jobs setActiveTab={setActiveTab}/> )
                         || (activeTab === "AddCategory" &&  <AddCategory setActiveTab={setActiveTab}/>)
                     }
                     </Col>
