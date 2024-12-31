@@ -167,6 +167,14 @@ function Categories({ setActiveTab }) {
         }
     }
 
+    const itemsPerPage = 5;
+    const totalPages = Math.ceil(categoryData.length / itemsPerPage);
+    const displayedData = categoryData.slice(
+        (Category_activePage - 1) * itemsPerPage,
+        Category_activePage * itemsPerPage
+    );
+    
+
     return (
         <>
             <Container fluid className="adminpagebg">
@@ -181,8 +189,6 @@ function Categories({ setActiveTab }) {
 
                     <Col className="d-flex align-items-center grid gap-2">
                         <div className="ms-auto p-2 d-flex bg-primary" onClick={displaynew}><FaPlus fill="white" /></div>
-                        {/* <div className="border p-2 d-flex bg-white"><FiRefreshCw /></div>
-                        <div className="border p-2 d-flex bg-danger"><RiDeleteBin5Fill fill="white" /></div> */}
                     </Col>
                 </Row>
             </Container>
@@ -191,9 +197,6 @@ function Categories({ setActiveTab }) {
                 <div className="border p-1 mt-3 pb-0 d-flex">
                     <h6 className="Categories_title p-1 d-flex align-items-center"><IoListSharp /> Category List</h6>
                     <div className="ms-auto m-1 d-flex gap-1">
-                        {/* <div className="border bg-light p-2"><BsFiletypeCsv /></div>
-                        <div className="border bg-light p-2"><FaRegFileExcel/></div>
-                        <div className="border bg-light p-2"><FaRegFilePdf/></div> */}
                         {['top'].map((placement) => (
                                                     <>
                                                         <OverlayTrigger key={placement} placement={placement} overlay={ 
@@ -231,20 +234,21 @@ function Categories({ setActiveTab }) {
                         </thead>
 
             {/*  ------------------------------------  (1) Category Table  -----------------------------------------  */}
-                        {Category_activePage===1 && (<tbody>
+                        {Category_activePage===1 && (
+                            <tbody>
                             {
                             categoryData.length > 0 ? (
-                                categoryData.map((category,image) => (
+                                [...categoryData].reverse().map((category,index) => (
                                     <tr>
                                         <td className="border p-2 py-3" style={{ width: "1px" }}>
                                             <input type="checkbox" />
                                         </td>
-                                        <td className="border p-2 py-3"></td>
+                                        <td className="border p-2 py-3">{categoryData.length-index}</td>
                                         <td className="border p-2" style={{ width: "55%" }}>
                                             <Link to="" className="text-decoration-none text-dark">{category.Categoryname}</Link>
                                         </td>
                                         <td className="border p-2 text-end">
-                                            <div key={image._id}>
+                                            <div >
                                                 <img src={category.CategoryImage}  alt={`Image ${category._id}`}  style={{ width: '300px', margin: '10px' }} />
                                             </div>
                                         </td>
@@ -279,10 +283,13 @@ function Categories({ setActiveTab }) {
                                     <td colSpan="4" className="text-center"></td>
                                 </tr>
                             )}
-                        </tbody>)}
+                        </tbody>
+                        )
+                        } 
+               
 
 
-                {/*  ------------------------------------  (1) Category Table  -----------------------------------------  */}      
+                {/*  ------------------------------------  (2) Category Table  -----------------------------------------  */}      
                         {Category_activePage === 2 && (<p>Hello</p>)}
 
                        
@@ -291,7 +298,7 @@ function Categories({ setActiveTab }) {
                     <div className="mt-3 d-flex justify-content-center">
                         <Pagination>
                             <span aria-hidden="true" className="border d-flex align-items-center px-3 me-3" onClick={backpage}>&raquo;</span>
-                            {items} 
+                            {items}  
                             <span aria-hidden="true" className="border d-flex align-items-center px-3" onClick={nextpage}>&raquo;</span>
                         </Pagination>
                     </div>

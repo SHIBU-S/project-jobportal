@@ -1,7 +1,3 @@
-
-
-
-
 import { Container, Row, Col } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { FaPlus } from "react-icons/fa";
@@ -22,15 +18,15 @@ import Pagination from 'react-bootstrap/Pagination';
 
 
 function Jobs({ setActiveTab }) {
-    const [showAddCategory, setshowAddCategory] = useState(false);
+    // const [showAddCategory, setshowAddCategory] = useState(false);
     const [categoryData, setCategoryData] = useState([]); 
-    const [Category_activePage,setCategory_ActivePage] = useState(1);
+    const [Job_activePage,setJob_ActivePage] = useState(1);
 
     let active = 1;
     let items = [];
     for (let number = 1; number <= 5; number++) {
         items.push(
-            <Pagination.Item key={number} active={number === Category_activePage} onClick={()=>{setCategory_ActivePage(number)}} >
+            <Pagination.Item key={number} active={number === Job_activePage} onClick={()=>{setJob_ActivePage(number)}} >
                 {number}
             </Pagination.Item>,
         );
@@ -40,18 +36,18 @@ function Jobs({ setActiveTab }) {
 
 
     function displaynew() {
-        setshowAddCategory(true);
-        setActiveTab('AddCategory');
+        // setshowAddCategory(true);
+        setActiveTab('AddJobs');
     }
 
     function backpage(){
-        if(Category_activePage>1){
-            setCategory_ActivePage(Category_activePage-1);
+        if(Job_activePage>1){
+            setJob_ActivePage(Job_activePage-1);
         }
     }
     function nextpage(){
-        if(Category_activePage<5){
-            setCategory_ActivePage(Category_activePage+1);
+        if(Job_activePage<5){
+            setJob_ActivePage(Job_activePage+1);
         }
     }
 
@@ -120,7 +116,7 @@ function Jobs({ setActiveTab }) {
                         </thead>
 
             {/*  ------------------------------------  (1) Category Table  -----------------------------------------  */}
-                        {Category_activePage===1 && (<tbody>
+                        {Job_activePage ===1 && (<tbody>
                             {
                             categoryData.length > 0 ? (
                                 categoryData.map((category,image) => (

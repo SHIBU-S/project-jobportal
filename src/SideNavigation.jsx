@@ -136,6 +136,7 @@ import { PiGreaterThan } from "react-icons/pi";
 import Categories from './Categories';
 import AddCategory from './AddCategory';
 import Jobs from './Jobs';
+import AddJobs from './AddJobs';
 
 
 function SideNavigation() {
@@ -223,9 +224,8 @@ function SideNavigation() {
                     <Col className='px-0'>
                     {
                          ((activeTab === "Dashboard" || activeTab === "Service" || activeTab === "Banner" || activeTab === "Blog" || activeTab === "Users" || activeTab === "Orders") && <Dashboard />) 
-                        || ( activeTab === "Categories" && <Categories setActiveTab={setActiveTab}/> )
-                        || ( activeTab === "Jobs" && <Jobs setActiveTab={setActiveTab}/> )
-                        || (activeTab === "AddCategory" &&  <AddCategory setActiveTab={setActiveTab}/>)
+                        || ( activeTab === "Categories" && <Categories setActiveTab={setActiveTab}/> ) || (activeTab === "AddCategory" &&  <AddCategory setActiveTab={setActiveTab}/>)
+                        || ( activeTab === "Jobs" && <Jobs setActiveTab={setActiveTab}/> ) || (activeTab === "AddJobs" && <AddJobs setActiveTab={setActiveTab}/> )
                     }
                     </Col>
 
