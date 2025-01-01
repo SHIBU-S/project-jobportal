@@ -13,12 +13,16 @@ import { FcUpLeft } from "react-icons/fc";
 import { EditorState } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
 import { useEffect, useState } from "react";
+import Dropdown from 'react-bootstrap/Dropdown';
 import axios from "axios";
 
 function AddJobs({ setActiveTab }) {
 
     const [displayCategorydatas, setDisplayCategoryDatas] = useState([]);
     const [descriptionname, setdescriptionname] = useState("");
+
+    const [MainCategoryname,setMainCategoryname] = useState([]);
+    const [SelectedCategory,setSelectedCategory] = useState("");
 
     const [editorState, setEditorState] = useState(EditorState.createEmpty());
 
@@ -33,6 +37,18 @@ function AddJobs({ setActiveTab }) {
         setActiveTab("Jobs");
     }
 
+    useEffect(()=>{
+        async function getMainCategoryname() {
+            try{
+                const Categoryname = await axios.get("http://localhost:5005/GetCategoryDatas");
+                setMainCategoryname(Categoryname.data.totaldatas)
+            }
+            catch (err) {
+                console.error("Error Fetching data:", err);
+            }
+        }
+        getMainCategoryname();
+    },[])
   
 
 
@@ -64,9 +80,24 @@ function AddJobs({ setActiveTab }) {
                                 <Row className="adminpanelformpage">
                                     <Col sm={2} className="d-flex align-items-center"><span className="ms-auto d-flex"><RiStarSFill fill="red" className="p-1" /> Main Category :</span></Col>
                                     <Col className="px-4">
-                                        <FloatingLabel controlId="floatingInput" label="Main Category" className="mb-3 mt-3">
-                                            <Form.Control type="text" placeholder="Main Category"  />
-                                        </FloatingLabel>
+                                <Dropdown>
+                                        <Dropdown.Toggle id="dropdown-basic">
+                                            {SelectedCategory || "Select Main Category"}
+                                    </Dropdown.Toggle>
+
+                                    <Dropdown.Menu>
+                                        {MainCategoryname.length > 0 ? (
+                                            MainCategoryname.map((MainCategory) => (
+                                                <Dropdown.Item key={MainCategory.id} onClick={() => setSelectedCategory(MainCategory.Categoryname)}>
+                                                    {MainCategory.Categoryname}
+                                                </Dropdown.Item>
+                                            ))
+                                        ) : (
+                                                <Dropdown.Item>No Data</Dropdown.Item>
+                                        )}
+                                    </Dropdown.Menu>
+                                </Dropdown>
+
                                     </Col>
                                 </Row>
 
