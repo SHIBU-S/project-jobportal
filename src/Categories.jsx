@@ -289,8 +289,6 @@ function Categories({ setActiveTab }) {
                
 
 
-                {/*  ------------------------------------  (2) Category Table  -----------------------------------------  */}      
-                        {Category_activePage === 2 && (<p>Hello</p>)}
 
                        
                     </table>
@@ -309,3 +307,12 @@ function Categories({ setActiveTab }) {
 }
 
 export default Categories;
+
+
+
+
+
+
+
+
+
