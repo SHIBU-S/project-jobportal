@@ -32,6 +32,7 @@ function AddCategory({ setActiveTab }) {
     };
 
     function backtocategory() {
+        localStorage.removeItem('EditedDatas');
         setActiveTab("Categories");
     }
 
@@ -45,7 +46,8 @@ function AddCategory({ setActiveTab }) {
     }, []);
     
 
-    function displayCategorydetails() {
+    function displayCategorydetails() 
+    {
         if (!Categoryname || !Image) {
             alert("Please enter all fields");
             return;
@@ -62,6 +64,7 @@ function AddCategory({ setActiveTab }) {
             axios.put(`http://localhost:5005/UpdateCategoryDatas/${categoryToEdit._id}`, formData)
                 .then(() => {
                     alert("Categories updated successfully");
+                    localStorage.removeItem('EditedDatas');
                     setActiveTab("Categories");
                 })
                 .catch((error) => {
