@@ -27,7 +27,7 @@ function Categories({ setActiveTab }) {
     const [selectedcategory,setselectedcategory] = useState({});
 
 
-//-----Checkbox
+//----------------------Checkbox-------------------------
     const [ischecked,setischecked] = useState(false);
     const [selectedCategorydatas, setSelectedCategorydatas] = useState([]); 
     function selectedtodelete(categoryId) 
@@ -49,9 +49,11 @@ function Categories({ setActiveTab }) {
             setSelectedCategorydatas([]);
         }
     }
-// ----
+// --------
 
-// -----Delete All Details
+
+
+// ------------------Delete All Details---------------------
     function deletealldetails()
     {
         if (isAllSelected && selectedCategorydatas.length > 0) 
@@ -78,8 +80,11 @@ function Categories({ setActiveTab }) {
             }
         }
 }
+// -----
 
-// -----Modal
+
+
+// ----------------------Modal------------------------
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -100,7 +105,9 @@ function Categories({ setActiveTab }) {
         );
     }
 
-// ------------- Fetch Datas ---------------
+
+
+// -------------------- Fetch Datas ------------------
     useEffect(() => {
         async function fetchCategoryData() {
             try {
@@ -112,8 +119,11 @@ function Categories({ setActiveTab }) {
         }
         fetchCategoryData(); 
     }, []); 
+// -----
 
-// ------------- Delete Datas ---------------
+
+
+// -------------------- Delete Datas -------------------
     async function deleteCategory() {
         try {
             await Promise.all( selectedCategorydatas.map(id => axios.delete(`http://localhost:5005/DeleteCategoryDatas/${id}`)));
@@ -125,14 +135,17 @@ function Categories({ setActiveTab }) {
             alert("Failed to delete some categories. Please try again.");
         }
     }
+// -----
 
 
-//------------- Edit Datas ----------------
+
+//--------------------- Edit Datas -----------------------
     async function editdatas(category) 
     {
         setActiveTab('AddCategory');
         localStorage.setItem('EditedDatas', JSON.stringify(category)); 
     }
+// -----
 
     
     
@@ -303,7 +316,7 @@ function Categories({ setActiveTab }) {
 
                     <Modal show={show} onHide={handleClose}>
                         <Modal.Header closeButton>
-                            <Modal.Title>Category Details</Modal.Title>
+                            <Modal.Title>CATEGORY DETAILS</Modal.Title>
                         </Modal.Header>
 
                         <Modal.Body>
@@ -334,4 +347,24 @@ function Categories({ setActiveTab }) {
 }
 
 export default Categories;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
