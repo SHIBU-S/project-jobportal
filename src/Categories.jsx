@@ -20,6 +20,7 @@ import Modal from 'react-bootstrap/Modal';
 import { RiDeleteBinLine } from "react-icons/ri";
 
 
+
 function Categories({ setActiveTab }) {
     const [showAddCategory, setshowAddCategory] = useState(false);
     const [categoryData, setCategoryData] = useState([]); 
@@ -228,7 +229,8 @@ function Categories({ setActiveTab }) {
                     <table style={{ width: "100%" }} className="border">
                         <thead>
                             <tr>
-                                <td className="border p-2" style={{ width: "1px" }}><input type="checkbox"  
+                                <td className="border p-2" style={{ width: "1px" }}>
+                                    <input type="checkbox"  
                                         checked={isAllSelected}
                                         onChange={handleSelectAll} /></td>
                                 <td className="border p-2 text-center">S.No</td>
@@ -407,13 +409,6 @@ function Categories({ setActiveTab }) {
 }
 
 export default Categories;
-
-
-
-
-
-
-
 
 
 
