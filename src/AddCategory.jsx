@@ -32,7 +32,7 @@ function AddCategory({ setActiveTab }) {
     };
 
     function backtocategory() {
-        localStorage.removeItem('EditedDatas');
+        // localStorage.removeItem('EditedDatas');
         setActiveTab("Categories");
     }
 
@@ -46,7 +46,7 @@ function AddCategory({ setActiveTab }) {
     }, []);
     
 
-    function displayCategorydetails() 
+    function displayCategorydetails_save() 
     {
         if (!Categoryname || !Image) {
             alert("Please enter all fields");
@@ -76,7 +76,6 @@ function AddCategory({ setActiveTab }) {
             axios.post("http://localhost:5005/InsertCategoryDatas", formData)
                 .then(() => {
                     alert("Category added successfully");
-                    setActiveTab("Categories");
                 })
                 .catch((error) => {
                     alert("Error adding category: " + error.message);
@@ -98,7 +97,7 @@ function AddCategory({ setActiveTab }) {
                         </ul>
                     </Col>
                     <Col className="d-flex align-items-center justify-content-end grid gap-2">
-                        <div className="bg-primary p-2 d-flex" onClick={displayCategorydetails}><FaRegSave fill="white" /></div>
+                        <div className="bg-primary p-2 d-flex" onClick={displayCategorydetails_save}><FaRegSave fill="white" /></div>
                         <div className="bg-white p-2 d-flex" onClick={backtocategory}><FcUpLeft /></div>
                     </Col>
                 </Row>

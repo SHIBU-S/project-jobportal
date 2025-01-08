@@ -168,16 +168,13 @@ function Categories({ setActiveTab }) {
         }
     }
 
-    // const itemsPerPage = 5;
-    // const totalPages = Math.ceil(categoryData.length / itemsPerPage);
-    // const displayedData = categoryData.slice(
-    //     (Category_activePage - 1) * itemsPerPage,
-    //     Category_activePage * itemsPerPage
-    // );
-    const itemsPerPage = 5;
-    const pageData = (Category_activePage === 1)
-        ? categoryData.slice(0, itemsPerPage)
-        : categoryData.slice(itemsPerPage);
+
+// -------------------- Pagination Condition -------------------
+    const itemsPerPage = 10;
+    const startIndex = (Category_activePage - 1) * itemsPerPage;    
+    const endIndex = startIndex + itemsPerPage;                     
+    const pageData = categoryData.slice(startIndex, endIndex);      
+
 
 
     return (
@@ -237,23 +234,86 @@ function Categories({ setActiveTab }) {
                                 <td className="border p-2 text-center">S.No</td>
                                 <td className="border p-2" style={{ width: "55%" }}><Link className="text-decoration-none">Category Name</Link></td>
                                 <td className="border p-2 text-center"><Link className="text-decoration-none">Image</Link></td>
-                                <td className="border p-2 text-end">Action</td>
+                                <td className="border p-2 text-center">Action</td>
                             </tr>
                         </thead>
+
 
             {/*  -------------------------------------  (1) Category Table  -----------------------------------------  */}
                         {Category_activePage===1 && (
                             <tbody>
                             {
-                            categoryData.length > 0 ? ( 
-                                [...categoryData].reverse().map((category,index) => (
+                                pageData.length > 0 ? (
+                                    pageData.reverse().map((category,index) => (
                                     <tr key={category._id}>
                                         <td className="border p-2 py-3" style={{ width: "1px" }}>
                                             <input type="checkbox"   
                                                 checked={selectedCategorydatas.includes(category._id)} 
                                                 onClick={() => selectedtodelete(category._id)}  />
                                         </td>
-                                        <td className="border text-center p-2 py-3">{categoryData.length-index}</td>
+                                        <td className="border text-center p-2 py-3">{pageData.length-index}</td>
+                                        <td className="border p-2" style={{ width: "55%" }}>
+                                            <Link to="" className="text-decoration-none text-dark">{category.Categoryname}</Link>
+                                        </td>
+                                        <td className="border p-2 text-center">
+                                            <div >
+                                                <img src={category.CategoryImage}  alt={`Image ${category._id}`}  style={{ width: '50px', margin: '10px' }} />
+                                            </div>
+                                        </td>
+                                        <td className="border-top p-2 d-flex pt-3 justify-content-center">
+                                                {['top'].map((placement) => (
+                                                    <>
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>View</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-2 m-1 bg-primary text-white border" onClick={() => viewCategoryDetails(category)}>View </Button>
+                                                        </OverlayTrigger>
+
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>Edit</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-2 m-1  bg-warning border border-none" onClick={() => editdatas(category)} >Edit </Button>
+                                                        </OverlayTrigger>
+
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>Delete</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-2 m-1 bg-danger text-white border"  onClick={() => deleteCategory(category._id)} disabled={!selectedCategorydatas.includes(category._id)}  >Delete </Button>
+                                                        </OverlayTrigger>
+                                                    </>
+                                                ))}
+                                        </td> 
+
+                                    </tr>
+                                ))                           
+                            ) : (
+                                <tr>
+                                    <td colSpan="4" className="text-center"></td>
+                                </tr>
+                            )                            
+                            }
+                        </tbody>
+                        )
+                        }     
+
+
+
+
+
+
+                        {/*  -------------------------------------  (2) Category Table  -----------------------------------------  */}
+                        {Category_activePage===2 && (
+                            <tbody>
+                            {
+                                pageData.length > 0 ? (
+                                    pageData.reverse().map((category,index) => ( 
+                                    <tr key={category._id}>
+                                        <td className="border p-2 py-3" style={{ width: "1px" }}>
+                                            <input type="checkbox"   
+                                                checked={selectedCategorydatas.includes(category._id)} 
+                                                onClick={() => selectedtodelete(category._id)}  />
+                                        </td>
+                                        <td className="border text-center p-2 py-3">{(pageData.length*2)-index}</td>
                                         <td className="border p-2" style={{ width: "55%" }}>
                                             <Link to="" className="text-decoration-none text-dark">{category.Categoryname}</Link>
                                         </td>
@@ -310,7 +370,7 @@ function Categories({ setActiveTab }) {
                             {items}  
                             <span aria-hidden="true" className="border d-flex align-items-center px-3" onClick={nextpage}>&raquo;</span>
                         </Pagination>
-                    </div>
+                    </div> 
 
 
 
@@ -347,8 +407,6 @@ function Categories({ setActiveTab }) {
 }
 
 export default Categories;
-
-
 
 
 
