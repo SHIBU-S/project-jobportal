@@ -19,6 +19,8 @@ import Pagination from 'react-bootstrap/Pagination';
 import Modal from 'react-bootstrap/Modal';
 import { RiDeleteBinLine } from "react-icons/ri";
 
+import { CSVLink } from "react-csv";
+
 
 
 function Categories({ setActiveTab }) {
@@ -62,11 +64,9 @@ function Categories({ setActiveTab }) {
             if (window.confirm("Are you sure you want to delete all selected categories?")) 
             {
                 try {
-                    // Delete all selected categories
                     Promise.all(selectedCategorydatas.map(id => axios.delete(`http://localhost:5005/DeleteCategoryDatas/${id}`)))
                         .then(() => {
                             alert("All selected categories have been deleted successfully.");
-                            // Remove deleted categories from the list
                             setCategoryData(prev => prev.filter(category => !selectedCategorydatas.includes(category._id)));
                             setSelectedCategorydatas([]);
                         })
@@ -95,6 +95,7 @@ function Categories({ setActiveTab }) {
         setShow(true);
     }
 // -----
+
 
     let active = 1;
     let items = [];
@@ -170,11 +171,14 @@ function Categories({ setActiveTab }) {
     }
 
 
+
+
 // -------------------- Pagination Condition -------------------
     const itemsPerPage = 10;
     const startIndex = (Category_activePage - 1) * itemsPerPage;    
     const endIndex = startIndex + itemsPerPage;                     
-    const pageData = categoryData.slice(startIndex, endIndex);      
+    const pageData = categoryData.slice(startIndex, endIndex); 
+// -----
 
 
 
@@ -315,6 +319,194 @@ function Categories({ setActiveTab }) {
                                                 checked={selectedCategorydatas.includes(category._id)} 
                                                 onClick={() => selectedtodelete(category._id)}  />
                                         </td>
+                                        <td className="border text-center p-2 py-3">{(pageData.length+10)-index}</td>
+                                        <td className="border p-2" style={{ width: "55%" }}>
+                                            <Link to="" className="text-decoration-none text-dark">{category.Categoryname}</Link>
+                                        </td>
+                                        <td className="border p-2 text-center">
+                                            <div >
+                                                <img src={category.CategoryImage}  alt={`Image ${category._id}`}  style={{ width: '50px', margin: '10px' }} />
+                                            </div>
+                                        </td>
+                                        <td className="border-top p-2 d-flex pt-3 justify-content-center">
+                                                {['top'].map((placement) => (
+                                                    <>
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>View</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-2 m-1 bg-primary text-white border" onClick={() => viewCategoryDetails(category)}>View </Button>
+                                                        </OverlayTrigger>
+
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>Edit</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-2 m-1  bg-warning border border-none" onClick={() => editdatas(category)} >Edit </Button>
+                                                        </OverlayTrigger>
+
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>Delete</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-2 m-1 bg-danger text-white border"  onClick={() => deleteCategory(category._id)} disabled={!selectedCategorydatas.includes(category._id)}  >Delete </Button>
+                                                        </OverlayTrigger>
+                                                    </>
+                                                ))}
+                                        </td> 
+
+                                    </tr>
+                                ))                           
+                            ) : (
+                                <tr>
+                                    <td colSpan="4" className="text-center"></td>
+                                </tr>
+                            )                            
+                            }
+                        </tbody>
+                        )
+                        }   
+
+
+
+
+
+
+
+                        {/*  -------------------------------------  (3) Category Table  -----------------------------------------  */}
+                        {Category_activePage===3 && (
+                            <tbody>
+                            {
+                                pageData.length > 0 ? (
+                                    pageData.reverse().map((category,index) => ( 
+                                    <tr key={category._id}>
+                                        <td className="border p-2 py-3" style={{ width: "1px" }}>
+                                            <input type="checkbox"   
+                                                checked={selectedCategorydatas.includes(category._id)} 
+                                                onClick={() => selectedtodelete(category._id)}  />
+                                        </td>
+                                        <td className="border text-center p-2 py-3">{(pageData.length+20)-index}</td> 
+                                        <td className="border p-2" style={{ width: "55%" }}>
+                                            <Link to="" className="text-decoration-none text-dark">{category.Categoryname}</Link>
+                                        </td>
+                                        <td className="border p-2 text-center">
+                                            <div >
+                                                <img src={category.CategoryImage}  alt={`Image ${category._id}`}  style={{ width: '50px', margin: '10px' }} />
+                                            </div>
+                                        </td>
+                                        <td className="border-top p-2 d-flex pt-3 justify-content-center">
+                                                {['top'].map((placement) => (
+                                                    <>
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>View</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-2 m-1 bg-primary text-white border" onClick={() => viewCategoryDetails(category)}>View </Button>
+                                                        </OverlayTrigger>
+
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>Edit</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-2 m-1  bg-warning border border-none" onClick={() => editdatas(category)} >Edit </Button>
+                                                        </OverlayTrigger>
+
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>Delete</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-2 m-1 bg-danger text-white border"  onClick={() => deleteCategory(category._id)} disabled={!selectedCategorydatas.includes(category._id)}  >Delete </Button>
+                                                        </OverlayTrigger>
+                                                    </>
+                                                ))}
+                                        </td> 
+
+                                    </tr>
+                                ))                           
+                            ) : (
+                                <tr>
+                                    <td colSpan="4" className="text-center"></td>
+                                </tr>
+                            )                            
+                            }
+                        </tbody>
+                        )
+                        }   
+
+
+
+
+
+
+
+                        {/*  -------------------------------------  (4) Category Table  -----------------------------------------  */}
+                        {Category_activePage===4 && (
+                            <tbody>
+                            {
+                                pageData.length > 0 ? (
+                                    pageData.reverse().map((category,index) => ( 
+                                    <tr key={category._id}>
+                                        <td className="border p-2 py-3" style={{ width: "1px" }}>
+                                            <input type="checkbox"   
+                                                checked={selectedCategorydatas.includes(category._id)} 
+                                                onClick={() => selectedtodelete(category._id)}  />
+                                        </td>
+                                        <td className="border text-center p-2 py-3">{(pageData.length+30)-index}</td>
+                                        <td className="border p-2" style={{ width: "55%" }}>
+                                            <Link to="" className="text-decoration-none text-dark">{category.Categoryname}</Link>
+                                        </td>
+                                        <td className="border p-2 text-center">
+                                            <div >
+                                                <img src={category.CategoryImage}  alt={`Image ${category._id}`}  style={{ width: '50px', margin: '10px' }} />
+                                            </div>
+                                        </td>
+                                        <td className="border-top p-2 d-flex pt-3 justify-content-center">
+                                                {['top'].map((placement) => (
+                                                    <>
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>View</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-2 m-1 bg-primary text-white border" onClick={() => viewCategoryDetails(category)}>View </Button>
+                                                        </OverlayTrigger>
+
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>Edit</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-2 m-1  bg-warning border border-none" onClick={() => editdatas(category)} >Edit </Button>
+                                                        </OverlayTrigger>
+
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>Delete</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-2 m-1 bg-danger text-white border"  onClick={() => deleteCategory(category._id)} disabled={!selectedCategorydatas.includes(category._id)}  >Delete </Button>
+                                                        </OverlayTrigger>
+                                                    </>
+                                                ))}
+                                        </td> 
+
+                                    </tr>
+                                ))                           
+                            ) : (
+                                <tr>
+                                    <td colSpan="4" className="text-center"></td>
+                                </tr>
+                            )                            
+                            }
+                        </tbody>
+                        )
+                        }   
+
+
+
+
+
+
+                        {/*  -------------------------------------  (5) Category Table  -----------------------------------------  */}
+                        {Category_activePage===5 && (
+                            <tbody>
+                            {
+                                pageData.length > 0 ? (
+                                    pageData.reverse().map((category,index) => ( 
+                                    <tr key={category._id}>
+                                        <td className="border p-2 py-3" style={{ width: "1px" }}>
+                                            <input type="checkbox"   
+                                                checked={selectedCategorydatas.includes(category._id)} 
+                                                onClick={() => selectedtodelete(category._id)}  />
+                                        </td>
                                         <td className="border text-center p-2 py-3">{(pageData.length*2)-index}</td>
                                         <td className="border p-2" style={{ width: "55%" }}>
                                             <Link to="" className="text-decoration-none text-dark">{category.Categoryname}</Link>
@@ -416,3 +608,136 @@ export default Categories;
 
 
 
+
+// import React, { useState, useEffect } from "react";
+// import axios from "axios";
+
+// const Categories = () => {
+//   const [data, setData] = useState([]); // To store all user data
+//   const [formData, setFormData] = useState({ name: "", age: "" }); // Form data
+//   const [isEditing, setIsEditing] = useState(false); // Editing state
+//   const [editId, setEditId] = useState(null); // ID of the record being edited
+
+//   const API_BASE = "http://localhost:1122"; // API Base URL
+
+//   // Fetch data from API
+//   useEffect(() => {
+//     fetchData();
+//   }, []);
+
+//   const fetchData = async () => {
+//     try {
+//       const response = await axios.get(`${API_BASE}/getdatas`);
+//       setData(response.data.totaldatas);
+//     } catch (err) {
+//       console.error("Error fetching data:", err);
+//     }
+//   };
+
+//   const handleInputChange = (e) => {
+//     const { name, value } = e.target;
+//     setFormData({ ...formData, [name]: value });
+//   };
+
+//   const handleFormSubmit = async (e) => {
+//     e.preventDefault();
+
+//     if (!formData.name || !formData.age) {
+//       alert("Please fill in all fields.");
+//       return;
+//     }
+
+//     try {
+//       if (isEditing) {
+//         // Update existing data
+//         await axios.put(`${API_BASE}/updatedatas/${editId}`, formData);
+//         setIsEditing(false);
+//         setEditId(null);
+//       } else {
+//         // Insert new data
+//         await axios.post(`${API_BASE}/insertdatas`, formData);
+//       }
+//       setFormData({ name: "", age: "" }); // Reset form
+//       fetchData(); // Refresh data
+//     } catch (err) {
+//       console.error("Error submitting form:", err);
+//     }
+//   };
+
+//   const handleDelete = async (id) => {
+//     if (window.confirm("Are you sure you want to delete this record?")) {
+//       try {
+//         await axios.delete(`${API_BASE}/deletedatas/${id}`);
+//         fetchData();
+//       } catch (err) {
+//         console.error("Error deleting data:", err);
+//       }
+//     }
+//   };
+
+//   const handleEdit = (user) => {
+//     setFormData({ name: user.name, age: user.age });
+//     setIsEditing(true);
+//     setEditId(user._id);
+//   };
+
+//   return (
+//     <div style={{ padding: "20px" }}>
+//       <h1>Manage Users</h1>
+
+//       {/* Form */}
+//       <form onSubmit={handleFormSubmit} style={{ marginBottom: "20px" }}>
+//         <input
+//           type="text"
+//           name="name"
+//           placeholder="Name"
+//           value={formData.name}
+//           onChange={handleInputChange}
+//           style={{ marginRight: "10px" }}
+//         />
+//         <input
+//           type="number"
+//           name="age"
+//           placeholder="Age"
+//           value={formData.age}
+//           onChange={handleInputChange}
+//           style={{ marginRight: "10px" }}
+//         />
+//         <button type="submit">{isEditing ? "Update" : "Add"}</button>
+//       </form>
+
+//       {/* Data Table */}
+//       <table border="1" cellPadding="10" style={{ width: "100%", textAlign: "left" }}>
+//         <thead>
+//           <tr>
+//             <th>Name</th>
+//             <th>Age</th>
+//             <th>Actions</th>
+//           </tr>
+//         </thead>
+//         <tbody>
+//           {data.length > 0 ? (
+//             data.map((user) => (
+//               <tr key={user._id}>
+//                 <td>{user.name}</td>
+//                 <td>{user.age}</td>
+//                 <td>
+//                   <button onClick={() => handleEdit(user)} style={{ marginRight: "10px" }}>
+//                     Edit
+//                   </button>
+//                   <button onClick={() => handleDelete(user._id)}>Delete</button>
+//                 </td>
+//               </tr>
+//             ))
+//           ) : (
+//             <tr>
+//               <td colSpan="3">No data found.</td>
+//             </tr>
+//           )}
+//         </tbody>
+//       </table>
+//     </div>
+//   );
+// };
+
+// export default Categories;

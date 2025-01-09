@@ -32,7 +32,6 @@ function AddCategory({ setActiveTab }) {
     };
 
     function backtocategory() {
-        // localStorage.removeItem('EditedDatas');
         setActiveTab("Categories");
     }
 
@@ -113,7 +112,7 @@ function AddCategory({ setActiveTab }) {
                                     <Col sm={2} className="d-flex align-items-center"><span className="ms-auto d-flex"><RiStarSFill fill="red" className="p-1" /> Category Name :</span></Col>
                                     <Col className="px-4">
                                         <FloatingLabel controlId="floatingInput" label="Category Name" className="mb-3 mt-3">
-                                            <Form.Control type="text" placeholder="Category Name" onChange={(e) => setcategoryname(e.target.value)} />
+                                            <Form.Control type="text" placeholder="Category Name" value={Categoryname} onChange={(e) => setcategoryname(e.target.value)} />
                                         </FloatingLabel>
                                     </Col>
                                 </Row>
@@ -136,3 +135,7 @@ function AddCategory({ setActiveTab }) {
 }
 
 export default AddCategory;
+
+
+
+
