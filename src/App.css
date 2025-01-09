@@ -636,6 +636,8 @@ background-image: url(./LeftArrow-ImgWhite.png); background-size: 60%;}
 .rdw-block-wrapper,.rdw-colorpicker-wrapper,.rdw-link-wrapper{display: none;}
 .adminpanelformpage{position: relative;}
 .adminpanelformpage::after{position: absolute; content: ""; height: 1px; width: 99.5%; background-color: #ededed; bottom: 0; left: 3px;}
+.convertbutton {background-color: #283443;}
+.convertbutton:hover{background-color: #414e5f;}
 
 /* ---- Animation --- */
 .body-img,.aboutUs2-animation,.Testimonial-Rightside

@@ -210,19 +210,19 @@ function Categories({ setActiveTab }) {
                                                         <OverlayTrigger key={placement} placement={placement} overlay={ 
                                                             <Tooltip id={`tooltip-${placement}`}>Csv</Tooltip>
                                                             } >
-                                                            <Button type="button" className="border ms-auto p-2 m-1 btn-light"><BsFiletypeCsv /> </Button>
+                                                            <Button type="button" className="border ms-auto p-2 m-1 convertbutton"><BsFiletypeCsv fill="white" /> </Button>
                                                         </OverlayTrigger>
 
                                                         <OverlayTrigger key={placement} placement={placement} overlay={ 
                                                             <Tooltip id={`tooltip-${placement}`}>Excel</Tooltip>
                                                             } >
-                                                            <Button type="button" className="border p-2 m-1 btn-light"><FaRegFileExcel/> </Button>
+                                                            <Button type="button" className="border p-2 m-1 btn-light convertbutton"><FaRegFileExcel fill="white" /> </Button>
                                                         </OverlayTrigger>
 
                                                         <OverlayTrigger key={placement} placement={placement} overlay={ 
                                                             <Tooltip id={`tooltip-${placement}`}>Pdf</Tooltip>
                                                             } >
-                                                            <Button type="button" className="border p-2 m-1 btn-light"><FaRegFilePdf/> </Button>
+                                                            <Button type="button" className="border p-2 m-1 btn-light convertbutton"><FaRegFilePdf fill="white" /> </Button>
                                                         </OverlayTrigger>
                                                     </>
                                                 ))}
