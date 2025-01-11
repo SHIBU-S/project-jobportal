@@ -19,23 +19,22 @@ import axios from "axios";
 function AddJobs({ setActiveTab }) {
 
     const [displayCategorydatas, setDisplayCategoryDatas] = useState([]);
-    const [descriptionname, setdescriptionname] = useState("");
+    // const [descriptionname, setdescriptionname] = useState("");
 
-    const [MainCategoryname,setMainCategoryname] = useState([]);
     const [SelectedCategory,setSelectedCategory] = useState("");
+    
 
-    const [editorState, setEditorState] = useState(EditorState.createEmpty());
-
-    const onEditorStateChange = (newEditorState) => {
-        setEditorState(newEditorState);
-        const contentState = newEditorState.getCurrentContent();
-        const description = contentState.getPlainText();
-        setdescriptionname(description);
-    };
-
-    function backtocategory() {
-        setActiveTab("Jobs");
-    }
+    // ------------ Input Values Storage-----------
+    const [MainCategoryname,setMainCategoryname] = useState([]);
+    const [JobPosition,setJobPosition] = useState("");
+    const [Description,setDescription] = useState("");
+    const [Salary,setSalary] = useState("");
+    const [Websitelink,setWebsitelink] = useState("");
+    const [Noticeperiod,setNoticeperiod] = useState("");
+    const [Location,setLocation] = useState("");
+    const [Jobtype,setJobtype] = useState("");
+    const [Image,setImage] = useState(null);
+    // ----
 
     useEffect(()=>{
         async function getMainCategoryname() {
@@ -48,7 +47,53 @@ function AddJobs({ setActiveTab }) {
             }
         }
         getMainCategoryname();
-    },[])
+    },[]);
+
+
+    // ------ Insert Job Datas
+    function submitJobdatas(){
+        const Job_formdatas = new FormData();
+        Job_formdatas.append("MainCategory",SelectedCategory);
+        Job_formdatas.append("JobPosition",JobPosition);
+        Job_formdatas.append("Description",Description);
+        Job_formdatas.append("Salary",Salary);
+        Job_formdatas.append("Websitelink",Websitelink);
+        Job_formdatas.append("Noticeperiod",Noticeperiod);
+        Job_formdatas.append("Location",Location);
+        Job_formdatas.append("Jobtype",Jobtype);
+        Job_formdatas.append("Image",Image);
+
+        if (!SelectedCategory || !JobPosition || !Description || !Salary || !Websitelink || !Noticeperiod || !Location || !Jobtype || !Image) {
+            alert("Please enter all job data fields.");
+            return;
+        }
+
+        try{
+            axios.post("http://localhost:5005/InsertJobDatas",Job_formdatas);
+            alert("Job Datas sucessfully inserted..");
+        }
+        catch(err){
+            alert("Error inserting job datas",err);
+        }
+    }
+    
+
+
+    const [editorState, setEditorState] = useState(EditorState.createEmpty());
+
+    const onEditorStateChange = (newEditorState) => {
+        setEditorState(newEditorState);
+        const contentState = newEditorState.getCurrentContent();
+        // const description = contentState.getPlainText();
+        // setdescriptionname(description);
+        setDescription(contentState.getPlainText());
+    };
+
+    function backtocategory() {
+        setActiveTab("Jobs");
+    }
+
+
   
 
 
@@ -64,7 +109,7 @@ function AddJobs({ setActiveTab }) {
                         </ul>
                     </Col>
                     <Col className="d-flex align-items-center justify-content-end grid gap-2">
-                        <div className="bg-primary p-2 d-flex" ><FaRegSave fill="white" /></div>
+                        <div className="bg-primary p-2 d-flex" onClick={submitJobdatas} ><FaRegSave fill="white" /></div>
                         <div className="bg-white p-2 d-flex" onClick={backtocategory}><FcUpLeft /></div>
                     </Col>
                 </Row>
@@ -91,6 +136,7 @@ function AddJobs({ setActiveTab }) {
                                                 <Dropdown.Item key={MainCategory.id} onClick={() => setSelectedCategory(MainCategory.Categoryname)}>
                                                     {MainCategory.Categoryname}
                                                 </Dropdown.Item>
+                                                
                                             ))
                                         ) : (
                                                 <Dropdown.Item>No Data</Dropdown.Item>
@@ -106,7 +152,7 @@ function AddJobs({ setActiveTab }) {
                                     <Col sm={2} className="d-flex align-items-center"><span className="ms-auto d-flex"> Job Position :</span></Col>
                                     <Col className="px-4">
                                         <FloatingLabel controlId="floatingInput" label="Job Position" className="mb-3 mt-3">
-                                            <Form.Control type="text" placeholder="Job Position"  />
+                                            <Form.Control type="text" placeholder="Job Position" onChange={(e)=>setJobPosition(e.target.value)}  />
                                         </FloatingLabel>
                                     </Col>
                                 </Row>
@@ -120,6 +166,7 @@ function AddJobs({ setActiveTab }) {
                                             wrapperClassName="demo-wrapper"
                                             editorClassName="demo-editor"
                                             onEditorStateChange={onEditorStateChange}
+                                            // onChange={(e)=>setDescription(e.target.value)}
                                         />
                                     </Col>
                                 </Row>
@@ -128,8 +175,8 @@ function AddJobs({ setActiveTab }) {
                                 <Row className="adminpanelformpage">
                                     <Col sm={2} className="d-flex align-items-center"><span className="ms-auto d-flex"> Salary :</span></Col>
                                     <Col className="px-4">
-                                        <FloatingLabel controlId="floatingInput" label="Job Position" className="mb-3 mt-3">
-                                            <Form.Control type="number" placeholder="Salary"  />
+                                        <FloatingLabel controlId="floatingInput" label="Salary" className="mb-3 mt-3">
+                                            <Form.Control type="number" placeholder="Salary" onChange={(e)=>setSalary(e.target.value)} />
                                         </FloatingLabel>
                                     </Col>
                                 </Row>
@@ -139,7 +186,7 @@ function AddJobs({ setActiveTab }) {
                                     <Col sm={2} className="d-flex align-items-center"><span className="ms-auto d-flex"> Website Link :</span></Col>
                                     <Col className="px-4">
                                         <FloatingLabel controlId="floatingInput" label="Website Link" className="mb-3 mt-3">
-                                            <Form.Control type="text" placeholder="Website Link"  />
+                                            <Form.Control type="text" placeholder="Website Link" onChange={(e)=>setWebsitelink(e.target.value)}  />
                                         </FloatingLabel>
                                     </Col>
                                 </Row>
@@ -149,7 +196,7 @@ function AddJobs({ setActiveTab }) {
                                     <Col sm={2} className="d-flex align-items-center"><span className="ms-auto d-flex"> Notice Period :</span></Col>
                                     <Col className="px-4">
                                         <FloatingLabel controlId="floatingInput" label="Notice Period" className="mb-3 mt-3">
-                                            <Form.Control type="text" placeholder="Notice Period"  />
+                                            <Form.Control type="text" placeholder="Notice Period" onChange={(e)=>setNoticeperiod(e.target.value)}  />
                                         </FloatingLabel>
                                     </Col>
                                 </Row>
@@ -159,7 +206,7 @@ function AddJobs({ setActiveTab }) {
                                     <Col sm={2} className="d-flex align-items-center"><span className="ms-auto d-flex"> Location :</span></Col>
                                     <Col className="px-4">
                                         <FloatingLabel controlId="floatingInput" label="Location" className="mb-3 mt-3">
-                                            <Form.Control type="text" placeholder="Location"  />
+                                            <Form.Control type="text" placeholder="Location" onChange={(e)=>setLocation(e.target.value)}  />
                                         </FloatingLabel>
                                     </Col>
                                 </Row>
@@ -169,7 +216,7 @@ function AddJobs({ setActiveTab }) {
                                     <Col sm={2} className="d-flex align-items-center"><span className="ms-auto d-flex"> Job Type :</span></Col>
                                     <Col className="px-4">
                                         <FloatingLabel controlId="floatingInput" label="Job Type" className="mb-3 mt-3">
-                                            <Form.Control type="text" placeholder="Job Type"  />
+                                            <Form.Control type="text" placeholder="Job Type" onChange={(e)=>setJobtype(e.target.value)}  />
                                         </FloatingLabel>
                                     </Col>
                                 </Row>
@@ -179,7 +226,7 @@ function AddJobs({ setActiveTab }) {
                                     <Col sm={2}  className="d-flex align-items-center"><span className="ms-auto">Image :</span></Col>
                                     <Col className="px-4">
                                         <FloatingLabel controlId="floatingInput" className="mb-3 mt-3">
-                                            <Form.Control type="file" className="py-3" />
+                                            <Form.Control type="file" className="py-3" onChange={(e)=>setImage(e.target.files[0])} />
                                         </FloatingLabel>
                                     </Col>
                                 </Row>
@@ -193,3 +240,23 @@ function AddJobs({ setActiveTab }) {
 }
 
 export default AddJobs;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

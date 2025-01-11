@@ -19,8 +19,9 @@ import Pagination from 'react-bootstrap/Pagination';
 
 function Jobs({ setActiveTab }) {
     // const [showAddCategory, setshowAddCategory] = useState(false);
-    const [categoryData, setCategoryData] = useState([]); 
     const [Job_activePage,setJob_ActivePage] = useState(1);
+
+    const [totalJobDatas,settotalJobDatas] = useState([]);
 
     let active = 1;
     let items = [];
@@ -33,6 +34,20 @@ function Jobs({ setActiveTab }) {
     }
 
 
+    // -------------------- Fetch JobDatas -----------------
+    useEffect(()=>{
+        async function fetchJobDatas() {
+            try{
+                const response = await axios.get("http://localhost:5005/GetJobDatas");
+                settotalJobDatas(response.data.totalJobDatas);
+            }
+            catch(err){
+                alert("Error fetching Job data:");
+            }
+        }
+        fetchJobDatas();
+    },[]);
+    
 
 
     function displaynew() {
@@ -115,49 +130,24 @@ function Jobs({ setActiveTab }) {
                             </tr>
                         </thead>
 
-            {/*  ------------------------------------  (1) Category Table  -----------------------------------------  */}
+            {/*  ------------------------------------  (1) Job Table  -----------------------------------------  */}
                         {Job_activePage ===1 && (<tbody>
                             {
-                            categoryData.length > 0 ? (
-                                categoryData.map((category,image) => (
-                                    <tr>
-                                        <td className="border p-2 py-3" style={{ width: "1px" }}>
-                                            <input type="checkbox" />
-                                        </td>
-                                        <td className="border p-2 py-3"></td>
-                                        <td className="border p-2" style={{ width: "55%" }}>
-                                            
-                                        </td>
-                                        <td className="border p-2 text-end">
-                                            <div key={image._id}>
-                                              
-                                            </div>
-                                        </td>
-                                        <td className=" p-2 d-flex align-items-center">
-                                                {['top'].map((placement) => (
-                                                    <>
-                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
-                                                            <Tooltip id={`tooltip-${placement}`}>View</Tooltip>
-                                                            } >
-                                                            <Button type="button" className="ms-auto p-2 m-1 bg-primary text-white">View </Button>
-                                                        </OverlayTrigger>
-
-                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
-                                                            <Tooltip id={`tooltip-${placement}`}>Edit</Tooltip>
-                                                            } >
-                                                            <Button type="button" className=" p-2 m-1  bg-warning">Edit </Button>
-                                                        </OverlayTrigger>
-
-                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
-                                                            <Tooltip id={`tooltip-${placement}`}>Delete</Tooltip>
-                                                            } >
-                                                            <Button type="button" className=" p-2 m-1 bg-danger text-white">Delete </Button>
-                                                        </OverlayTrigger>
-                                                    </>
-                                                ))}
-                                        </td> 
-
-                                    </tr>
+                            totalJobDatas.length > 0 ? (
+                                totalJobDatas.map((jobdatas,index) => (
+                                <tr key={jobdatas.id}>
+                                    <td className="border p-2 py-3" style={{ width: "1px" }}> <input type="checkbox" /> </td>
+                                    <td className="border p-2 py-3">{index}</td> 
+                                    <td className="border p-2" style={{ width: "55%" }}> {jobdatas.MainCategory} </td>
+                                    <td className="border p-2 text-end">{jobdatas.JobPosition}</td>
+                                    <td className="border p-2 text-end">{jobdatas.Description}</td>
+                                    <td className="border p-2 text-end">{jobdatas.Salary}</td>
+                                    <td className="border p-2 text-end">{jobdatas.WebsiteLink}</td>
+                                    <td className="border p-2 text-end">{jobdatas.NoticePeriod}</td>
+                                    <td className="border p-2 text-end">{jobdatas.Location}</td>
+                                    <td className="border p-2 text-end">{jobdatas.JobType}</td>
+                                    <td className="border p-2 text-end"><img src={jobdatas.Image} alt="Job" style={{ width: "50px" }} /></td>
+                                </tr>
                                 ))                           
                             ) : (
                                 <tr>
@@ -184,3 +174,7 @@ function Jobs({ setActiveTab }) {
 }
 
 export default Jobs;
+
+
+
+
