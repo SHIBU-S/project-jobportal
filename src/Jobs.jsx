@@ -21,7 +21,7 @@ function Jobs({ setActiveTab }) {
     // const [showAddCategory, setshowAddCategory] = useState(false);
     const [Job_activePage,setJob_ActivePage] = useState(1);
 
-    const [totalJobDatas,settotalJobDatas] = useState([]);
+    const [totalJobDatas,setTotalJobDatas] = useState([]);
 
     let active = 1;
     let items = [];
@@ -34,19 +34,50 @@ function Jobs({ setActiveTab }) {
     }
 
 
+    // ----------- Checkbox
+    const [selectedJobdatas, setSelectedJobdatas] = useState([]);
+    function selectedtodelete(JobID){
+        setSelectedJobdatas(prevstate => prevstate.includes(JobID) ? 
+        prevstate.filter(id => id !== JobID )  // Unselect if already selected 
+        : [...prevstate,JobID] )               
+    }
+    //---------
+
+
     // -------------------- Fetch JobDatas -----------------
     useEffect(()=>{
         async function fetchJobDatas() {
             try{
                 const response = await axios.get("http://localhost:5005/GetJobDatas");
-                settotalJobDatas(response.data.totalJobDatas);
+                setTotalJobDatas(response.data.totaljobdatas);
             }
             catch(err){
                 alert("Error fetching Job data:");
             }
         }
         fetchJobDatas();
-    },[]);
+    }, []);
+
+
+    // -------------------- Pagination Condition -------------------
+    const itemsPerPage = 10;
+    const startIndex = (Job_activePage - 1) * itemsPerPage;    
+    const endIndex = startIndex + itemsPerPage;                     
+    const pageData = totalJobDatas.slice(startIndex, endIndex); 
+    // -----
+
+
+    // -------------------- Delete Datas ------------------
+    // async function deleteJobdatas() {
+    //     try{
+    //         await Promise.all(selectedJobdatas.map(id=> axios.delete(`http://localhost:5005/DeleteJobDatas/${id}`)));
+    //         setTotalJobDatas(prev => prev.filter(job => !selectedJobdatas.includes(job._id)));
+    //         alert("Successfully Deleted this details..");
+    //     }
+    //     catch(err){
+    //         alert("Failed to delete dats.. Please try again.");
+    //     }
+    // }
     
 
 
@@ -112,41 +143,69 @@ function Jobs({ setActiveTab }) {
                     </div>
                 </div>
 
-                <div className="border p-3 bg-white" style={{ height: "500px", overflowY: "auto" }}>
+                <div className="border p-3 bg-white" style={{ height: "500px", overflowY: "auto" }}> 
                     <table style={{ width: "100%" }} className="border">
                         <thead>
                             <tr>
                                 <td className="border p-2" style={{ width: "1px" }}><input type="checkbox" /></td>
                                 <td className="border p-2">S.No</td>
-                                <td className="border p-2">Main Category</td>
-                                <td className="border p-2 text-end">Job Position</td>
-                                <td className="border p-2 text-end">Description</td>
-                                <td className="border p-2 text-end">salary</td>
-                                <td className="border p-2 text-end">Website Link</td>
-                                <td className="border p-2 text-end">Notice Period</td>
-                                <td className="border p-2 text-end">Location</td>
-                                <td className="border p-2 text-end">Job Type</td>
-                                <td className="border p-2 text-end">Image</td>
+                                <td className="border p-2 text-center">Main Category</td>
+                                <td className="border p-2 text-center">Job Position</td>
+                                <td className="border p-2 text-center">Description</td>
+                                <td className="border p-2 text-center">Salary</td>
+                                <td className="border p-2 text-center">Website Link</td>
+                                <td className="border p-2 text-center">Notice Period</td>
+                                <td className="border p-2 text-center">Location</td>
+                                <td className="border p-2 text-center">Job Type</td>
+                                <td className="border p-2 text-center">Image</td>
+                                <td className="border p-2 text-center">Actions</td> 
                             </tr>
                         </thead>
 
             {/*  ------------------------------------  (1) Job Table  -----------------------------------------  */}
                         {Job_activePage ===1 && (<tbody>
                             {
-                            totalJobDatas.length > 0 ? (
-                                totalJobDatas.map((jobdatas,index) => (
-                                <tr key={jobdatas.id}>
-                                    <td className="border p-2 py-3" style={{ width: "1px" }}> <input type="checkbox" /> </td>
-                                    <td className="border p-2 py-3">{index}</td> 
-                                    <td className="border p-2" style={{ width: "55%" }}> {jobdatas.MainCategory} </td>
-                                    <td className="border p-2 text-end">{jobdatas.JobPosition}</td>
-                                    <td className="border p-2 text-end">{jobdatas.Description}</td>
-                                    <td className="border p-2 text-end">{jobdatas.Salary}</td>
-                                    <td className="border p-2 text-end">{jobdatas.WebsiteLink}</td>
-                                    <td className="border p-2 text-end">{jobdatas.NoticePeriod}</td>
-                                    <td className="border p-2 text-end">{jobdatas.Location}</td>
-                                    <td className="border p-2 text-end">{jobdatas.JobType}</td>
-                                    <td className="border p-2 text-end"><img src={jobdatas.Image} alt="Job" style={{ width: "50px" }} /></td>
+                                pageData && pageData.length > 0 ? (
+                                    pageData.reverse().map((jobdatas,index) => (
+                                <tr key={jobdatas._id}>
+                                    <td className="border p-1 text-center"> <input type="checkbox" 
+                                        checked={selectedJobdatas.includes(jobdatas._id)} 
+                                        onClick={()=>selectedtodelete(jobdatas._id)} /> 
+                                    </td>
+                                    <td className="border p-1  text-center">{pageData.length-index}</td> 
+                                    <td className="border p-1 text-center"> {jobdatas.MainCategory}</td>
+                                    <td className="border p-1 text-center">{jobdatas.JobPosition}</td>
+                                    <td className="border p-1 text-center">{jobdatas.Description}</td>
+                                    <td className="border p-1 text-center">{jobdatas.Salary}</td>
+                                    <td className="border p-1 text-center">{jobdatas.WebsiteLink}</td>
+                                    <td className="border p-1 text-center">{jobdatas.NoticePeriod}</td>
+                                    <td className="border p-1 text-center">{jobdatas.Location}</td>
+                                    <td className="border p-1 text-center">{jobdatas.JobType}</td>
+                                    <td className="border p-1 text-center"><img src={jobdatas.Image} alt="Job"  style={{ width: "30px", height: "30px" }}   /></td>
+                                    <td className="border-top d-block pt-3 ">
+                                                {['top'].map((placement) => (
+                                                    <>
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>View</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-1 m-1 bg-primary text-white border" >View </Button>
+                                                        </OverlayTrigger>
+
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>Edit</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-1 bg-warning border border-none"  >Edit </Button>
+                                                        </OverlayTrigger>
+
+                                                        {/* <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>Delete</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-1 m-1 bg-danger text-white border" 
+                                                                disabled={!selectedJobdatas.includes(jobdatas._id)} onClick={deleteJobdatas(jobdatas._id)} >Delete </Button>
+                                                        </OverlayTrigger>  */}
+                                                    </>
+                                                ))}
+                                    </td>  
                                 </tr>
                                 ))                           
                             ) : (
@@ -154,7 +213,8 @@ function Jobs({ setActiveTab }) {
                                     <td colSpan="4" className="text-center"></td>
                                 </tr>
                             )}
-                        </tbody>)}
+                            </tbody>
+                        )}
 
 
                        
@@ -174,6 +234,8 @@ function Jobs({ setActiveTab }) {
 }
 
 export default Jobs;
+
+
 
 
 

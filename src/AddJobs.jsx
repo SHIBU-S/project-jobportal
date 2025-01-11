@@ -29,10 +29,10 @@ function AddJobs({ setActiveTab }) {
     const [JobPosition,setJobPosition] = useState("");
     const [Description,setDescription] = useState("");
     const [Salary,setSalary] = useState("");
-    const [Websitelink,setWebsitelink] = useState("");
-    const [Noticeperiod,setNoticeperiod] = useState("");
+    const [WebsiteLink,setWebsitelink] = useState("");
+    const [NoticePeriod,setNoticeperiod] = useState("");
     const [Location,setLocation] = useState("");
-    const [Jobtype,setJobtype] = useState("");
+    const [JobType,setJobtype] = useState("");
     const [Image,setImage] = useState(null);
     // ----
 
@@ -57,13 +57,13 @@ function AddJobs({ setActiveTab }) {
         Job_formdatas.append("JobPosition",JobPosition);
         Job_formdatas.append("Description",Description);
         Job_formdatas.append("Salary",Salary);
-        Job_formdatas.append("Websitelink",Websitelink);
-        Job_formdatas.append("Noticeperiod",Noticeperiod);
+        Job_formdatas.append("WebsiteLink",WebsiteLink);
+        Job_formdatas.append("NoticePeriod",NoticePeriod);
         Job_formdatas.append("Location",Location);
-        Job_formdatas.append("Jobtype",Jobtype);
+        Job_formdatas.append("JobType",JobType);
         Job_formdatas.append("Image",Image);
 
-        if (!SelectedCategory || !JobPosition || !Description || !Salary || !Websitelink || !Noticeperiod || !Location || !Jobtype || !Image) {
+        if (!SelectedCategory || !JobPosition || !Description || !Salary || !WebsiteLink || !NoticePeriod || !Location || !JobType || !Image) {
             alert("Please enter all job data fields.");
             return;
         }
@@ -84,8 +84,6 @@ function AddJobs({ setActiveTab }) {
     const onEditorStateChange = (newEditorState) => {
         setEditorState(newEditorState);
         const contentState = newEditorState.getCurrentContent();
-        // const description = contentState.getPlainText();
-        // setdescriptionname(description);
         setDescription(contentState.getPlainText());
     };
 
@@ -166,7 +164,6 @@ function AddJobs({ setActiveTab }) {
                                             wrapperClassName="demo-wrapper"
                                             editorClassName="demo-editor"
                                             onEditorStateChange={onEditorStateChange}
-                                            // onChange={(e)=>setDescription(e.target.value)}
                                         />
                                     </Col>
                                 </Row>
@@ -215,9 +212,15 @@ function AddJobs({ setActiveTab }) {
                                 <Row className="adminpanelformpage">
                                     <Col sm={2} className="d-flex align-items-center"><span className="ms-auto d-flex"> Job Type :</span></Col>
                                     <Col className="px-4">
-                                        <FloatingLabel controlId="floatingInput" label="Job Type" className="mb-3 mt-3">
-                                            <Form.Control type="text" placeholder="Job Type" onChange={(e)=>setJobtype(e.target.value)}  />
-                                        </FloatingLabel>
+                                        <Dropdown onSelect={(e)=>setJobtype(e)} className="p-4">
+                                            <Dropdown.Toggle variant="light" id="dropdown-basic" >
+                                                {JobType || "Select a Job Type" }
+                                            </Dropdown.Toggle>
+                                            <Dropdown.Menu>
+                                                <Dropdown.Item eventKey="Part Time">Part Time</Dropdown.Item>
+                                                <Dropdown.Item eventKey="Full Time">Full Time</Dropdown.Item>
+                                            </Dropdown.Menu>
+                                        </Dropdown>
                                     </Col>
                                 </Row>
 
