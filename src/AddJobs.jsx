@@ -19,7 +19,6 @@ import axios from "axios";
 function AddJobs({ setActiveTab }) {
 
     const [displayCategorydatas, setDisplayCategoryDatas] = useState([]);
-    // const [descriptionname, setdescriptionname] = useState("");
 
     const [SelectedCategory,setSelectedCategory] = useState("");
     
@@ -50,6 +49,22 @@ function AddJobs({ setActiveTab }) {
     },[]);
 
 
+    useEffect(()=>{
+        const editJobdatas = JSON.parse(localStorage.getItem("EditedJobsDatas"));
+        if(editJobdatas){
+            setSelectedCategory(editJobdatas.SelectedCategory);
+            setJobPosition(editJobdatas.JobPosition);
+            setDescription(editJobdatas.Description);
+            setSalary(editJobdatas.Salary);
+            setWebsitelink(editJobdatas.WebsiteLink);
+            setNoticeperiod(editJobdatas.NoticePeriod);
+            setLocation(editJobdatas.Location);
+            setJobtype(editJobdatas.JobType);
+            setImage(editJobdatas.Image);
+        }
+    },[]);
+
+
     // ------ Insert Job Datas
     function submitJobdatas(){
         const Job_formdatas = new FormData();
@@ -63,17 +78,33 @@ function AddJobs({ setActiveTab }) {
         Job_formdatas.append("JobType",JobType);
         Job_formdatas.append("Image",Image);
 
+        
         if (!SelectedCategory || !JobPosition || !Description || !Salary || !WebsiteLink || !NoticePeriod || !Location || !JobType || !Image) {
             alert("Please enter all job data fields.");
             return;
         }
+        
+        const edit_Jobdatas = JSON.parse(localStorage.getItem("EditedJobDatas"));
 
-        try{
-            axios.post("http://localhost:5005/InsertJobDatas",Job_formdatas);
-            alert("Job Datas sucessfully inserted..");
-        }
-        catch(err){
-            alert("Error inserting job datas",err);
+        if(edit_Jobdatas){
+            axios.put(`http://localhost:5005/EditJobDatas/${edit_Jobdatas._id}`,Job_formdatas)
+                .then(() => {
+                    alert("Job Datas updated successfully");
+                    localStorage.removeItem('EditedJobDatas');
+                    setActiveTab("Jobs");
+                })
+                .catch((error) => {
+                    alert("Error updating job datas: " + error.message);
+                });
+        }       
+        else{
+            try{
+                axios.post("http://localhost:5005/InsertJobDatas",Job_formdatas);
+                alert("Job Datas sucessfully inserted..");
+            }
+            catch(err){
+                alert("Error inserting job datas",err);
+            }
         }
     }
     
@@ -90,6 +121,8 @@ function AddJobs({ setActiveTab }) {
     function backtocategory() {
         setActiveTab("Jobs");
     }
+
+
 
 
   
@@ -131,7 +164,7 @@ function AddJobs({ setActiveTab }) {
                                     <Dropdown.Menu>
                                         {MainCategoryname.length > 0 ? (
                                             MainCategoryname.map((MainCategory) => (
-                                                <Dropdown.Item key={MainCategory.id} onClick={() => setSelectedCategory(MainCategory.Categoryname)}>
+                                                <Dropdown.Item key={MainCategory.id} value={SelectedCategory} onClick={() => setSelectedCategory(MainCategory.Categoryname)}>
                                                     {MainCategory.Categoryname}
                                                 </Dropdown.Item>
                                                 
@@ -150,7 +183,7 @@ function AddJobs({ setActiveTab }) {
                                     <Col sm={2} className="d-flex align-items-center"><span className="ms-auto d-flex"> Job Position :</span></Col>
                                     <Col className="px-4">
                                         <FloatingLabel controlId="floatingInput" label="Job Position" className="mb-3 mt-3">
-                                            <Form.Control type="text" placeholder="Job Position" onChange={(e)=>setJobPosition(e.target.value)}  />
+                                            <Form.Control type="text" placeholder="Job Position" value={JobPosition} onChange={(e)=>setJobPosition(e.target.value)}  />
                                         </FloatingLabel>
                                     </Col>
                                 </Row>
@@ -164,6 +197,7 @@ function AddJobs({ setActiveTab }) {
                                             wrapperClassName="demo-wrapper"
                                             editorClassName="demo-editor"
                                             onEditorStateChange={onEditorStateChange}
+                                            value={Description}
                                         />
                                     </Col>
                                 </Row>
@@ -173,7 +207,7 @@ function AddJobs({ setActiveTab }) {
                                     <Col sm={2} className="d-flex align-items-center"><span className="ms-auto d-flex"> Salary :</span></Col>
                                     <Col className="px-4">
                                         <FloatingLabel controlId="floatingInput" label="Salary" className="mb-3 mt-3">
-                                            <Form.Control type="number" placeholder="Salary" onChange={(e)=>setSalary(e.target.value)} />
+                                            <Form.Control type="number" placeholder="Salary" value={Salary} onChange={(e)=>setSalary(e.target.value)} />
                                         </FloatingLabel>
                                     </Col>
                                 </Row>
@@ -183,7 +217,7 @@ function AddJobs({ setActiveTab }) {
                                     <Col sm={2} className="d-flex align-items-center"><span className="ms-auto d-flex"> Website Link :</span></Col>
                                     <Col className="px-4">
                                         <FloatingLabel controlId="floatingInput" label="Website Link" className="mb-3 mt-3">
-                                            <Form.Control type="text" placeholder="Website Link" onChange={(e)=>setWebsitelink(e.target.value)}  />
+                                            <Form.Control type="text" placeholder="Website Link" value={WebsiteLink} onChange={(e)=>setWebsitelink(e.target.value)}  />
                                         </FloatingLabel>
                                     </Col>
                                 </Row>
@@ -193,7 +227,7 @@ function AddJobs({ setActiveTab }) {
                                     <Col sm={2} className="d-flex align-items-center"><span className="ms-auto d-flex"> Notice Period :</span></Col>
                                     <Col className="px-4">
                                         <FloatingLabel controlId="floatingInput" label="Notice Period" className="mb-3 mt-3">
-                                            <Form.Control type="text" placeholder="Notice Period" onChange={(e)=>setNoticeperiod(e.target.value)}  />
+                                            <Form.Control type="text" placeholder="Notice Period" value={NoticePeriod} onChange={(e)=>setNoticeperiod(e.target.value)}  />
                                         </FloatingLabel>
                                     </Col>
                                 </Row>
@@ -203,7 +237,7 @@ function AddJobs({ setActiveTab }) {
                                     <Col sm={2} className="d-flex align-items-center"><span className="ms-auto d-flex"> Location :</span></Col>
                                     <Col className="px-4">
                                         <FloatingLabel controlId="floatingInput" label="Location" className="mb-3 mt-3">
-                                            <Form.Control type="text" placeholder="Location" onChange={(e)=>setLocation(e.target.value)}  />
+                                            <Form.Control type="text" placeholder="Location" value={Location} onChange={(e)=>setLocation(e.target.value)}  />
                                         </FloatingLabel>
                                     </Col>
                                 </Row>

@@ -15,6 +15,8 @@ import Button from 'react-bootstrap/Button';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip'; 
 import Pagination from 'react-bootstrap/Pagination';
+import Modal from 'react-bootstrap/Modal';
+import { RiDeleteBinLine } from "react-icons/ri";
 
 
 function Jobs({ setActiveTab }) {
@@ -35,11 +37,25 @@ function Jobs({ setActiveTab }) {
 
 
     // ----------- Checkbox
+    const [ischecked,setischecked] = useState(false);
     const [selectedJobdatas, setSelectedJobdatas] = useState([]);
     function selectedtodelete(JobID){
         setSelectedJobdatas(prevstate => prevstate.includes(JobID) ? 
         prevstate.filter(id => id !== JobID )  // Unselect if already selected 
         : [...prevstate,JobID] )               
+    }
+
+    const [isAllSelected, setIsAllSelected] = useState(false); 
+    function handleSelectAll() 
+    {
+        setIsAllSelected(!isAllSelected);
+        if (!isAllSelected) {
+            const allJobIds = totalJobDatas.map((job) => job._id);
+            setSelectedJobDetails(allJobIds);
+        } 
+        else {
+            setSelectedJobDetails([]);
+        }
     }
     //---------
 
@@ -68,16 +84,66 @@ function Jobs({ setActiveTab }) {
 
 
     // -------------------- Delete Datas ------------------
-    // async function deleteJobdatas() {
-    //     try{
-    //         await Promise.all(selectedJobdatas.map(id=> axios.delete(`http://localhost:5005/DeleteJobDatas/${id}`)));
-    //         setTotalJobDatas(prev => prev.filter(job => !selectedJobdatas.includes(job._id)));
-    //         alert("Successfully Deleted this details..");
-    //     }
-    //     catch(err){
-    //         alert("Failed to delete dats.. Please try again.");
-    //     }
-    // }
+    async function deleteJobdatas() {
+        try{
+            await Promise.all(selectedJobdatas.map(id=> axios.delete(`http://localhost:5005/DeleteJobDatas/${id}`)));
+            setTotalJobDatas(prev => prev.filter(job => !selectedJobdatas.includes(job._id)));
+            alert("Successfully Deleted this details..");
+        }
+        catch(err){
+            alert("Failed to delete dats.. Please try again.");
+        }
+    }
+
+
+    //--------------------- Edit Datas -----------------------
+    async function editdatas(jobdatas) 
+    {
+        setActiveTab('AddJobs');
+        localStorage.setItem('EditedJobDatas', JSON.stringify(jobdatas)); 
+    }
+    // -----
+
+
+    // ------------------Delete All Details---------------------
+    function deletealldetails()
+    {
+        if (isAllSelected && selectedJobDetails.length > 0) 
+        {
+            if (window.confirm("Are you sure you want to delete all selected categories?")) 
+            {
+                try {
+                    Promise.all(selectedJobDetails.map(id => axios.delete(`http://localhost:5005/DeleteJobDatas/${id}`)))
+                        .then(() => {
+                            alert("All selected Job Datas have been deleted successfully.");
+                            setTotalJobDatas(prev => prev.filter(job => !selectedJobDetails.includes(job._id)));
+                            setSelectedJobDetails([]);
+                        })
+                        .catch((err) => {
+                            console.error("Error deleting categories:", err);
+                            alert("Failed to delete some categories. Please try again.");
+                        });
+                } catch (err) {
+                    console.error("Error deleting categories:", err);
+                    alert("Failed to delete some categories. Please try again.");
+                }
+            }
+        }
+}
+// -----
+
+
+    // ----------------------Modal------------------------
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    const [selectedJobDetails, setSelectedJobDetails] = useState(null);
+
+    function viewJobDetails(jobdatas) {
+        setSelectedJobDetails(jobdatas);
+        setShow(true); 
+    }
+    // -----
     
 
 
@@ -111,6 +177,7 @@ function Jobs({ setActiveTab }) {
 
                     <Col className="d-flex align-items-center grid gap-2">
                         <div className="ms-auto p-2 d-flex bg-primary" onClick={displaynew}><FaPlus fill="white" /></div>
+                         <div className="p-2 d-flex bg-danger" onClick={deletealldetails}><RiDeleteBinLine fill="white"  /></div>
                     </Col>
                 </Row>
             </Container>
@@ -147,7 +214,8 @@ function Jobs({ setActiveTab }) {
                     <table style={{ width: "100%" }} className="border">
                         <thead>
                             <tr>
-                                <td className="border p-2" style={{ width: "1px" }}><input type="checkbox" /></td>
+                                <td className="border p-2" style={{ width: "1px" }}><input type="checkbox" 
+                                                checked={isAllSelected} onChange={handleSelectAll} /></td>
                                 <td className="border p-2">S.No</td>
                                 <td className="border p-2 text-center">Main Category</td>
                                 <td className="border p-2 text-center">Job Position</td>
@@ -188,21 +256,21 @@ function Jobs({ setActiveTab }) {
                                                         <OverlayTrigger key={placement} placement={placement} overlay={ 
                                                             <Tooltip id={`tooltip-${placement}`}>View</Tooltip>
                                                             } >
-                                                            <Button type="button" className=" p-1 m-1 bg-primary text-white border" >View </Button>
+                                                            <Button type="button" className=" p-1 m-1 bg-primary text-white border" onClick={()=>viewJobDetails(jobdatas)} >View </Button>
                                                         </OverlayTrigger>
 
                                                         <OverlayTrigger key={placement} placement={placement} overlay={ 
                                                             <Tooltip id={`tooltip-${placement}`}>Edit</Tooltip>
                                                             } >
-                                                            <Button type="button" className=" p-1 bg-warning border border-none"  >Edit </Button>
+                                                            <Button type="button" className=" p-1 bg-warning border border-none" onClick={() => editdatas(jobdatas)} >Edit </Button>
                                                         </OverlayTrigger>
 
-                                                        {/* <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
                                                             <Tooltip id={`tooltip-${placement}`}>Delete</Tooltip>
                                                             } >
                                                             <Button type="button" className=" p-1 m-1 bg-danger text-white border" 
-                                                                disabled={!selectedJobdatas.includes(jobdatas._id)} onClick={deleteJobdatas(jobdatas._id)} >Delete </Button>
-                                                        </OverlayTrigger>  */}
+                                                                disabled={!selectedJobdatas.includes(jobdatas._id)} onClick={()=>deleteJobdatas(jobdatas._id)} >Delete </Button>
+                                                        </OverlayTrigger> 
                                                     </>
                                                 ))}
                                     </td>  
@@ -227,6 +295,48 @@ function Jobs({ setActiveTab }) {
                             <span aria-hidden="true" className="border d-flex align-items-center px-3" onClick={nextpage}>&raquo;</span>
                         </Pagination>
                     </div>
+
+
+                    <Modal show={show} onHide={handleClose}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>JOB DETAILS</Modal.Title>
+                        </Modal.Header>
+
+                        <Modal.Body>
+                            {selectedJobDetails ? (
+                                <>
+                                    <Container fluid>
+                                        <Row>
+                                            <Col><h5>Main Category:</h5></Col>
+                                            <Col><p>{selectedJobDetails.MainCategory}</p></Col>
+                                        </Row>
+                                        <Row>
+                                            <Col><h5>Job Position:</h5></Col>
+                                            <Col><p>{selectedJobDetails.JobPosition}</p></Col>
+                                        </Row>
+                                        <Row>
+                                            <Col><h5>Description:</h5></Col>
+                                            <Col><p>{selectedJobDetails.Description}</p></Col>
+                                        </Row>
+                                        <Row>
+                                            <Col><h5>Salary:</h5></Col>
+                                            <Col><p>{selectedJobDetails.Salary}</p></Col>
+                                        </Row>
+                                        <Row>
+                                            <Col><h5>Location:</h5></Col>
+                                            <Col><p>{selectedJobDetails.Location}</p></Col>
+                                        </Row>
+                                        <Row>
+                                            <Col><h5>Image:</h5></Col>
+                                            <Col><img src={selectedJobDetails.Image} alt="Job" style={{ width: "100%", height: "auto" }} /></Col>
+                                        </Row>
+                                    </Container>
+                                </>
+                            ) : (
+                                <p>No Category Details available here..</p>
+                            )}
+                        </Modal.Body>
+                    </Modal>
                 </div>
             </Container>
         </>
