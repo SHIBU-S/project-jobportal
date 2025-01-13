@@ -51,10 +51,10 @@ function Jobs({ setActiveTab }) {
         setIsAllSelected(!isAllSelected);
         if (!isAllSelected) {
             const allJobIds = totalJobDatas.map((job) => job._id);
-            setSelectedJobDetails(allJobIds);
+            setSelectedJobdatas(allJobIds);
         } 
         else {
-            setSelectedJobDetails([]);
+            setSelectedJobdatas([]);
         }
     }
     //---------
@@ -108,16 +108,16 @@ function Jobs({ setActiveTab }) {
     // ------------------Delete All Details---------------------
     function deletealldetails()
     {
-        if (isAllSelected && selectedJobDetails.length > 0) 
+        if (isAllSelected && selectedJobdatas.length > 0) 
         {
             if (window.confirm("Are you sure you want to delete all selected categories?")) 
             {
                 try {
-                    Promise.all(selectedJobDetails.map(id => axios.delete(`http://localhost:5005/DeleteJobDatas/${id}`)))
+                    Promise.all(selectedJobdatas.map(id => axios.delete(`http://localhost:5005/DeleteJobDatas/${id}`)))
                         .then(() => {
                             alert("All selected Job Datas have been deleted successfully.");
-                            setTotalJobDatas(prev => prev.filter(job => !selectedJobDetails.includes(job._id)));
-                            setSelectedJobDetails([]);
+                            setTotalJobDatas(prev => prev.filter(job => !selectedJobdatas.includes(job._id)));
+                            setSelectedJobdatas([]);
                         })
                         .catch((err) => {
                             console.error("Error deleting categories:", err);
@@ -215,7 +215,8 @@ function Jobs({ setActiveTab }) {
                         <thead>
                             <tr>
                                 <td className="border p-2" style={{ width: "1px" }}><input type="checkbox" 
-                                                checked={isAllSelected} onChange={handleSelectAll} /></td>
+                                                checked={isAllSelected} 
+                                                onChange={handleSelectAll} /></td>
                                 <td className="border p-2">S.No</td>
                                 <td className="border p-2 text-center">Main Category</td>
                                 <td className="border p-2 text-center">Job Position</td>

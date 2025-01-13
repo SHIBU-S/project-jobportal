@@ -98,13 +98,20 @@ function AddJobs({ setActiveTab }) {
                 });
         }       
         else{
-            try{
-                axios.post("http://localhost:5005/InsertJobDatas",Job_formdatas);
-                alert("Job Datas sucessfully inserted..");
-            }
-            catch(err){
-                alert("Error inserting job datas",err);
-            }
+            // try{
+            //     axios.post("http://localhost:5005/InsertJobDatas",Job_formdatas);
+            //     alert("Job Datas sucessfully inserted..");
+            // }
+            // catch(err){
+            //     alert("Error inserting job datas",err);
+            // }
+            axios.post("http://localhost:5005/InsertJobDatas", Job_formdatas)
+            .then(() => {
+                alert("Job Datas added successfully");
+            })
+            .catch((error) => {
+                alert("Error adding job datas: " + error.message);
+            });
         }
     }
     
