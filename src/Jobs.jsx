@@ -286,6 +286,233 @@ function Jobs({ setActiveTab }) {
                         )}
 
 
+
+
+            {/*  ------------------------------------  (2) Job Table  -----------------------------------------  */}
+                        {Job_activePage ===2 && (<tbody>
+                            {
+                                pageData && pageData.length > 0 ? (
+                                    pageData.reverse().map((jobdatas,index) => (
+                                <tr key={jobdatas._id}>
+                                    <td className="border p-1 text-center"> <input type="checkbox" 
+                                        checked={selectedJobdatas.includes(jobdatas._id)} 
+                                        onClick={()=>selectedtodelete(jobdatas._id)} /> 
+                                    </td>
+                                    <td className="border p-1  text-center">{startIndex+pageData.length-index}</td> 
+                                    <td className="border p-1 text-center"> {jobdatas.MainCategory}</td>
+                                    <td className="border p-1 text-center">{jobdatas.JobPosition}</td>
+                                    <td className="border p-1 text-center">{jobdatas.Description}</td>
+                                    <td className="border p-1 text-center">{jobdatas.Salary}</td>
+                                    <td className="border p-1 text-center">{jobdatas.WebsiteLink}</td>
+                                    <td className="border p-1 text-center">{jobdatas.NoticePeriod}</td>
+                                    <td className="border p-1 text-center">{jobdatas.Location}</td>
+                                    <td className="border p-1 text-center">{jobdatas.JobType}</td>
+                                    <td className="border p-1 text-center"><img src={jobdatas.Image} alt="Job"  style={{ width: "30px", height: "30px" }}   /></td>
+                                    <td className="border-top d-block pt-3 ">
+                                                {['top'].map((placement) => (
+                                                    <>
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>View</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-1 m-1 bg-primary text-white border" onClick={()=>viewJobDetails(jobdatas)} >View </Button>
+                                                        </OverlayTrigger>
+
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>Edit</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-1 bg-warning border border-none" onClick={() => editdatas(jobdatas)} >Edit </Button>
+                                                        </OverlayTrigger>
+
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>Delete</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-1 m-1 bg-danger text-white border" 
+                                                                disabled={!selectedJobdatas.includes(jobdatas._id)} onClick={()=>deleteJobdatas(jobdatas._id)} >Delete </Button>
+                                                        </OverlayTrigger> 
+                                                    </>
+                                                ))}
+                                    </td>  
+                                </tr>
+                                ))                           
+                            ) : (
+                                <tr>
+                                    <td colSpan="4" className="text-center"></td>
+                                </tr>
+                            )}
+                            </tbody>
+                        )}
+
+
+
+
+
+                        {/*  ------------------------------------  (3) Job Table  -----------------------------------------  */}
+                        {Job_activePage ===3 && (<tbody>
+                            {
+                                pageData && pageData.length > 0 ? (
+                                    pageData.reverse().map((jobdatas,index) => (
+                                <tr key={jobdatas._id}>
+                                    <td className="border p-1 text-center"> <input type="checkbox" 
+                                        checked={selectedJobdatas.includes(jobdatas._id)} 
+                                        onClick={()=>selectedtodelete(jobdatas._id)} /> 
+                                    </td>
+                                    <td className="border p-1  text-center">{startIndex+pageData.length-index}</td> 
+                                    <td className="border p-1 text-center"> {jobdatas.MainCategory}</td>
+                                    <td className="border p-1 text-center">{jobdatas.JobPosition}</td>
+                                    <td className="border p-1 text-center">{jobdatas.Description}</td>
+                                    <td className="border p-1 text-center">{jobdatas.Salary}</td>
+                                    <td className="border p-1 text-center">{jobdatas.WebsiteLink}</td>
+                                    <td className="border p-1 text-center">{jobdatas.NoticePeriod}</td>
+                                    <td className="border p-1 text-center">{jobdatas.Location}</td>
+                                    <td className="border p-1 text-center">{jobdatas.JobType}</td>
+                                    <td className="border p-1 text-center"><img src={jobdatas.Image} alt="Job"  style={{ width: "30px", height: "30px" }}   /></td>
+                                    <td className="border-top d-block pt-3 ">
+                                                {['top'].map((placement) => (
+                                                    <>
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>View</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-1 m-1 bg-primary text-white border" onClick={()=>viewJobDetails(jobdatas)} >View </Button>
+                                                        </OverlayTrigger>
+
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>Edit</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-1 bg-warning border border-none" onClick={() => editdatas(jobdatas)} >Edit </Button>
+                                                        </OverlayTrigger>
+
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>Delete</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-1 m-1 bg-danger text-white border" 
+                                                                disabled={!selectedJobdatas.includes(jobdatas._id)} onClick={()=>deleteJobdatas(jobdatas._id)} >Delete </Button>
+                                                        </OverlayTrigger> 
+                                                    </>
+                                                ))}
+                                    </td>  
+                                </tr>
+                                ))                           
+                            ) : (
+                                <tr>
+                                    <td colSpan="4" className="text-center"></td>
+                                </tr>
+                            )}
+                            </tbody>
+                        )}
+
+
+
+
+                        {/*  ------------------------------------  (4) Job Table  -----------------------------------------  */}
+                        {Job_activePage ===4 && (<tbody>
+                            {
+                                pageData && pageData.length > 0 ? (
+                                    pageData.reverse().map((jobdatas,index) => (
+                                <tr key={jobdatas._id}>
+                                    <td className="border p-1 text-center"> <input type="checkbox" 
+                                        checked={selectedJobdatas.includes(jobdatas._id)} 
+                                        onClick={()=>selectedtodelete(jobdatas._id)} /> 
+                                    </td>
+                                    <td className="border p-1  text-center">{startIndex+pageData.length-index}</td> 
+                                    <td className="border p-1 text-center"> {jobdatas.MainCategory}</td>
+                                    <td className="border p-1 text-center">{jobdatas.JobPosition}</td>
+                                    <td className="border p-1 text-center">{jobdatas.Description}</td>
+                                    <td className="border p-1 text-center">{jobdatas.Salary}</td>
+                                    <td className="border p-1 text-center">{jobdatas.WebsiteLink}</td>
+                                    <td className="border p-1 text-center">{jobdatas.NoticePeriod}</td>
+                                    <td className="border p-1 text-center">{jobdatas.Location}</td>
+                                    <td className="border p-1 text-center">{jobdatas.JobType}</td>
+                                    <td className="border p-1 text-center"><img src={jobdatas.Image} alt="Job"  style={{ width: "30px", height: "30px" }}   /></td>
+                                    <td className="border-top d-block pt-3 ">
+                                                {['top'].map((placement) => (
+                                                    <>
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>View</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-1 m-1 bg-primary text-white border" onClick={()=>viewJobDetails(jobdatas)} >View </Button>
+                                                        </OverlayTrigger>
+
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>Edit</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-1 bg-warning border border-none" onClick={() => editdatas(jobdatas)} >Edit </Button>
+                                                        </OverlayTrigger>
+
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>Delete</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-1 m-1 bg-danger text-white border" 
+                                                                disabled={!selectedJobdatas.includes(jobdatas._id)} onClick={()=>deleteJobdatas(jobdatas._id)} >Delete </Button>
+                                                        </OverlayTrigger> 
+                                                    </>
+                                                ))}
+                                    </td>  
+                                </tr>
+                                ))                           
+                            ) : (
+                                <tr>
+                                    <td colSpan="4" className="text-center"></td>
+                                </tr>
+                            )}
+                            </tbody>
+                        )}
+
+
+
+                        {/*  ------------------------------------  (5) Job Table  -----------------------------------------  */}
+                        {Job_activePage ===5 && (<tbody>
+                            {
+                                pageData && pageData.length > 0 ? (
+                                    pageData.reverse().map((jobdatas,index) => (
+                                <tr key={jobdatas._id}>
+                                    <td className="border p-1 text-center"> <input type="checkbox" 
+                                        checked={selectedJobdatas.includes(jobdatas._id)} 
+                                        onClick={()=>selectedtodelete(jobdatas._id)} /> 
+                                    </td>
+                                    <td className="border p-1  text-center">{startIndex+pageData.length-index}</td> 
+                                    <td className="border p-1 text-center"> {jobdatas.MainCategory}</td>
+                                    <td className="border p-1 text-center">{jobdatas.JobPosition}</td>
+                                    <td className="border p-1 text-center">{jobdatas.Description}</td>
+                                    <td className="border p-1 text-center">{jobdatas.Salary}</td>
+                                    <td className="border p-1 text-center">{jobdatas.WebsiteLink}</td>
+                                    <td className="border p-1 text-center">{jobdatas.NoticePeriod}</td>
+                                    <td className="border p-1 text-center">{jobdatas.Location}</td>
+                                    <td className="border p-1 text-center">{jobdatas.JobType}</td>
+                                    <td className="border p-1 text-center"><img src={jobdatas.Image} alt="Job"  style={{ width: "30px", height: "30px" }}   /></td>
+                                    <td className="border-top d-block pt-3 ">
+                                                {['top'].map((placement) => (
+                                                    <>
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>View</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-1 m-1 bg-primary text-white border" onClick={()=>viewJobDetails(jobdatas)} >View </Button>
+                                                        </OverlayTrigger>
+
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>Edit</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-1 bg-warning border border-none" onClick={() => editdatas(jobdatas)} >Edit </Button>
+                                                        </OverlayTrigger>
+
+                                                        <OverlayTrigger key={placement} placement={placement} overlay={ 
+                                                            <Tooltip id={`tooltip-${placement}`}>Delete</Tooltip>
+                                                            } >
+                                                            <Button type="button" className=" p-1 m-1 bg-danger text-white border" 
+                                                                disabled={!selectedJobdatas.includes(jobdatas._id)} onClick={()=>deleteJobdatas(jobdatas._id)} >Delete </Button>
+                                                        </OverlayTrigger> 
+                                                    </>
+                                                ))}
+                                    </td>  
+                                </tr>
+                                ))                           
+                            ) : (
+                                <tr>
+                                    <td colSpan="4" className="text-center"></td>
+                                </tr>
+                            )}
+                            </tbody>
+                        )}
+
                        
                     </table>
 

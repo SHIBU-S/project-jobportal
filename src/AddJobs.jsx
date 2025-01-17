@@ -86,7 +86,8 @@ function AddJobs({ setActiveTab }) {
         
         const edit_Jobdatas = JSON.parse(localStorage.getItem("EditedJobDatas"));
 
-        if(edit_Jobdatas){
+        if(edit_Jobdatas)
+        {
             axios.put(`http://localhost:5005/EditJobDatas/${edit_Jobdatas._id}`,Job_formdatas)
                 .then(() => {
                     alert("Job Datas updated successfully");
@@ -97,14 +98,8 @@ function AddJobs({ setActiveTab }) {
                     alert("Error updating job datas: " + error.message);
                 });
         }       
-        else{
-            // try{
-            //     axios.post("http://localhost:5005/InsertJobDatas",Job_formdatas);
-            //     alert("Job Datas sucessfully inserted..");
-            // }
-            // catch(err){
-            //     alert("Error inserting job datas",err);
-            // }
+        else
+        {
             axios.post("http://localhost:5005/InsertJobDatas", Job_formdatas)
             .then(() => {
                 alert("Job Datas added successfully");
@@ -284,7 +279,6 @@ function AddJobs({ setActiveTab }) {
 }
 
 export default AddJobs;
-
 
 
 

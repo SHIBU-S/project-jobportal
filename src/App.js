@@ -25,8 +25,10 @@ function App() {
 
                   <Route path="/Home" element={<HomePage/>} />
                   <Route path="/AboutUs" element={<AboutUsPage/>} />
-                  <Route path='/JobList' element={<JobListPage/>}/>
-                  <Route path='/BrowseJobs' element={<BrowseJobsPage/>}/>
+                  <Route path='/JobList' element={<JobListPage/>}/> 
+
+                  <Route path="/BrowseJobs/:Categoryname" element={<BrowseJobsPage />} />
+
                   <Route path='BrowseCategories' element={<BrowseCategoryPage/>}/>
                   <Route path='/BlogGridSidebar' element={<BlogGridSidebarPage/>}/>
                   <Route path='/BlogSingle' element={<BlogSingle/>}/>

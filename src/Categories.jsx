@@ -322,7 +322,7 @@ function Categories({ setActiveTab }) {
                                                 checked={selectedCategorydatas.includes(category._id)} 
                                                 onClick={() => selectedtodelete(category._id)}  />
                                         </td>
-                                        <td className="border text-center p-2 py-3">{(pageData.length+10)-index}</td>
+                                        <td className="border text-center p-2 py-3">{startIndex+pageData.length-index}</td>
                                         <td className="border p-2" style={{ width: "55%" }}>
                                             <Link to="" className="text-decoration-none text-dark">{category.Categoryname}</Link>
                                         </td>
@@ -385,7 +385,7 @@ function Categories({ setActiveTab }) {
                                                 checked={selectedCategorydatas.includes(category._id)} 
                                                 onClick={() => selectedtodelete(category._id)}  />
                                         </td>
-                                        <td className="border text-center p-2 py-3">{(pageData.length+20)-index}</td> 
+                                        <td className="border text-center p-2 py-3">{startIndex+pageData.length-index}</td> 
                                         <td className="border p-2" style={{ width: "55%" }}>
                                             <Link to="" className="text-decoration-none text-dark">{category.Categoryname}</Link>
                                         </td>
@@ -448,7 +448,7 @@ function Categories({ setActiveTab }) {
                                                 checked={selectedCategorydatas.includes(category._id)} 
                                                 onClick={() => selectedtodelete(category._id)}  />
                                         </td>
-                                        <td className="border text-center p-2 py-3">{(pageData.length+30)-index}</td>
+                                        <td className="border text-center p-2 py-3">{startIndex+pageData.length-index}</td>
                                         <td className="border p-2" style={{ width: "55%" }}>
                                             <Link to="" className="text-decoration-none text-dark">{category.Categoryname}</Link>
                                         </td>
@@ -510,7 +510,7 @@ function Categories({ setActiveTab }) {
                                                 checked={selectedCategorydatas.includes(category._id)} 
                                                 onClick={() => selectedtodelete(category._id)}  />
                                         </td>
-                                        <td className="border text-center p-2 py-3">{(pageData.length*2)-index}</td>
+                                        <td className="border text-center p-2 py-3">{startIndex+pageData.length-index}</td>
                                         <td className="border p-2" style={{ width: "55%" }}>
                                             <Link to="" className="text-decoration-none text-dark">{category.Categoryname}</Link>
                                         </td>
