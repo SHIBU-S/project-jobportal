@@ -20,7 +20,8 @@ import { RiDeleteBinLine } from "react-icons/ri";
 
 import { CSVLink } from "react-csv";
 import * as XLSX from 'xlsx';
-import { usePDF } from 'react-to-pdf';
+import jsPDF from "jspdf";
+import "jspdf-autotable";
 
 
 function Jobs({ setActiveTab }) {
@@ -185,7 +186,42 @@ function Jobs({ setActiveTab }) {
     
     
     // -------------------- Pdf ------------------------------------
-    const { toPDF } = usePDF({filename: 'Jobdatas.pdf'});
+    function exportToPDF(){
+        if (totalJobDatas.length === 0) {
+            alert("No data available to export.");
+            return;
+        }
+    
+        const doc = new jsPDF();
+    
+        // Add title
+        doc.text("Job Datas", 14, 10);
+    
+        // Define table columns and rows
+        const columns = ["S.No", "Main Category", "Job Position", "Description", "Salary", "Website Link", "Notice Period", "Location", "Job Type"];
+        const rows = totalJobDatas.map((job, index) => [
+            index + 1,
+            job.MainCategory,
+            job.JobPosition,
+            job.Description,
+            job.Salary,
+            job.WebsiteLink,
+            job.NoticePeriod,
+            job.Location,
+            job.JobType
+        ]);
+    
+        // Add table to the PDF
+        doc.autoTable({
+            head: [columns],
+            body: rows,
+            startY: 20,
+        });
+        doc.autoTable(totalJobDatas);
+    
+        // Save the PDF
+        doc.save("JobDatas.pdf");
+    };
     // -----
 
 
@@ -230,7 +266,7 @@ function Jobs({ setActiveTab }) {
                                                         <OverlayTrigger key={placement} placement={placement} overlay={ 
                                                             <Tooltip id={`tooltip-${placement}`}>Pdf</Tooltip>
                                                             } >
-                                                            <Button type="button" className="border p-2 m-1 btn-light convertbutton" onClick={() => toPDF(totalJobDatas)}><FaRegFilePdf fill="white" /> </Button>
+                                                            <Button type="button" className="border p-2 m-1 btn-light convertbutton" onClick={exportToPDF}><FaRegFilePdf fill="white" /> </Button>
                                                         </OverlayTrigger>
                                                     </>
                                                 ))}

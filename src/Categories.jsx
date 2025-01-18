@@ -21,7 +21,8 @@ import { RiDeleteBinLine } from "react-icons/ri";
 
 import { CSVLink } from "react-csv";
 import * as XLSX from 'xlsx';
-import { usePDF } from 'react-to-pdf';
+import jsPDF from "jspdf";
+import "jspdf-autotable";
 
 
 function Categories({ setActiveTab }) {
@@ -201,7 +202,36 @@ const exportToExcel = () => {
 
 
 // -------------------- Pdf ------------------------------------
-const { toPDF } = usePDF({filename: 'Categorydatas.pdf'});
+function exportToPDF(){
+    if (categoryData.length === 0) {
+        alert("No data available to export.");
+        return;
+    }
+
+    const doc = new jsPDF();
+
+    // Add title
+    doc.text("Category Data", 14, 10);
+
+    // Define table columns and rows
+    const columns = ["S.No", "Category Name", "Image URL"];
+    const rows = categoryData.map((category, index) => [
+        index + 1,
+        category.Categoryname,
+        category.CategoryImage,
+    ]);
+
+    // Add table to the PDF
+    doc.autoTable({
+        head: [columns],
+        body: rows,
+        startY: 20,
+    });
+    doc.autoTable(categoryData);
+
+    // Save the PDF
+    doc.save("CategoryDatas.pdf");
+};
 // -----
 
     return (
@@ -244,7 +274,7 @@ const { toPDF } = usePDF({filename: 'Categorydatas.pdf'});
                                                         <OverlayTrigger key={placement} placement={placement} overlay={ 
                                                             <Tooltip id={`tooltip-${placement}`}>Pdf</Tooltip>
                                                             } >
-                                                            <Button type="button" className="border p-2 m-1 btn-light convertbutton" onClick={() => toPDF(categoryData)}><FaRegFilePdf fill="white" /> </Button>
+                                                            <Button type="button" className="border p-2 m-1 btn-light convertbutton" onClick={exportToPDF}><FaRegFilePdf fill="white" /> </Button>
                                                         </OverlayTrigger>
                                                     </>
                                                 ))}
