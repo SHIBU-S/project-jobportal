@@ -20,6 +20,8 @@ import Modal from 'react-bootstrap/Modal';
 import { RiDeleteBinLine } from "react-icons/ri";
 
 import { CSVLink } from "react-csv";
+import * as XLSX from 'xlsx';
+import { usePDF } from 'react-to-pdf';
 
 
 function Categories({ setActiveTab }) {
@@ -182,6 +184,26 @@ function Categories({ setActiveTab }) {
 
 
 
+// -------------------- Excel ----------------------------------
+const exportToExcel = () => {
+    if (categoryData.length === 0) {
+        alert("No data available to export.");
+        return;
+    }
+
+    const worksheet = XLSX.utils.json_to_sheet(categoryData);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Categories");
+
+    XLSX.writeFile(workbook, "CategoryDatas.xlsx");
+};
+// -----
+
+
+// -------------------- Pdf ------------------------------------
+const { toPDF } = usePDF({filename: 'Categorydatas.pdf'});
+// -----
+
     return (
         <>
             <Container fluid className="adminpagebg">
@@ -210,22 +232,19 @@ function Categories({ setActiveTab }) {
                                                         <OverlayTrigger key={placement} placement={placement} overlay={ 
                                                             <Tooltip id={`tooltip-${placement}`}>Csv</Tooltip>
                                                             } >
-                                                           <>
-                                                           {/* <Button type="button" className="border ms-auto p-2 m-1 convertbutton"><BsFiletypeCsv fill="white" /> </Button> */}
                                                            <Button type="button" className="border ms-auto p-2 m-1 convertbutton"><CSVLink data={categoryData}><BsFiletypeCsv fill="white" /></CSVLink></Button>
-                                                           </>
                                                         </OverlayTrigger>
 
                                                         <OverlayTrigger key={placement} placement={placement} overlay={ 
                                                             <Tooltip id={`tooltip-${placement}`}>Excel</Tooltip>
                                                             } >
-                                                            <Button type="button" className="border p-2 m-1 btn-light convertbutton"><FaRegFileExcel fill="white" /> </Button>
+                                                            <Button type="button" className="border p-2 m-1 btn-light convertbutton" onClick={exportToExcel}><FaRegFileExcel fill="white" /> </Button>
                                                         </OverlayTrigger>
 
                                                         <OverlayTrigger key={placement} placement={placement} overlay={ 
                                                             <Tooltip id={`tooltip-${placement}`}>Pdf</Tooltip>
                                                             } >
-                                                            <Button type="button" className="border p-2 m-1 btn-light convertbutton"><FaRegFilePdf fill="white" /> </Button>
+                                                            <Button type="button" className="border p-2 m-1 btn-light convertbutton" onClick={() => toPDF(categoryData)}><FaRegFilePdf fill="white" /> </Button>
                                                         </OverlayTrigger>
                                                     </>
                                                 ))}
@@ -609,3 +628,18 @@ export default Categories;
 
 
 
+// import { usePDF } from 'react-to-pdf';
+
+// const Categories = () => {
+//    const { toPDF, targetRef } = usePDF({filename: 'page.pdf'});
+//    return (
+//       <div>
+//          <button onClick={() => toPDF()}>Download PDF</button>
+//          <div ref={targetRef}>
+//             Content to be generated to PDF
+//          </div>
+//       </div>
+//    )
+// }
+
+// export default Categories;

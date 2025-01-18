@@ -18,6 +18,10 @@ import Pagination from 'react-bootstrap/Pagination';
 import Modal from 'react-bootstrap/Modal';
 import { RiDeleteBinLine } from "react-icons/ri";
 
+import { CSVLink } from "react-csv";
+import * as XLSX from 'xlsx';
+import { usePDF } from 'react-to-pdf';
+
 
 function Jobs({ setActiveTab }) {
     // const [showAddCategory, setshowAddCategory] = useState(false);
@@ -163,6 +167,29 @@ function Jobs({ setActiveTab }) {
         }
     }
 
+
+    // -------------------- Excel ----------------------------------
+    const exportToExcel = () => {
+        if (totalJobDatas.length === 0) {
+            alert("No data available to export.");
+            return;
+        }
+    
+        const worksheet = XLSX.utils.json_to_sheet(totalJobDatas);
+        const workbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workbook, worksheet, "Jobs");
+    
+        XLSX.writeFile(workbook, "JobDatas.xlsx");
+    };
+    // -----
+    
+    
+    // -------------------- Pdf ------------------------------------
+    const { toPDF } = usePDF({filename: 'Jobdatas.pdf'});
+    // -----
+
+
+
     return (
         <>
             <Container fluid className="adminpagebg">
@@ -191,19 +218,19 @@ function Jobs({ setActiveTab }) {
                                                         <OverlayTrigger key={placement} placement={placement} overlay={ 
                                                             <Tooltip id={`tooltip-${placement}`}>Csv</Tooltip>
                                                             } >
-                                                            <Button type="button" className="border ms-auto p-2 m-1 btn-light"><BsFiletypeCsv /> </Button>
+                                                           <Button type="button" className="border ms-auto p-2 m-1 convertbutton"><CSVLink data={totalJobDatas}><BsFiletypeCsv fill="white" /></CSVLink></Button>
                                                         </OverlayTrigger>
 
                                                         <OverlayTrigger key={placement} placement={placement} overlay={ 
                                                             <Tooltip id={`tooltip-${placement}`}>Excel</Tooltip>
                                                             } >
-                                                            <Button type="button" className="border p-2 m-1 btn-light"><FaRegFileExcel/> </Button>
+                                                            <Button type="button" className="border p-2 m-1 btn-light convertbutton" onClick={exportToExcel}><FaRegFileExcel fill="white" /> </Button>
                                                         </OverlayTrigger>
 
                                                         <OverlayTrigger key={placement} placement={placement} overlay={ 
                                                             <Tooltip id={`tooltip-${placement}`}>Pdf</Tooltip>
                                                             } >
-                                                            <Button type="button" className="border p-2 m-1 btn-light"><FaRegFilePdf/> </Button>
+                                                            <Button type="button" className="border p-2 m-1 btn-light convertbutton" onClick={() => toPDF(totalJobDatas)}><FaRegFilePdf fill="white" /> </Button>
                                                         </OverlayTrigger>
                                                     </>
                                                 ))}
@@ -551,8 +578,20 @@ function Jobs({ setActiveTab }) {
                                             <Col><p>{selectedJobDetails.Salary}</p></Col>
                                         </Row>
                                         <Row>
+                                            <Col><h5>Website Link:</h5></Col>
+                                            <Col><p>{selectedJobDetails.WebsiteLink}</p></Col>
+                                        </Row>
+                                        <Row>
+                                            <Col><h5>Notice Period:</h5></Col>
+                                            <Col><p>{selectedJobDetails.NoticePeriod}</p></Col>
+                                        </Row>
+                                        <Row>
                                             <Col><h5>Location:</h5></Col>
                                             <Col><p>{selectedJobDetails.Location}</p></Col>
+                                        </Row>
+                                        <Row>
+                                            <Col><h5>Job Type:</h5></Col>
+                                            <Col><p>{selectedJobDetails.JobType}</p></Col>
                                         </Row>
                                         <Row>
                                             <Col><h5>Image:</h5></Col>
