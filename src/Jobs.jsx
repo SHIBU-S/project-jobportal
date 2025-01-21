@@ -78,6 +78,7 @@ function Jobs({ setActiveTab }) {
         }
         fetchJobDatas();
     }, []);
+    // --------
 
 
     // -------------------- Pagination Condition -------------------
@@ -85,7 +86,7 @@ function Jobs({ setActiveTab }) {
     const startIndex = (Job_activePage - 1) * itemsPerPage;    
     const endIndex = startIndex + itemsPerPage;                     
     const pageData = totalJobDatas.slice(startIndex, endIndex); 
-    // -----
+    // --------
 
 
     // -------------------- Delete Datas ------------------
@@ -99,6 +100,7 @@ function Jobs({ setActiveTab }) {
             alert("Failed to delete dats.. Please try again.");
         }
     }
+    // --------
 
 
     //--------------------- Edit Datas -----------------------
@@ -107,7 +109,7 @@ function Jobs({ setActiveTab }) {
         setActiveTab('AddJobs');
         localStorage.setItem('EditedJobDatas', JSON.stringify(jobdatas)); 
     }
-    // -----
+    // --------
 
 
     // ------------------Delete All Details---------------------
@@ -117,7 +119,8 @@ function Jobs({ setActiveTab }) {
         {
             if (window.confirm("Are you sure you want to delete all selected categories?")) 
             {
-                try {
+                try 
+                {
                     Promise.all(selectedJobdatas.map(id => axios.delete(`http://localhost:5005/DeleteJobDatas/${id}`)))
                         .then(() => {
                             alert("All selected Job Datas have been deleted successfully.");
@@ -128,14 +131,16 @@ function Jobs({ setActiveTab }) {
                             console.error("Error deleting categories:", err);
                             alert("Failed to delete some categories. Please try again.");
                         });
-                } catch (err) {
+                } 
+                catch (err) 
+                {
                     console.error("Error deleting categories:", err);
                     alert("Failed to delete some categories. Please try again.");
                 }
             }
         }
-}
-// -----
+    }
+    // --------
 
 
     // ----------------------Modal------------------------
@@ -148,7 +153,7 @@ function Jobs({ setActiveTab }) {
         setSelectedJobDetails(jobdatas);
         setShow(true); 
     }
-    // -----
+    // -------
     
 
 
@@ -542,7 +547,7 @@ function Jobs({ setActiveTab }) {
                                     <td className="border p-1 text-center">{jobdatas.Location}</td>
                                     <td className="border p-1 text-center">{jobdatas.JobType}</td>
                                     <td className="border p-1 text-center"><img src={jobdatas.Image} alt="Job"  style={{ width: "30px", height: "30px" }}   /></td>
-                                    <td className="border-top d-block pt-3 ">
+                                    <td className="border-top d-block pt-3">
                                                 {['top'].map((placement) => (
                                                     <>
                                                         <OverlayTrigger key={placement} placement={placement} overlay={ 

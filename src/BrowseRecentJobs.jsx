@@ -1366,7 +1366,7 @@ function BrowseRecentJobs()
     fetchJobData();
   }, []);
 
-    useEffect(() => {
+  useEffect(() => {
     if (Categoryname) {
       setFilteredJobs(jobData.filter((job) => job.MainCategory === Categoryname));
     } else {
@@ -1374,6 +1374,7 @@ function BrowseRecentJobs()
     }
   }, [Categoryname, jobData]);
   // ------------------------------------------------------------------
+
 
   // -------------------- Pagination Condition -------------------
     const itemsPerPage = 8;
