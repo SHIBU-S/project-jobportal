@@ -1437,7 +1437,7 @@ function rightarrow(){
                                             <Col md={10} className="position-relative">
                                                 <div className="jobcontent">
                                                     <h4 className="BrowseRecentJobname mt-4 mt-md-0"><Link to="">{job.JobPosition}</Link></h4>
-                                                    <p className="lightcolorline"> {job.Description} </p>
+                                                    <p className="lightcolorline" style={{maxHeight:'50px',overflow:"hidden"}}> {job.Description} </p>
                                                     <ul className="ps-0  jobcontent-lists">
                                                         <li className="border me-2r">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" class="bi bi-reception-0" viewBox="0 0 16 16"><path d="M0 13.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m4 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m4 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m4 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5"/></svg>
@@ -1483,7 +1483,7 @@ function rightarrow(){
                                             <Col md={10} className="position-relative">
                                                 <div className="jobcontent">
                                                     <h4 className="BrowseRecentJobname mt-4 mt-md-0"><Link to="">{job.JobPosition}</Link></h4>
-                                                    <p className="lightcolorline"> {job.Description} </p>
+                                                    <p className="lightcolorline" style={{maxHeight:'50px',overflow:"hidden"}}> {job.Description} </p>
                                                     <ul className="ps-0  jobcontent-lists">
                                                         <li className="border me-2r">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" class="bi bi-reception-0" viewBox="0 0 16 16"><path d="M0 13.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m4 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m4 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m4 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5"/></svg>
@@ -1530,7 +1530,7 @@ function rightarrow(){
                                             <Col md={10} className="position-relative">
                                                 <div className="jobcontent">
                                                     <h4 className="BrowseRecentJobname mt-4 mt-md-0"><Link to="">{job.JobPosition}</Link></h4>
-                                                    <p className="lightcolorline"> {job.Description} </p>
+                                                    <p className="lightcolorline" style={{maxHeight:'50px',overflow:"hidden"}}> {job.Description} </p>
                                                     <ul className="ps-0  jobcontent-lists">
                                                         <li className="border me-2r">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" class="bi bi-reception-0" viewBox="0 0 16 16"><path d="M0 13.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m4 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m4 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m4 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5"/></svg>
@@ -1578,7 +1578,7 @@ function rightarrow(){
                                             <Col md={10} className="position-relative">
                                                 <div className="jobcontent">
                                                     <h4 className="BrowseRecentJobname mt-4 mt-md-0"><Link to="">{job.JobPosition}</Link></h4>
-                                                    <p className="lightcolorline"> {job.Description} </p>
+                                                    <p className="lightcolorline" style={{maxHeight:'50px',overflow:"hidden"}}> {job.Description} </p>
                                                     <ul className="ps-0  jobcontent-lists">
                                                         <li className="border me-2r">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" class="bi bi-reception-0" viewBox="0 0 16 16"><path d="M0 13.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m4 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m4 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m4 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5"/></svg>
