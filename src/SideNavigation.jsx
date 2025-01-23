@@ -15,6 +15,8 @@ import Categories from './Categories';
 import AddCategory from './AddCategory';
 import Jobs from './Jobs';
 import AddJobs from './AddJobs';
+import Blog from './Blog';
+import AddBlog from './AddBlog';
 
 
 function SideNavigation() {
@@ -99,9 +101,10 @@ function SideNavigation() {
 
                     <Col className='px-0'>
                     {
-                         ((activeTab === "Dashboard" || activeTab === "Service" || activeTab === "Banner" || activeTab === "Blog" || activeTab === "Users" || activeTab === "Orders") && <Dashboard />) 
+                         ((activeTab === "Dashboard" || activeTab === "Service" || activeTab === "Banner" || activeTab === "Users" || activeTab === "Orders") && <Dashboard />) 
                         || ( activeTab === "Categories" && <Categories setActiveTab={setActiveTab}/> ) || (activeTab === "AddCategory" &&  <AddCategory setActiveTab={setActiveTab}/>)
                         || ( activeTab === "Jobs" && <Jobs setActiveTab={setActiveTab}/> ) || (activeTab === "AddJobs" && <AddJobs setActiveTab={setActiveTab}/> )
+                        || ( activeTab === "Blog" && <Blog setActiveTab={setActiveTab}/> ) || (activeTab === "AddBlog" && <AddBlog setActiveTab={setActiveTab}/> )
                     }
                     </Col>
 

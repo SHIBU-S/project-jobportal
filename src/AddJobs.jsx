@@ -29,7 +29,6 @@ function AddJobs({ setActiveTab }) {
     const [Description,setDescription] = useState("");
     const [Salary,setSalary] = useState("");
     const [WebsiteLink,setWebsitelink] = useState("");
-    const [NoticePeriod,setNoticeperiod] = useState("");
     const [Location,setLocation] = useState("");
     const [JobType,setJobtype] = useState("");
     const [Image,setImage] = useState(null);
@@ -57,7 +56,6 @@ function AddJobs({ setActiveTab }) {
             setDescription(editJobdatas.Description);
             setSalary(editJobdatas.Salary);
             setWebsitelink(editJobdatas.WebsiteLink);
-            setNoticeperiod(editJobdatas.NoticePeriod);
             setLocation(editJobdatas.Location);
             setJobtype(editJobdatas.JobType);
             setImage(editJobdatas.Image);
@@ -73,13 +71,12 @@ function AddJobs({ setActiveTab }) {
         Job_formdatas.append("Description",Description);
         Job_formdatas.append("Salary",Salary);
         Job_formdatas.append("WebsiteLink",WebsiteLink);
-        Job_formdatas.append("NoticePeriod",NoticePeriod);
         Job_formdatas.append("Location",Location);
         Job_formdatas.append("JobType",JobType);
         Job_formdatas.append("Image",Image);
 
         
-        if (!SelectedCategory || !JobPosition || !Description || !Salary || !WebsiteLink || !NoticePeriod || !Location || !JobType || !Image) {
+        if (!SelectedCategory || !JobPosition || !Description || !Salary || !WebsiteLink || !Location || !JobType || !Image) {
             alert("Please enter all job data fields.");
             return;
         }
@@ -224,15 +221,6 @@ function AddJobs({ setActiveTab }) {
                                     </Col>
                                 </Row>
 
-                                                    {/* -----------------  Notice Period ---------------- */}
-                                <Row className="adminpanelformpage">
-                                    <Col sm={2} className="d-flex align-items-center"><span className="ms-auto d-flex"> Notice Period :</span></Col>
-                                    <Col className="px-4">
-                                        <FloatingLabel controlId="floatingInput" label="Notice Period" className="mb-3 mt-3">
-                                            <Form.Control type="text" placeholder="Notice Period" value={NoticePeriod} onChange={(e)=>setNoticeperiod(e.target.value)}  />
-                                        </FloatingLabel>
-                                    </Col>
-                                </Row>
 
                                                     {/* -----------------  Location ---------------- */}
                                 <Row className="adminpanelformpage">

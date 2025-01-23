@@ -181,7 +181,7 @@ function JobCategory() {
           </Col>
         </Row>
         <Row className="mt-3 text-center">
-          {categoryData.map((category) => (
+          {[...categoryData].reverse().map((category) => (
             <Col sm={12} md={6} lg={3} className="p-2" key={category.id}>
               <Link to={`/BrowseJobs/${category.Categoryname}`} style={{ textDecoration: "none", color: "#081828" }}>
                 <div className=" jobcategory-lists p-3" style={{border:"1px dashed #eee",animationDelay:"0.2s"}}>

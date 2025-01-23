@@ -211,7 +211,7 @@ function Jobs({ setActiveTab }) {
             job.Description,
             job.Salary,
             job.WebsiteLink,
-            job.NoticePeriod,
+            // job.NoticePeriod,
             job.Location,
             job.JobType
         ]);
@@ -291,7 +291,7 @@ function Jobs({ setActiveTab }) {
                                 <td className="border p-2 text-center">Description</td>
                                 <td className="border p-2 text-center">Salary</td>
                                 <td className="border p-2 text-center">Website Link</td>
-                                <td className="border p-2 text-center">Notice Period</td>
+                                {/* <td className="border p-2 text-center">Notice Period</td> */}
                                 <td className="border p-2 text-center">Location</td>
                                 <td className="border p-2 text-center">Job Type</td>
                                 <td className="border p-2 text-center">Image</td>
@@ -315,7 +315,7 @@ function Jobs({ setActiveTab }) {
                                     <td className="border p-1 text-center">{jobdatas.Description}</td>
                                     <td className="border p-1 text-center">{jobdatas.Salary}</td>
                                     <td className="border p-1 text-center">{jobdatas.WebsiteLink}</td>
-                                    <td className="border p-1 text-center">{jobdatas.NoticePeriod}</td>
+                                    {/* <td className="border p-1 text-center">{jobdatas.NoticePeriod}</td> */}
                                     <td className="border p-1 text-center">{jobdatas.Location}</td>
                                     <td className="border p-1 text-center">{jobdatas.JobType}</td>
                                     <td className="border p-1 text-center"><img src={jobdatas.Image} alt="Job"  style={{ width: "30px", height: "30px" }}   /></td>
@@ -372,7 +372,7 @@ function Jobs({ setActiveTab }) {
                                     <td className="border p-1 text-center">{jobdatas.Description}</td>
                                     <td className="border p-1 text-center">{jobdatas.Salary}</td>
                                     <td className="border p-1 text-center">{jobdatas.WebsiteLink}</td>
-                                    <td className="border p-1 text-center">{jobdatas.NoticePeriod}</td>
+                                    {/* <td className="border p-1 text-center">{jobdatas.NoticePeriod}</td> */}
                                     <td className="border p-1 text-center">{jobdatas.Location}</td>
                                     <td className="border p-1 text-center">{jobdatas.JobType}</td>
                                     <td className="border p-1 text-center"><img src={jobdatas.Image} alt="Job"  style={{ width: "30px", height: "30px" }}   /></td>
@@ -430,7 +430,7 @@ function Jobs({ setActiveTab }) {
                                     <td className="border p-1 text-center">{jobdatas.Description}</td>
                                     <td className="border p-1 text-center">{jobdatas.Salary}</td>
                                     <td className="border p-1 text-center">{jobdatas.WebsiteLink}</td>
-                                    <td className="border p-1 text-center">{jobdatas.NoticePeriod}</td>
+                                    {/* <td className="border p-1 text-center">{jobdatas.NoticePeriod}</td> */}
                                     <td className="border p-1 text-center">{jobdatas.Location}</td>
                                     <td className="border p-1 text-center">{jobdatas.JobType}</td>
                                     <td className="border p-1 text-center"><img src={jobdatas.Image} alt="Job"  style={{ width: "30px", height: "30px" }}   /></td>
@@ -487,7 +487,7 @@ function Jobs({ setActiveTab }) {
                                     <td className="border p-1 text-center">{jobdatas.Description}</td>
                                     <td className="border p-1 text-center">{jobdatas.Salary}</td>
                                     <td className="border p-1 text-center">{jobdatas.WebsiteLink}</td>
-                                    <td className="border p-1 text-center">{jobdatas.NoticePeriod}</td>
+                                    {/* <td className="border p-1 text-center">{jobdatas.NoticePeriod}</td> */}
                                     <td className="border p-1 text-center">{jobdatas.Location}</td>
                                     <td className="border p-1 text-center">{jobdatas.JobType}</td>
                                     <td className="border p-1 text-center"><img src={jobdatas.Image} alt="Job"  style={{ width: "30px", height: "30px" }}   /></td>
@@ -543,7 +543,7 @@ function Jobs({ setActiveTab }) {
                                     <td className="border p-1 text-center">{jobdatas.Description}</td>
                                     <td className="border p-1 text-center">{jobdatas.Salary}</td>
                                     <td className="border p-1 text-center">{jobdatas.WebsiteLink}</td>
-                                    <td className="border p-1 text-center">{jobdatas.NoticePeriod}</td>
+                                    {/* <td className="border p-1 text-center">{jobdatas.NoticePeriod}</td> */}
                                     <td className="border p-1 text-center">{jobdatas.Location}</td>
                                     <td className="border p-1 text-center">{jobdatas.JobType}</td>
                                     <td className="border p-1 text-center"><img src={jobdatas.Image} alt="Job"  style={{ width: "30px", height: "30px" }}   /></td>
@@ -622,10 +622,10 @@ function Jobs({ setActiveTab }) {
                                             <Col><h5>Website Link:</h5></Col>
                                             <Col><p>{selectedJobDetails.WebsiteLink}</p></Col>
                                         </Row>
-                                        <Row>
+                                        {/* <Row>
                                             <Col><h5>Notice Period:</h5></Col>
                                             <Col><p>{selectedJobDetails.NoticePeriod}</p></Col>
-                                        </Row>
+                                        </Row> */}
                                         <Row>
                                             <Col><h5>Location:</h5></Col>
                                             <Col><p>{selectedJobDetails.Location}</p></Col>
