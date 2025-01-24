@@ -81,9 +81,9 @@ function SideNavigation() {
                             <Nav.Item className='text-start navitem'>
                                 <Nav.Link className='text-white d-flex align-items-center' eventKey="jobs" onClick={() => setActiveTab("Jobs")}>Jobs <PiGreaterThan className="ms-auto p-1"/></Nav.Link>
                             </Nav.Item>
-                            <Nav.Item className='text-start navitem'>
+                            {/* <Nav.Item className='text-start navitem'>
                                 <Nav.Link className='text-white d-flex align-items-center' eventKey="service" onClick={() => setActiveTab("Service")}>Service <PiGreaterThan className="ms-auto p-1"/></Nav.Link>
-                            </Nav.Item>
+                            </Nav.Item> */}
                             <Nav.Item className='text-start navitem'>
                                 <Nav.Link className='text-white d-flex align-items-center' eventKey="banner" onClick={() => setActiveTab("Banner")}>Banner <PiGreaterThan className="ms-auto p-1"/></Nav.Link>
                             </Nav.Item>
@@ -101,7 +101,7 @@ function SideNavigation() {
 
                     <Col className='px-0'>
                     {
-                         ((activeTab === "Dashboard" || activeTab === "Service" || activeTab === "Banner" || activeTab === "Users" || activeTab === "Orders") && <Dashboard />) 
+                         ((activeTab === "Dashboard" || activeTab === "Banner" || activeTab === "Users" || activeTab === "Orders") && <Dashboard />) 
                         || ( activeTab === "Categories" && <Categories setActiveTab={setActiveTab}/> ) || (activeTab === "AddCategory" &&  <AddCategory setActiveTab={setActiveTab}/>)
                         || ( activeTab === "Jobs" && <Jobs setActiveTab={setActiveTab}/> ) || (activeTab === "AddJobs" && <AddJobs setActiveTab={setActiveTab}/> )
                         || ( activeTab === "Blog" && <Blog setActiveTab={setActiveTab}/> ) || (activeTab === "AddBlog" && <AddBlog setActiveTab={setActiveTab}/> )

@@ -64,22 +64,22 @@ function Blog({ setActiveTab }) {
     {
         if (isAllSelected && selectedCategorydatas.length > 0) 
         {
-            if (window.confirm("Are you sure you want to delete all selected categories?")) 
+            if (window.confirm("Are you sure you want to delete all selected blog datas?")) 
             {
                 try {
-                    Promise.all(selectedCategorydatas.map(id => axios.delete(`http://localhost:5005/DeleteCategoryDatas/${id}`)))
+                    Promise.all(selectedCategorydatas.map(id => axios.delete(`http://localhost:5005/DeleteBlogDatas/${id}`)))
                         .then(() => {
-                            alert("All selected categories have been deleted successfully.");
+                            alert("All selected blog datas have been deleted successfully.");
                             setBlogData(prev => prev.filter(category => !selectedCategorydatas.includes(category._id)));
                             setSelectedCategorydatas([]);
                         })
                         .catch((err) => {
-                            console.error("Error deleting categories:", err);
-                            alert("Failed to delete some categories. Please try again.");
+                            console.error("Error deleting blog datas:", err);
+                            alert("Failed to delete some blog datas. Please try again.");
                         });
                 } catch (err) {
-                    console.error("Error deleting categories:", err);
-                    alert("Failed to delete some categories. Please try again.");
+                    console.error("Error deleting blog datas:", err);
+                    alert("Failed to delete some blog datas. Please try again.");
                 }
             }
         }
@@ -131,13 +131,13 @@ function Blog({ setActiveTab }) {
 // -------------------- Delete Datas -------------------
     async function deleteCategory() {
         try {
-            await Promise.all( selectedCategorydatas.map(id => axios.delete(`http://localhost:5005/DeleteCategoryDatas/${id}`)));
-            alert("Selected categories deleted successfully.");
+            await Promise.all( selectedCategorydatas.map(id => axios.delete(`http://localhost:5005/DeleteBlogDatas/${id}`)));
+            alert("Selected blog datas deleted successfully.");
             setBlogData(prev => prev.filter(category => !selectedCategorydatas.includes(category._id)));
             setSelectedCategorydatas([]);
         } catch (err) {
-            console.error("Error deleting categories:", err);
-            alert("Failed to delete some categories. Please try again.");
+            console.error("Error deleting blog:", err);
+            alert("Failed to delete some blog. Please try again.");
         }
     }
 // -----
@@ -147,8 +147,8 @@ function Blog({ setActiveTab }) {
 //--------------------- Edit Datas -----------------------
     async function editdatas(category) 
     {
-        setActiveTab('AddCategory');
-        localStorage.setItem('EditedDatas', JSON.stringify(category)); 
+        setActiveTab('AddBlog');
+        localStorage.setItem('EditedBlogDatas', JSON.stringify(category)); 
     }
 // -----
 
@@ -214,11 +214,11 @@ function exportToPDF(){
     doc.text("Category Data", 14, 10);
 
     // Define table columns and rows
-    const columns = ["S.No", "Category Name", "Image URL"];
+    const columns = ["S.No", "Blog Title", "Image URL", ];
     const rows = BlogData.map((category, index) => [
         index + 1,
-        category.Categoryname,
-        category.CategoryImage,
+        category.BlogTitle,
+        category.Im,
     ]);
 
     // Add table to the PDF
@@ -230,7 +230,7 @@ function exportToPDF(){
     doc.autoTable(BlogData);
 
     // Save the PDF
-    doc.save("CategoryDatas.pdf");
+    doc.save("BlogDatas.pdf");
 };
 // -----
 
@@ -298,7 +298,7 @@ function exportToPDF(){
                         </thead>
 
 
-            {/*  -------------------------------------  (1) Category Table  -----------------------------------------  */}
+            {/*  -------------------------------------  (1) Blog Table  -----------------------------------------  */}
                         {Category_activePage===1 && (
                             <tbody>
                             {

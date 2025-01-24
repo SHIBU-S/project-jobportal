@@ -31,14 +31,15 @@ function AddBlog({ setActiveTab }) {
         setActiveTab("Blog");
     }
 
-    // useEffect(() => {
-    //     const categorydatas_Edit = JSON.parse(localStorage.getItem('EditedDatas'));
-    //     if (categorydatas_Edit) 
-    //     {
-    //         setcategoryname(categorydatas_Edit.Categoryname);
-    //         setImage(categorydatas_Edit.CategoryImage);
-    //     }
-    // }, []);
+    useEffect(() => {
+        const categorydatas_Edit = JSON.parse(localStorage.getItem('EditedBlogDatas'));
+        if (categorydatas_Edit) 
+        {
+            setBlogTitle(categorydatas_Edit.BlogTitle);
+            setDescription(categorydatas_Edit.Description)
+            setImage(categorydatas_Edit.Image);
+        }
+    }, []);
     
 
     function displayCategorydetails_save() 
@@ -53,22 +54,22 @@ function AddBlog({ setActiveTab }) {
         formData.append("BlogImage", Image);
         formData.append("BlogDescription", Description);
     
-        // const categoryToEdit = JSON.parse(localStorage.getItem('EditedDatas'));
+        const categoryToEdit = JSON.parse(localStorage.getItem('EditedBlogDatas'));
     
-        // if (categoryToEdit) 
-        // {
-        //     axios.put(`http://localhost:5005/UpdateBlogDatas/${categoryToEdit._id}`, formData)
-        //         .then(() => {
-        //             alert("Categories updated successfully");
-        //             localStorage.removeItem('EditedDatas');
-        //             setActiveTab("Categories");
-        //         })
-        //         .catch((error) => {
-        //             alert("Error updating category: " + error.message);
-        //         });
-        // } 
-        // else 
-        // {
+        if (categoryToEdit) 
+        {
+            axios.put(`http://localhost:5005/UpdateBlogDatas/${categoryToEdit._id}`, formData)
+                .then(() => {
+                    alert("Blog Datas updated successfully");
+                    localStorage.removeItem('EditedBlogDatas');
+                    setActiveTab("Blog");
+                })
+                .catch((error) => {
+                    alert("Error updating blog datas: " + error.message);
+                });
+        } 
+        else 
+        {
             axios.post("http://localhost:5005/InsertBlogDatas", formData)
                 .then(() => {
                     alert("Blog Datas added successfully");
@@ -76,7 +77,7 @@ function AddBlog({ setActiveTab }) {
                 .catch((error) => {
                     alert("Error adding Blog datas: " + error.message);
                 });
-        // }
+        }
     }
     
 
