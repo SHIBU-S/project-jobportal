@@ -1,4 +1,3 @@
-
 import { Container, Row, Col, Modal } from "react-bootstrap";
 import bodyimage from './hero-image.png';
 import React, { useState } from 'react';

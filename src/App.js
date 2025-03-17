@@ -108,7 +108,7 @@ function App() {
                   <Route path="/Admin" element={<AdminPage onLogin={handleLogin} />} />
                   <Route path="/Admin/Sidenavigation" element={<ProtectedRoute element={<SideNavigation />} />} /> 
                   <Route path="*" element={<Navigate to={isAuthenticated ? "/Admin/Sidenavigation" : "/Admin"} />} />
-
+                                                                                                                                                                                                                                                    
                   <Route path='/AddCategory' element={<AddCategory/>}/>
               </Routes>
     </div>
